@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">敌军还有5秒到达战场</div>
+
+    <script>
+        var oBox = document.getElementById("box");
+
+        var num = 5;
+         var timer = setInterval(function(){
+            num--;
+            if(num <= 0){
+                oBox.innerHTML = "全君出击";
+                clearInterval(timer);//如果不清除定时器的话，结束的只是code这个函数，但定时器仍然还在执行，
+                console.log("这是取消之后会输出的内容");//取消定时器是从下一次定时器的调用开始取消的，这一次中的之后的内容依然会执行
+                return;
+            }
+            oBox.innerHTML = "敌军还有" + num + "秒到达战场";
+        },1000)
+    </script>
+</body>
+</html>

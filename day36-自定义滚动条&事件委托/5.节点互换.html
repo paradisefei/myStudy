@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .outer {
+            width: 600px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+            display: flex;
+        }
+
+        .left {
+            width: 200px;
+            background-color: blueviolet;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .center {
+            width: 200px;
+            text-align: center;
+        }
+
+        .right {
+            width: 200px;
+            background-color: hotpink;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <ul class="left">
+            <li>left Con1</li>
+            <li>left Con2</li>
+            <li>left Con3</li>
+            <li>left Con4</li>
+            <li>left Con5</li>
+        </ul>
+        <div class="center">
+            <button class="toRight">&gt;&gt;&gt;&gt;&gt;&gt;</button>
+            <br>
+            <button class="toLeft">&lt;&lt;&lt;&lt;&lt;&lt;</button>
+        </div>
+        <ul class="right">
+            <li>right con1</li>
+            <li>right con2</li>
+            <li>right con3</li>
+            <li>right con4</li>
+            <li>right con5</li>
+        </ul>
+    </div>
+    <script>
+        //获取元素对象
+        var oToRight = document.querySelector(".toRight");
+        var oToLeft = document.querySelector(".toLeft");
+        var oLeft = document.querySelector(".left");
+        var oLeftLis = oLeft.getElementsByTagName("li");
+        var oRight = document.querySelector(".right");
+        var oRightLis = oRight.getElementsByTagName("li");
+
+        //left事件委托
+        oLeft.onclick = function (e) {
+            if (e.target.nodeName === "LI") {
+                //改变样式
+                e.target.style.backgroundColor = "red";
+                //添加标记属性
+                e.target.dataset.mark = "true";
+            }
+        }
+        //right事件委托
+        oRight.onclick = function (e) {
+            if (e.target.nodeName === "LI") {
+                //改变样式
+                e.target.style.backgroundColor = "red";
+                //添加标记属性
+                e.target.dataset.mark = "true";
+            }
+        }
+
+        // //toRight按钮点击事件
+        // oToRight.onclick = function () {
+        //     Array.from(oLeftLis).forEach(function (item, index) {
+        //         if (item.dataset.mark) {
+        //             oRight.appendChild(item);
+        //             delete item.dataset.mark;
+        //             item.style.backgroundColor = "";
+        //             // console.log(1);
+        //         }
+        //     })
+        // }
+        // //toLeft按钮点击事件
+        // oToLeft.onclick = function () {
+        //     // console.log("toleft")
+        //     console.log(oRightLis);
+        //     Array.from(oRightLis).forEach(function (item, index) {
+        //         if (item.dataset.mark) {
+        //             oLeft.appendChild(item);
+        //             delete item.dataset.mark;
+        //             item.style.backgroundColor = "";
+        //         }
+        //     })
+        // }
+
+        //还可以在每次点击的时候重新获取一次伪数组对象
+        //toRight按钮点击事件
+        oToRight.onclick = function () {
+            oLeftLis = oLeft.querySelectorAll(".left li");
+            oLeftLis.forEach(function (item, index) {
+                if (item.dataset.mark) {
+                    oRight.appendChild(item);
+                    delete item.dataset.mark;
+                    item.style.backgroundColor = "";
+                    // console.log(1);
+                }
+            })
+        }
+        //toLeft按钮点击事件
+        oToLeft.onclick = function () {
+            oRightLis = oRight.querySelectorAll(".right li");
+            oRightLis.forEach(function (item, index) {
+                if (item.dataset.mark) {
+                    oLeft.appendChild(item);
+                    delete item.dataset.mark;
+                    item.style.backgroundColor = "";
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

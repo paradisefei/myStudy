@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div id="box">
+            <p>蛋黄的长裙</p>
+            <p>蓬松的头发</p>
+            <p>锄禾日当午</p>
+            <p>粒粒皆辛苦</p>
+        </div>
+        <p>哈哈哈哈哈</p>
+        <script>
+            //这是获取整个文档中的所有p标签，没有限制
+            // var oPs = document.getElementsByTagName("p");
+
+            // for(var i = 0; i < oPs.length; i++){
+            //         oPs[i].style.color = "red";
+            // }
+            
+            //加上限制，获取某一块中的所有p标签
+            var oBox = document.getElementById("box");
+            var oPs = oBox.getElementsByTagName("p");
+            console.log(oPs);
+            for(var i = 0; i < oPs.length; i++){
+                    oPs[i].style.fontSize = "100px";
+                     oPs[i].style.color = "green";
+             }
+
+        </script>
+</body>
+</html>

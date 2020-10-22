@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        var oBox = document.getElementById("box");
+
+        var num = 0;
+        oBox.onclick = function(){
+            num++;
+            //如果写了else，不那么容易看出逻辑，可以不写else，都写if
+            if(num % 2 === 0){
+                oBox.style.backgroundColor = "red";
+                return;
+            }
+            if(num % 2 === 1){
+                oBox.style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</body>
+</html>

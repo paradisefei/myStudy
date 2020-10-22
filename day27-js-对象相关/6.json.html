@@ -1,0 +1,27 @@
+<script>
+    //JavaScript数据转为json数据
+    var data = [
+        {
+            name:'张三',
+            age:29
+        },
+        {
+            name:'李四',
+            age:30
+        },
+        {
+            name:'王五',
+            age:undefined,
+            sex:undefined,
+
+        }
+    ]
+
+    var res = JSON.stringify(data);
+    console.log(res)
+
+    console.log(typeof res);
+
+    console.log(JSON.parse(res));
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+    /* 
+        1.entries(),keys(),values()得到的都是Iterator对象
+        2.调用entries()的next()得到value属性的结果为[key,value]
+        3.调用keys()的next()得到value属性的结果为key
+        4.values()的next()得到的结果中value属性的值为value
+
+1.调用Symbol.iterator方法,得到一个Iterator对象,Iterator对象有一个next()方法
+2.调用next()得到的是一个对象{value,done}
+3.for...of...就是拿出每个next()中的value赋值给定义的参数
+     */
+
+     {
+        const arr = ["a","b","c","d"];
+        for(let values of arr){
+            console.log(values);
+        }
+         const str = "helloworld";
+         for(let values of str){
+             console.log(values);
+         }
+     }
+</script>

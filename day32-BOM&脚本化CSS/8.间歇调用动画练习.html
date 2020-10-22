@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: relative;
+        }
+        .con {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="go">走</button>
+    <button id="stop">停</button>
+    <div id="box">
+        <div class="con">
+
+        </div>
+    </div>
+
+    <script>
+        //获取元素对象
+        var oGo = document.getElementById("go");
+        var oStop = document.getElementById("stop");
+        var oCon = document.querySelector(".con");
+        var timer = null;
+        var move = 0;
+        // 开启间歇调用让元素动起来
+        oGo.onclick = function(){
+            clearInterval(timer);
+            timer = setInterval(function(){
+                move += 3;
+                oCon.style.left = move + "px";
+            },1000/60)
+        }
+        oStop.onclick = function(){
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html>

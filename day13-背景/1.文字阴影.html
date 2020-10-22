@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>文字阴影</title>
+    <style>
+        div {
+            width: 100%;
+            font-size: 150px;
+            background-color: #ccc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .a {
+            text-shadow: 1px 1px white,-1px -1px black;
+            color: #ccc;
+        }
+        .b {
+            text-shadow: 1px 1px black,-1px -1px white;
+            color: #ccc;
+        }
+        .c {
+            color: red;
+            text-shadow: 
+            /* 1px 1px rgba(206, 203, 203, 0.89),
+            2px 2px rgba(206, 203, 203, 0.89),
+            3px 3px rgba(206, 203, 203, 0.89),
+            4px 4px rgba(206, 203, 203, 0.89),
+            5px 5px rgba(206, 203, 203, 0.89),
+            6px 6px rgba(206, 203, 203, 0.89),
+            7px 7px rgba(206, 203, 203, 0.89),
+            8px 8px rgba(206, 203, 203, 0.89),
+            9px 9px rgba(206, 203, 203, 0.89),
+            10px 10px rgba(206, 203, 203, 0.89), */
+            /* 1px 1px rgb(255, 255, 255),
+            2px 2px rgba(255, 255, 255),
+            3px 3px rgba(255, 255, 255),
+            4px 4px rgba(255, 255, 255),
+            5px 5px rgba(255, 255, 255),
+            6px 6px rgba(255, 255, 255),
+            7px 7px rgba(255, 255, 255),
+            8px 8px rgba(255, 255, 255),
+            9px 9px rgba(255, 255, 255),
+            10px 10px rgba(255, 255, 255), */
+            
+            1px 1px rgba(10, 247, 247, 0.1),
+            2px 2px rgba(10, 247, 247, 0.2),
+            3px 3px rgba(10, 247, 247, 0.3),
+            4px 4px rgba(10, 247, 247, 0.4),
+            5px 5px rgba(10, 247, 247, 0.5),
+            6px 6px rgba(10, 247, 247, 0.6),
+            7px 7px rgba(10, 247, 247, 0.7),
+            8px 8px rgba(10, 247, 247, 0.8),
+            9px 9px rgba(0, 255, 255, 0.9),
+            10px 10px rgba(10, 247, 247, 1),
+
+            /* 1px 1px green,
+            2px 2px green,
+            3px 3px green,
+            4px 4px green,
+            5px 5px green,
+            6px 6px green,
+            7px 7px green,
+            8px 8px green,
+            9px 9px green,
+            10px 10px green, */
+            
+            0px 0px 10px black
+            
+            ;
+        }
+        .d {
+            color: white;
+            background-color: black;
+            text-shadow: 
+            0 0 1px #02fefe,
+            0 0 2px #02fefe,
+            0 0 3px #02fefe,
+            0 0 4px #02fefe,
+            0 0 5px #02fefe,
+            0 0 6px #02fefe,
+            0 0 7px #02fefe,
+            0 0 8px #02fefe,
+            0 0 9px #02fefe,
+            0 0 10px #02fefe,
+            0 0 11px #02fefe;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        富强民主文明和谐
+    </div>
+    <div class="b">
+        自由平等公正法治
+    </div>
+    <div class="c">
+        爱国敬业诚信友善
+    </div>
+    <div class="d">
+        社会主义核心价值观
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        div {
+            font-size: 150px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* 凹形字体 */
+        div:first-of-type {
+            height: 200px;
+            font-size: 150px;
+            background-color: #ccc;
+            text-align: center;
+            color: #ccc;
+            text-shadow:  black -1px -1px,white 1px 1px;
+        }
+        /* 凸字 */
+        div:nth-of-type(2){
+            background-color: #ccc;
+            color: #ccc;
+            text-shadow: white -1px -1px,black 1px 1px;
+        }
+        /* 立体 */
+        div:nth-of-type(3){
+            background-color: #ccc;
+            color: white;
+            text-shadow: rgba(204,204,204,0.1) 0px 1px,
+            rgba(204,204,204,0.2) 0px 2px,
+            rgba(204,204,204,0.3) 0px 3px,
+            rgba(204,204,204,0.4) 0px 4px,
+            rgba(204,204,204,0.5) 0px 5px,
+            rgba(204,204,204,0.6) 0px 6px,
+            rgba(204,204,204,0.7) 0px 7px,
+            rgba(204,204,204,0.8) 0px 8px,
+            rgba(204,204,204,0.9) 0px 9px,
+            black 0px 10px 10px;
+        }
+        /* 荧光 */
+        div:last-of-type {
+            background-color: #000;
+            color: white;
+            text-shadow: #00ffff 0px 0px 1px,
+            #00ffff 0 0 3px,
+            #00ffff 0 0 7px,
+            #00ffff 0 0 10px,
+            #00ffff 0 0 15px,
+            #00ffff 0 0 20px,
+            #00ffff 0 0 30px,
+            #00ffff 0 0 50px,
+            #00ffff 0 0 100px;
+        }
+        </style>
+</head>
+<body>
+    <div>富强民主文明和谐</div>
+    <div>自由平等公正法治</div>
+    <div>爱国敬业诚信友善</div>
+    <div>社会主义核心价值观</div>
+</body>
+</html> -->

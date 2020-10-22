@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>清除浮动</title>
+        <style>
+            .container {
+                width: 500px;
+                /* background-color: #ffd460; */
+                border: 1px solid #ffd460;
+            }
+            .container div {
+                width: 200px;
+                height: 200px;
+                border: 1px solid #3490de;
+                float: left;
+            }
+            .clear {
+                display: block;
+                border: 1px solid #f73859;
+                clear: both;
+                /* height: 0; */
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <span class="clear"></span>
+        </div>
+    </body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>clear</title>
+        <style>
+            .father {
+                width: 500px;
+                border: 1px solid #ff2e63;
+            }
+            .father .z {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #3f72af;
+                float: left;
+            }
+            .father div.clear {
+                /* float: left; */
+                clear: both;
+                border: 0px;
+                /* height: 20px; */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="father">
+            <div class="z"></div>
+            <div class="z"></div>
+            <div class="z"></div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html> -->

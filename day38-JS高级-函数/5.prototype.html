@@ -1,0 +1,22 @@
+<script>
+    //给所有数组扩展一个排序去重的方法
+    Array.prototype.sortOffRepeat = function(){
+        //先排序
+        var arrSort = this.sort(function(a,b){
+            return a - b;
+        })
+
+        //filter中,某一项调用函数之后返回true,则返回该项
+        var result = arrSort.filter(function(item,index,arr){
+            // if(item === arr[index + 1]){
+            //     return false;
+            // }else {
+            //     return true;
+            // }
+            return item != arr[index + 1];
+        })
+        return result;
+    }
+    var arr = [2,3,5,2,3,4,21,5,6,7,];
+    console.log(arr.sortOffRepeat());
+</script>

@@ -1,0 +1,30 @@
+<script>
+    function fn(){
+        console.log(this);
+    }
+
+    //call
+    fn.call();
+    fn.call(null);
+    fn.call(undefined);
+    fn.call(1);
+    fn.call("hello");
+    fn.call(true);
+    //求最值
+    console.log(Math.max(13,4,5,76,3,2));
+    console.log(Math.max([13,4,5,76,3,2]));
+    console.log(Math.max.apply(Math,[133,4,5,76,3,2]));
+
+
+    /* 将伪数组转成数组 */
+    var arrObj = {
+        0:"a",
+        1:"b",
+        2:"c",
+        3:"d",
+        length:4
+    }
+    var arr = Array.prototype.slice.call(arrObj);
+    console.log(arr);
+    console.log(arrObj);
+</script>

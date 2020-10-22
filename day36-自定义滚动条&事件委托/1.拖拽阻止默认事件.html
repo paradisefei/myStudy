@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    <script>
+        //获取元素对象
+        var oBox = document.getElementById("box");
+
+        //滑块鼠标按下事件
+        oBox.onmousedown = function (e) {
+            e.preventDefault();
+            //获取移动前鼠标位置保存在对象中
+            var staPosOfMouse = {
+                x: e.offsetX,
+                y: e.offsetY
+            }
+
+            //文档鼠标移动事件
+            document.onmousemove = function (e) {
+                // console.log(1);
+                //获取移动后鼠标位置保存在对象中
+                var endPosOfMouse = {
+                    x: e.clientX,
+                    y: e.clientY
+                }
+                //滑块的最终定位
+                var res = {
+                    x:endPosOfMouse.x - staPosOfMouse.x,
+                    y:endPosOfMouse.y - staPosOfMouse.y
+                }
+                //判断临界值
+                    //获取浏览器视口宽高
+                    var browser = {
+                        x:document.documentElement.clientWidth,
+                        y:document.documentElement.clientHeight
+                    }
+                    console.log(browser.y)
+                    //获取滑块宽高
+                    var box = {
+                        x:oBox.offsetWidth,
+                        y:oBox.offsetHeight
+                    }
+                    //判断
+                    if(res.x > browser.x - box.x){
+                        res.x = browser.x - box.x;
+                    }
+                    if(res.x < 0){
+                        res.x = 0;
+                    }
+                    if(res.y > browser.y - box.y){
+                        res.y = browser.y - box.y;
+                    }
+                    if(res.y < 0){
+                        res.y = 0;
+                    }
+                    // console.log(1)
+                    console.log(res.y)
+
+                //确定滑块的定位
+                oBox.style.left = res.x + "px";
+                oBox.style.top = res.y + "px";
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

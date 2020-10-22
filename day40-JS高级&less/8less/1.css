@@ -1,0 +1,11 @@
+/*
+这也是注释
+*/
+.con {
+  width: 200px;
+  height: 400px;
+}
+.con .box {
+  width: 100px;
+  color: white;
+}

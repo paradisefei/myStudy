@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab切换方法2.html</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #tab {
+            width: 606px;
+            margin: 50px auto 0;
+            border: 1px solid #000;
+        }
+
+        .title {
+            display: flex;
+        }
+
+        .title h2 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            cursor:pointer;
+        }
+
+        /* 交集选择器 选择h2标签，并且h2标签还拥有active类名的 */
+        .title h2.active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content li {
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 40px;
+            display: none;
+        }
+
+        .content li.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="con1">
+            <li>1</li>
+            <li>2</li>
+            <li class="li1">3</li>
+            <li>4</li>
+            <li>9</li>
+        </ul>
+        <ul class="con2">
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+    </div>
+    <script>
+        /*
+        就是根据当前元素查找元素
+        */
+       $(function(){
+           //children():获取前面元素的所有子元素
+           //1.前面获取到的只有一个
+        //    console.log($(".con1").children());
+           //2.前面获取到多个
+        //    console.log($(".box ul").children());
+           //3.children()中的参数用于筛选选出来的这些子元素
+        //    console.log($(".box ul").children(".li1"));
+
+           //parent():参数是对获取到的这些父元素进行筛选
+           //1.获取的是父元素而不是祖辈
+        //    console.log($(".li1").parent());
+
+        //siblings:获取同辈元素
+        // console.log($(".li1").siblings());
+
+        //find():寻找后代元素,参数只能从前面调用它的元素开始
+        // console.log($(".box").find(".li1"))
+
+        //end():将匹配的元素对象变为前一次的状态
+        // console.log($("body").css("background","red").find(".con1 .li1").css("background","green").end())
+        //prev():获取上一个兄弟元素
+        // console.log($(".li1").prev())
+        //获取前面所有兄弟元素,从后往前
+        // console.log($(".li1").prevAll())
+
+        //next():获取后一个兄弟元素
+        console.log($(".li1").next())
+        //获取后面所有兄弟元素,从前往后
+        console.log($(".li1").nextAll())
+       })
+    </script>
+</body>
+
+</html>

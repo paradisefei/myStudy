@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div id="inner">
+            我是inner
+            <span>我是span</span>
+        </div>
+    </div>
+    <button id="btn">点击</button>
+
+    <script>
+        /*
+            innerHTML会解析标签,用的最多,设置的时候是在原基础上添加还是删掉原来的重写
+            innerText不会解析标签
+
+        */
+        var oBtn = document.getElementById("btn");
+        var oBox = document.getElementById("box");
+        var oInner = document.getElementById("inner");
+
+        oBtn.onclick = function(){
+            //innerText
+                //获取
+                console.log(oBox.innerText);//只获取文本
+                // //设置
+                // oBox.innerText+="<h2>我是innerText</h2>"
+                // console.log(oBox.innerText);//不会解析标签
+            //outerText
+                // console.log(oBox.outerText);
+                //设置
+                // oBox.outerText="<h2>我是innerText</h2>"
+        }
+    </script>
+</body>
+</html>

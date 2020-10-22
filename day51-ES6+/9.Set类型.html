@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        /*
+            Set
+            1.新的数据结构,里面的值没有重复的
+            2.Set本身是一个构造函数,用来生成Set数据结构
+            2.使用new实例化,可以接收数组(或任意一个拥有iterator接口的数据结构)进行初始化
+            4.set数据可以使用三点运算符展开
+        */
+        {
+            //数组
+            const set = new Set([1,2,3,4,5,2,3,6,7,4,8,10]);
+            console.log(set)
+            // 字符串
+            const set2 = new Set("11,2,3,4,5,6,77,4,2")
+            console.log(set2)
+            //对象
+            // const set3 = new Set({name:"张三",age:33});
+            // console.log(set3);
+
+            // NodeList
+            const oLis = document.querySelectorAll("li");
+            console.log(oLis);
+        }
+        {
+            // 数组去重
+            const arr = [1,1,1,2,3,4,4,5,5]
+            const set = new Set(arr);
+            const newArr = [...set];
+            console.log(newArr);//[1, 2, 3, 4, 5]
+        }
+        {
+            //字符串去重
+            const str = "hfahfjajdhfafhfjhfla";
+            const set = new Set(str);
+            console.log(set)
+            console.log(...set)
+            console.log([...set])
+            console.log([...set].join(""))
+
+        }
+    </script>
+</body>
+
+</html>

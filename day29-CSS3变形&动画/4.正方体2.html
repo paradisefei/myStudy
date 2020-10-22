@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .cube {
+            width: 200px;
+            height: 200px;
+            margin: 300px auto;
+
+            position: relative;
+
+            /* 开启3D */
+            transform-style: preserve-3d;
+            /* perspective: 300px; */
+
+            transform: rotateY(-30deg) rotateX(-30deg);
+            transition: all 2s;
+        }
+        /* .cube:hover {
+            transform: rotateY(-140deg) rotateX(-240deg);
+        } */
+        .cube li {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            left: 0;
+            top: 0;
+            position: absolute;
+            text-align: center;
+
+            transition: all 1s;
+        }
+        /* A面里面 */
+        .cube li:first-child {
+            background-color: #005691;
+        }
+        .cube:hover li:first-child{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        /* B面 外面 */
+        .cube li:nth-child(2){
+            background-color: #ff6f3c;
+        }
+        .cube:hover li:nth-child(2){
+            transform: translateZ(100px);
+        }
+        /* C面 左面 */
+        .cube li:nth-child(3){
+            background-color: #00bbf0;
+        }
+        .cube:hover li:nth-child(3){
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        /* D面 右面 */
+        .cube li:nth-child(4){
+            background-color: #00adb5;
+        }
+        .cube:hover li:nth-child(4){
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        /* E面 上面 */
+        .cube li:nth-child(5){
+            background-color: #f85f73;
+        }
+        .cube:hover li:nth-child(5){
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        /* F面 下面 */
+        .cube li:nth-child(6){
+            background-color: #878ecd;
+        }
+        .cube:hover li:nth-child(6){
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul class="cube">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+            <li>F</li>
+        </ul>
+    </div>
+</body>
+</html>

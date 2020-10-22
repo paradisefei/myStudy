@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt" value = "请输入号码">
+
+    <script>
+        /*
+            需求：模拟placeholder效果；在没有获得焦点时有“请输入号码”的文字，在获得到焦点时文字消失，可输入内容
+
+            逻辑：
+                1.在初始状态下，文本框有value值，为“请输入号码”
+                2.获得焦点，value为空
+                3.失去焦点
+                    3.1如果有内容，则不变
+                    3.2如果内容为空，则仍将value设为请输入号码
+        */
+        var oIpt = document.getElementById("ipt");
+
+        oIpt.onfocus = function(){
+            if(this.value === "请输入号码"){
+                this.value = "";
+            }
+        }
+        oIpt.onblur = function(){
+            if(this.value === ""){
+                this.value = "请输入号码";
+            }
+        }
+
+    </script>
+</body>
+</html>

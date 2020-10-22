@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        #box {
+            width: 500px;
+            margin: 0 auto;
+        }
+        #box .show {
+            height: 400px;
+            position: relative;
+        }
+        #box .show a {
+            position: absolute;
+        }
+        #box .show a img {
+            height: 400px;
+        }
+        #box .click {
+            margin-top: 10px;
+        }
+        #box .click li {
+            float: left;
+            margin-left: 10px;
+        }
+        #box .click li img {
+            height: 70px;
+        }
+        #box .show a:first-child {
+            z-index: 1;
+        }
+        #box .show a:target {
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="show">
+            <a name='kof-01'>
+                <img src="./img/kof-01.jpg" alt="">
+            </a>
+            <a name='kof-02'>
+                <img src="./img/kof-02.jpg" alt="">
+            </a>
+        </div>
+        <ul class="click">
+            <li>
+                <a href="#kof-01">
+                    <img src="./img/kof-01.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#kof-02">
+                    <img src="./img/kof-02.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

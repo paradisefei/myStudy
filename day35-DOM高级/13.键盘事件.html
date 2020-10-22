@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.键盘事件.html</title>
+</head>
+
+<body>
+    hello world
+    <script>
+        //阻止赋值
+        document.onkeydown = function(e){
+            if(e.ctrlKey && e.keyCode == 67){
+                alert('你复制你妈呢');
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

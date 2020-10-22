@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>绝对定位后生成的是块级元素</title>
+        <style>
+            span {
+                background-color: #b83b5e;
+            }
+            .a {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <span class="a">1</span>
+            <span class="b">2</span>
+            <span class="c">3</span>
+        </div>
+        
+    </body>
+</html>

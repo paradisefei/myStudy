@@ -1,0 +1,126 @@
+<script>
+
+//slice
+    // var str = 'hello';
+    // //提取字符串，参数为下标，返回提取出来的字符串
+    // //没有参数
+    // console.log(str.slice());//'hello'
+    // //一个参数
+    // console.log(str.slice(1));//'ello'
+    // //两个参数
+    // console.log(str.slice(1,3));//'el'//包括第一个下标，不包括第二个下标
+
+//substr
+    // var str = 'hello';
+    // console.log(str.substr(0));//'hello'
+    // console.log(str.substr(0,2));//'he'
+
+//split
+    // var colors = 'red,green,yellow,blue';
+
+    // // var res = colors.split();
+    // //第一个参数不写，直接将整个字符串作为数组中的元素，此时数组中只有一个元素
+    // // console.log(colors.split())
+    // // //参数为空串''时，则将每个字符都作为数组的元素
+    // // console.log(colors.split(''));
+    // // console.log(colors.split(','));
+    // // console.log(colors.split('e'));
+    // console.log(colors.split(',',2));
+    // console.log(colors.split(',',100));
+
+    // //将查询键值对存入对象中
+    // var str = 'https://www.baidu.com/s?cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&rsv_dl=fyb_n_homepage&hisfilter=1';
+
+    // //提取出查询字符串
+
+    // var obj = {};
+    // var pars = str.split('?')[1].split('&');
+    // console.log(pars);
+    // for(var i = 0 ; i < pars.length ;   i++){
+    //     // console.log(pars[i].split('='));
+    //     var parsObj = pars[i].split('=');
+    //     obj[parsObj[0]] = parsObj[1];
+    // }
+    // console.log(obj);
+
+    // var str1 = 'abgkGKJLdbSbGBIWLhakl';
+    // console.log(str1.toLowerCase());
+    // console.log(str1.toUpperCase());
+
+//valueOf()
+        // var num = new Number(123);
+        // console.log(num);
+        // console.log(num.valueOf());
+        // var obj = {}
+        // console.log(obj.valueOf());
+
+
+//toString()
+        // var num = new Number(123);
+        // console.log(num.toString());
+
+        // var str = new String('abc');
+        // console.log(str.toString());
+
+        // var obj = {
+        //     name:"Joey",
+        //     age:26
+        // };
+        // console.log(obj);
+        // console.log(obj.toString());
+
+        // var arr = [1,2,3];
+        // console.log(arr);
+        // console.log(arr.toString());
+
+        // function test(){
+        //     console.log('hello');
+        // }
+        // console.log(test);
+        // console.log(test.toString());
+
+        // var a = new Array(1,2,3);
+        // console.log(a)
+        // console.log(a.toString());
+
+
+//includes()
+            // var str = 'hello world!';
+            // // console.log(str.includes());//false
+            // // console.log(str.includes('o'));
+            // // console.log(str.includes('0'));
+            // // console.log(str.includes('O'));
+            // console.log(str.includes('h',2))//false
+            // console.log(str.includes('o',2));//true
+
+//startsWith()
+//             var str = 'hello world!';
+
+//             // // console.log(str.startsWith('h'));//true
+//             // // console.log(str.startsWith('he'));//true
+//             // // console.log(str.startsWith('hell'));//true
+
+//             console.log(str.startsWith('e',1));
+//             // console.log(str.startsWith('l',2));
+
+// //endsWith()
+//             var str = 'hello world!';
+            
+//             console.log(str.endsWith('!'));
+//             console.log(str.endsWith('r',9));
+            // console.log(str.endsWith(' ',6));
+
+//repeat(N)
+            // var str = 'hello';
+            // console.log(str.repeat(5));
+
+//padStart()
+            // var num = '1';
+
+            // console.log(num.padStart(4,'0'));
+
+            var x = 'how';
+            console.log(x.padStart(6,'aaaaaaa'));
+        
+
+</script>

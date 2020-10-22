@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="outer">
+        <div class="todo-container">
+            <!-- 头部 -->
+            <div class="todo-header">
+                <input type="text" id="newTodo" placeholder="请输入您的任务，回车确认">
+            </div>
+            <!-- 内容展示区域 -->
+            <ul class="todo-main">
+                <!-- <li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>抽烟</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li>
+                <li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>喝酒</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li>
+                <li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>烫头发</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li> -->
+            </ul>
+            <!-- 底部区域 -->
+            <div class="todo-footer">
+                <label>
+                    <input type="checkbox" id="checkAll">
+                </label>
+                <span>
+                    已完成 <span id="allComplateTodos">0</span>
+                    /全部 <span id="allTodos">0</span>
+                </span>
+                <button id="removeAllComplate" class="btn btn-danger">清除已完成任务</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+
+    <script>
+        var obj = {
+            toThing: [{
+                content: "抽烟a"
+            },
+            {
+                content: "喝酒b"
+            },
+            {
+                content: "烫头c"
+            },
+            ]
+        }
+
+        $(function () {
+            //1.数据加载
+            dataLoad();
+            function dataLoad() {
+                $.each(obj.toThing, function (index, item) {
+                    //创建元素插入到父元素中
+                    $(`<li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>${item.content}</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li>`).appendTo($(".todo-main"));
+                })
+            }
+
+            //2.鼠标移入时改变背景颜色
+            hover();
+            function hover() {
+                //遍历jQuery对象
+                $(".todo-main li").each(function (index, item) {
+                    //改变背景颜色
+                    //鼠标移入时所有兄弟都变为白色,自己为灰色
+                    $(item).mouseenter(function () {
+                        $(this).css("backgroundColor", "#ccc").siblings().css("backgroundColor", "#fff")
+                        //获取所有按钮
+                        $(".todo-main li .btn-danger").hide().eq(index).show();
+                    })
+                    //鼠标移出时自己变为白色
+                    $(item).mouseleave(function () {
+                        $(this).css("backgroundColor", "#fff");
+                        $(".todo-main li .btn-danger").eq(index).hide();
+                    })
+                })
+            }
+            //3.计算总任务数
+            allTask();
+            function allTask() {
+                var num = 0;
+                num = $(".todo-main li").length;
+                $("#allTodos").html(num);
+            }
+
+            //4.单选控制数量
+            singleClick();
+            function singleClick() {
+                //定义变量保存每次点击label时已被选中的input
+                var num = 0;
+                //点击单选框时改变已完成数
+                $(".todo-main").on("click", "label", function () {
+                    //获取所有li中的input
+                    num = $(".todo-main input:checked").length;
+                    if (num === $(".todo-main li").length) {
+                        $("#checkAll").prop("checked", true);
+                    } else {
+                        $("#checkAll").prop("checked", false);
+                    }
+                    //把num写入到已完成中
+                    $("#allComplateTodos").html(num)
+                })
+
+
+            }
+
+            //5.全选按钮
+            allClick();
+            function allClick() {
+                //点击已完成框
+                $("#checkAll").click(function () {
+                    if ($(".todo-main input:checked").length === $(".todo-main li").length) {
+
+                        $(".todo-main input").prop("checked", false);
+                        // $("#checkAll").prop("checked", false);/
+                        $("#allComplateTodos").html(0);
+                    } else {
+                        $(".todo-main input").prop("checked", true);
+                        $("#allComplateTodos").html($(".todo-main li").length);
+                    }
+                })
+            }
+
+            //6.发布新的
+            publishNew();
+            function publishNew() {
+                // 获取文本框的内容
+                var str = $("#newTodo").val().trim();
+                //enter键按下事件
+                $("#newTodo").keyup(function (e) {
+                    var str = $("#newTodo").val().trim();
+                    if (e.keyCode === 13) {
+                        if (!str) {
+                            return;
+                        }
+                        $(`<li class="todo-list">
+                    <label>
+                        <input type="checkbox">
+                        <span>${str}</span>
+                    </label>
+                    <button class="btn btn-danger">删除</button>
+                </li>`).appendTo($(".todo-main")).hide().slideDown();
+
+                //把新加的数据添加到数据库中
+                var data = {};
+                data.content = str;
+                obj.toThing.push(data)
+                allTask();
+                    }
+                })
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

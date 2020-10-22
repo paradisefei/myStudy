@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片轮播</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .outer {
+            width: 600px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .inner {
+            width: 600px;
+            overflow: hidden;
+        }
+
+        .inner ul.pic {
+            width: 3000px;
+            display: flex;
+        }
+        .inner ul.pic li {
+            display:none;
+        }
+        .inner ul.pic li.bk {
+            display:block;
+        }
+        .inner ul.pic img {
+            width: 600px;
+            height: 400px;
+        }
+
+        /* 箭头 */
+        .arrow>div {
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            background-color: rgba(255, 255, 255, .3);
+            cursor: pointer;
+            border-radius:5px;
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .arrow>div:hover{
+            background-color: rgba(255, 255, 255, .7);
+        }
+        #leftArrow {
+            left: 10px;
+        }
+
+        #rightArrow {
+            right: 10px;
+        }
+
+        /* 小圆点 */
+        .dot {
+            width: 150px;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            bottom: 50px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .dot li {
+            width: 15px;
+            height: 15px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot li:hover {
+            background-color: rgba(255, 255, 255, .7);
+        }
+        .dot li.active {
+            background-color: rgba(255, 255, 255);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 放整个轮播图 相对于这个定位-->
+    <div class="outer">
+        <!--  -->
+        <div class="inner" id="inner">
+            <!-- 定位 -->
+            <ul id="pic" class="pic">
+                <li class="bk">
+                    <img src="./image/1.jpg">
+                </li>
+                <li>
+                    <img src="./image/2.jpg">
+                </li>
+                <li>
+                    <img src="./image/7.jpg">
+                </li>
+                <li>
+                    <img src="./image/8.jpg">
+                </li>
+                <li>
+                    <img src="./image/9.jpg">
+                </li>
+            </ul>
+
+            <!-- 左右箭头 -->
+            <div class="arrow">
+                <div id="leftArrow"></div>
+                <div id="rightArrow"></div>
+            </div>
+            <ul class="dot">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        $(function(){
+            $("#rightArrow").click(function(){
+                $(".pic li").
+            })
+        })
+    </script>
+</body>
+
+</html>

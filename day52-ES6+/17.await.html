@@ -1,0 +1,31 @@
+<script>
+    /*
+        await
+1.是一个关键字
+2.表示等待,await 表达式,等待后面的表达式处理
+    1.如果后面是Promise对象,就返回该Promise对象的处理结果
+        1.如果后面的Promise对象返回成功状态,则继续向下运行,await的返回值是resolve参数,最后async函数返回一个成功的Promise对象
+        2.如果后面的Promise对象返回的是失败状态,则停止运行,async函数返回这个失败的Promise对象
+    2.如果等待的不是Promise对象,则返回后面本身
+3.只能在异步函数async function中使用
+    */
+
+    {
+        async function fn() {
+            console.log("我是用async定义的函数");
+
+            // const res1 = await new Promise((resolve, reject) => {
+            //     console.log("我要成功");
+            //     resolve("成功");
+            // })
+            const res1 = await new Promise((resolve, reject) => {
+                throw new Error()
+                console.log("失败了");
+                reject("err")
+            })
+            console.log(res1)
+        }
+        const res = fn();
+        console.log(res);
+    }
+</script>

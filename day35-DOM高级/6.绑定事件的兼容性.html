@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">box</div>
+    <script>
+        var oBox = document.getElementById("box");
+
+        bind(oBox,"click",fn,false);
+        function fn(){
+            alert(1);
+        }
+        function bind(ele,type,fn,boo){
+            if(ele.addEventListener){
+                ele.addEventListener(type,fn,boo || false);
+            }
+            else if(ele.attachEvent){
+                ele.attachEvent("on" + type,fn);
+            }
+            else {
+                ele["on" + type] = fn;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li[class *= 'abc'] {
+            color: red;
+        }
+        li[class ^= 'h']{
+            font-size: 33px;
+        }
+        li[title $= 'l'] {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="abcdefghijklmnopqrstuvwxyz">这是列表的第1项</li>
+        <li class="helloworld">这是列表的第2项</li>
+        <li>这是列表的第3项</li>
+        <li title="ahdfhahafljkdhljhl">这是列表的第4项</li>
+        <li>这是列表的第5项</li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>*包含</title>
+    <style>
+        a[href *= "com"] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://wcomww.baidu.org">淘宝</a>
+    <a href="http://www.taobao.com">淘宝</a>
+</body>
+</html> -->

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>滑动菜单</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        #menu {
+            text-align: center;
+            border: 1px solid black;
+        }
+        #menu > li {
+            position: relative;
+            display: inline-block;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        #menu > li >ul {
+            position: absolute;
+            /* border: 1px solid darkkhaki; */
+            width: 300px;
+            left: -120px;
+            overflow: hidden;
+            height: 0px;
+        }
+        #menu > li:hover > ul {
+            height: auto;
+        }
+        #menu > li > ul > li {
+            height: 30px;
+            line-height: 30px;
+            
+        }
+        #menu > li > ul > li > a {
+            position: absolute;
+            left: 0px;
+            /* opacity: 0; */
+            width: 100%;
+            height: 30px;
+            background-color: #fce38a;
+            transition-property: left,opacity;
+            transition-duration: 2s;
+        }
+        #menu > li > ul > li >a.odd {
+            left: -300px;
+        }
+        #menu > li > ul > li >a.even {
+            left: 300px;
+        }
+        #menu > li:hover > ul > li >a{
+            left: 0px;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <a href="#">一级菜单</a>
+        <ul class="menu2">
+            <li>
+                <a href="#" class="odd">二级菜单</a>
+            </li>
+            <li>
+                <a href="#" class="even">二级菜单</a>
+            </li>
+            <li>
+                <a href="#" class="odd">二级菜单</a>
+            </li>
+        </ul>
+    </li>
+</ul>    
+</body>
+</html>

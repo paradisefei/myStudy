@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div id="box">
+        <strong>锄禾日当午</strong>
+        <span>汗滴禾下土</span>
+        <!-- <em>这是注释</em> -->
+        <strong>谁知盘中餐</strong>
+        这是文本
+        <p>粒粒皆辛苦</p>
+    </div>
+
+    <script>
+        //获取div这个元素节点
+        var oBox = document.getElementById("box");
+
+        //获取oBox中所有节点
+        var oBoxChildNode = oBox.childNodes;
+        // console.log(oBoxChildNode);
+
+        //关于节点的几个属性
+        /*
+            nodeType
+            nodeValue
+            nodeName
+        */
+        //1.文档节点
+        console.log('文档节点---------');
+        console.log(document.nodeType);//9
+        console.log(document.nodeName);//#document
+        console.log(document.nodeValue);//null
+
+        //2.元素节点
+        console.log('元素节点---------');
+        console.log(oBoxChildNode[1].nodeType);//1（所有元素节点的类型都是1）
+        console.log(oBoxChildNode[1].nodeName);//元素标签名，所有字母都大写
+        console.log(oBoxChildNode[1].nodeValue);//null(所有的元素节点的nodeValue都是null)
+
+        //3.文本节点
+        console.log('文本节点---------');
+        console.log(oBoxChildNode[0].nodeType);//3（所有文本节点的类型都是3）
+        console.log(oBoxChildNode[0].nodeName);//#text(所有文本节点的nodeName都是#text)
+        console.log(oBoxChildNode[0].nodeValue);//文本内容
+
+        //4.注释节点
+        console.log('注释节点---------');
+        console.log(oBoxChildNode[5].nodeType);//8（所有注释节点的类型都是8）
+        console.log(oBoxChildNode[5].nodeName);//所有注释节点的nodeName是#comment
+        console.log(oBoxChildNode[5].nodeValue);//所有的注释节点的nodeValue都是注释的内容
+
+        //5.属性节点
+        console.log('属性节点---------');
+
+        //创建属性(不方便获取，所以自己创建一个查看他的 属性的内容)
+        var oDivAttr = document.createAttribute("study");//给文档中所有标签都添加了一个study属性
+
+        oDivAttr.value = "javascript";
+        console.log(oDivAttr);
+
+        console.log(oDivAttr.nodeType);//2  （所有属性节点类型都是2）
+        console.log(oDivAttr.nodeName);// study （所有属性节点nodeName 都是属性的key）
+        console.log(oDivAttr.nodeValue);//javascript  （所有属性节点nodeValue 都是属性的值）
+    </script>
+</body>
+</html>

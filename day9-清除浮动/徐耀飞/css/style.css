@@ -1,0 +1,1206 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+/* 清除浮动 */
+
+/* 通栏 */
+#link-menu {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #eaeaea;
+    font-size: 12px;
+    min-width: 1200px;
+}
+/* 通栏中的具体内容 */
+#link {
+    width: 1200px;
+    margin: 0 auto;
+}
+/* 通栏左边 */
+#link .link-menu {
+    float: left;
+}
+.link-menu strong {
+    font-weight: normal;
+}
+.link-menu a {
+    padding: 0 5px;
+    border-right: 1px solid #b3aeae;
+    text-decoration: none;
+    color: #333333;
+}
+.link-menu a:hover {
+color: #e1251b;
+}
+#link-menu #link .clear {
+    border: 0;
+}
+/* 通栏右边 */
+#link .link-item {
+    float: right;
+}
+#link .link-item {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#link .link-item li {
+    float: left;
+    
+}
+#link .link-item li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #333333;
+    border-right: 1px solid #b3aeae;
+}
+#link .link-item li a:hover {
+    color: #e61c5d;
+    text-decoration: underline;
+}
+/* logo */
+#logo {
+    width: 1200px;
+    height: 110px;
+    line-height: 110px;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+/* 尚品汇logo */
+#logo .logo-img {
+    width: 250px;
+    float: left;
+    text-align: center;
+}
+#logo .logo-img img{
+    vertical-align: middle;
+}
+
+/* 搜索框 */
+#logo .logo-search form{
+    float: right;
+    font-size: 0;
+}
+.logo-search input {
+    width: 490px;
+    height: 32px;
+    box-sizing: border-box;
+    outline: none;
+    border: 2px solid #e1251b;
+    border-right: 0;
+    vertical-align: middle;
+}
+.logo-search button {
+    width: 68px;
+    height: 32px;
+    background-color: #e1251b;
+    border: 0;
+    vertical-align: middle;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+/* 导航banner部分 */
+#banner {
+    border-bottom: 2px solid #e1251b;
+}
+.banner {
+    width: 1200px;
+    padding: 0;
+    margin: 0;
+    margin: 0 auto;
+    list-style-type: none;
+}
+.banner::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.banner li {
+    float: left;
+    height: 46px;
+    line-height: 46px;
+}
+.banner .first-li {
+    width: 210px;
+    text-align: center;
+    background-color: #e1251b;
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.banner li a {
+    padding-left: 22px;
+    padding-right: 22px;
+    text-decoration: none;
+    color: #333333;
+}
+.banner li a:hover {
+    color: #e61c5d;
+    text-decoration: underline;
+}
+
+/* 商品的具体分类块 */
+#goods-item {
+    width: 1200px;
+    margin: 10px auto 0;
+
+    /* background-color: #b43c3c; */
+    position: relative;
+}
+#goods-item::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 左边的商品分类 */
+#goods-item .goods {
+    padding: 0;
+    margin: 0;
+    width: 210px;
+    height: 460px;
+    list-style-type: none;
+    background-color: #eeeeee;
+
+    float: left;
+    position: relative;
+}
+#goods-item .goods li {
+    width: 190px;
+    padding-left: 20px;
+    /* padding-right: 20px; */
+    height: 30px;
+    line-height: 30px;
+}
+
+#goods-item .goods li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #333333;
+}
+#goods-item .goods li a:hover {
+    color: #e61c5d;
+    text-decoration: underline;
+}
+/* 商品分类的右边放具体分类部分 */
+#goods-item .goods li div.item {
+    width: 735px;
+
+    position: absolute;
+    top: 0;
+    left: 210px;
+    bottom: 0;
+
+    display: none;
+}
+/* 商品分类的第一项 */
+#goods-item .goods li div.item.item1 {
+    /* display: block; */
+    background-color:#f7f7f7;
+}
+/* 商品分类的第一项的具体分类 */
+#goods-item .goods li div.item div {
+    width: 600px;
+    padding-left: 50px;
+}
+/* 清除浮动 */
+/* #goods-item .goods li div.item1 div::after {
+    content: '';
+    display: block;
+    clear: both;
+} */
+/* 商品分类一块右边具体分类的标题部分 */
+#goods-item .goods li div.item h5{
+    margin: 0;
+    padding: 0;
+    width: 65px;
+    box-sizing: border-box;
+    text-align: right;
+    position: absolute;
+}
+/* 商品分类一块右边具体分类的标题中的链接 */
+#goods-item .goods li div.item h5 a {
+    padding-right: 5px;
+    border-right: 1px solid #e4e4e4;
+    font-size: 12px;
+}
+/* 商品分类一块右边具体分类中的内容列表 */
+#goods-item .goods li div.item ul {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    list-style-type: none;
+
+    margin-left: 14%;
+    font-size: 0;
+}
+/* 商品分类一块右边具体分类中的内容列表的每一项 */
+#goods-item .goods li div.item ul li{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+#goods-item .goods li div.item ul li a{
+    padding: 0 5px;
+    border-right: 1px solid #e4e4e4;
+    font-size: 12px;
+}
+ #goods-item .goods li div.item.item3{
+    background-color: #f7f7f7;
+ }
+ #goods-item .goods li div.item.item2 {
+    background-color: #f7f7f7;
+ }
+ #goods-item .goods li div.item.item4 {
+    background-color: #f7f7f7;
+ }
+ #goods-item .goods li div.item.item5 {
+    background-color: #fff5a5;
+ }
+ #goods-item .goods li div.item.item6 {
+    background-color: #9df3c4;
+ }
+ #goods-item .goods li div.item.item7 {
+    background-color: #ffaa64;
+ }
+ #goods-item .goods li div.item.item8 {
+    background-color: #f95959;
+ }
+ #goods-item .goods li div.item.item9 {
+    background-color: #c1c0b9;
+ }
+ #goods-item .goods li div.item.item10 {
+    background-color: #1f5f8b;
+ }
+ #goods-item .goods li div.item.item11 {
+    background-color: #2a363b;
+ }
+ #goods-item .goods li div.item.item12 {
+    background-color: #4d606e;
+ }
+ #goods-item .goods li div.item.item13 {
+    background-color: #6eb6ff;
+ }
+ #goods-item .goods li div.item.item14 {
+    background-color: #7c7575;
+ }
+ #goods-item .goods li div.item.item15 {
+    background-color: #f6f6f6 ;
+ }
+
+#goods-item .goods li:hover div.item {
+    z-index: 10;
+    display: block;
+}
+/* 商品分类块中间的轮播图 */
+#goods-item .lunbo {
+    width: 730px;
+    height: 454px;
+    position: absolute;
+    left: 215px;
+    top: 3px;
+    overflow: hidden;
+}
+/* 商品分类块轮播图中的列表 */
+#goods-item .lunbo ul.lunbopic {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 2920px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+/* 商品分类块轮播图列表中的每一项 */
+#goods-item .lunbo ul li {
+    float: left;
+}
+/* 商品分类块轮播图中的小箭头 */
+#goods-item .lunbo .arrow {
+    width: 40px;
+    height: 70px;
+    background-image: url("../images/home/icon-slides.png");
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    cursor: pointer;
+}
+/* 商品分类块轮播图中的前面一个小箭头 */
+#goods-item .lunbo .arrow.prev {
+    background-position: -83px 0;
+}
+#goods-item .lunbo:hover .arrow.prev {
+    background-position: 0 0;
+}
+/* 商品分类块轮播图中的后面一个小箭头 */
+#goods-item .lunbo .arrow.next {
+    right: 0;
+    background-position: -125px 0;
+}
+#goods-item .lunbo:hover .arrow.next {
+    background-position: -42px 0;
+}
+/* 商品分类块轮播图下面的四个小圆点 */
+#goods-item .lunbo .dot {
+    padding:0;
+    margin: 0;
+    list-style-type: none;
+    width: 100px;
+    /* height: 10px; */
+    /* background-color: #1891ac; */
+    cursor: pointer;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    /* bottom: 10px; */
+    top: 434px;
+}
+/* 商品分类块轮播图下面的四个小圆点每一个点 */
+#goods-item .lunbo .dot li {
+    width: 10px;
+    height: 10px;
+    background-color: #cc183b;
+   margin-left: 10px;
+   border-radius: 50%;
+    /* float: left; */
+}
+#goods-item .lunbo .dot li.active {
+    background-color: #900048;
+}
+/* 右边的快报 */
+#goods-item .news {
+    width: 250px;
+    float: right;
+    /* border: 1px solid #e4e4e4; */
+    
+}
+/* 快报中的新闻列表 */
+#goods-item .news dl {
+    height: 180px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #e4e4e4;
+    border-bottom: 0;
+    /* background-color: #f47c7c; */
+
+    position: relative;
+}
+#goods-item .news dl .strong {
+    font-weight: bolder;
+}
+/* 快报中新闻列表的表头 */
+#goods-item .news dl dt{
+    padding:10px;
+    margin: 0px 10px 10px; 
+    box-sizing: border-box;
+
+    font-size: 14px;
+    border-bottom: 1px solid #e4e4e4;
+}
+/* 快报中新闻列表的表体 */
+#goods-item .news dl dd{
+    /* padding: 0; */
+    margin: 0;
+    padding: 6px 18px;
+    font-size: 12px;
+}
+#goods-item .news dl:second-child {
+    padding-top: 12px;
+}
+#goods-item .news dl span.more {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+#goods-item .news dl span.more a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #333333;
+}
+
+/* 快报中的图标链接 */
+#goods-item .a-img {
+    width: 250px;
+    /* border-right: 1px solid #e4e4e4; */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    border: 1px solid #e4e4e4;
+    border-top: 0;
+}
+/* 清除快报图标链接这个列表的浮动 */
+#goods-item .a-img::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 快报图标链接中具体的列表项 */
+#goods-item .a-img li {
+    float: left;
+    width: 61px;
+    height: 65px;
+    border-right: 1px solid #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+}
+#goods-item .a-img li:hover {
+    cursor: pointer;
+}
+/* 清除第4、8、12三个项的右边界 */
+#goods-item .a-img li.a-img-li-clear {
+    width: 62px;
+    border-right: 0;
+}
+/* 快报图标链接中列表项中图片的存放div */
+#goods-item .a-img li div {
+    height: 40px;
+    line-height: 40px;
+    background-image: url(../images/home/icons.png);
+    background-repeat: no-repeat;
+    background-position: 0 -3px;
+}
+/* 把背景调到对应的图片 */
+/* #goods-item .a-img .a-img-link1 {
+} */
+#goods-item .a-img .a-img-link2 {
+    background-position-x: -64px;
+}
+#goods-item .a-img .a-img-link3 {
+    background-position-x: -128px;
+}
+#goods-item .a-img .a-img-link4 {
+    background-position-x: -192px;
+}
+#goods-item .a-img .a-img-link5 {
+    background-position-y: -72px;
+}
+#goods-item .a-img .a-img-link6 {
+    background-position:-64px -72px;
+}
+#goods-item .a-img .a-img-link7 {
+    background-position:-128px -68px;
+}
+#goods-item .a-img .a-img-link8 {
+    background-position:-192px -68px;
+}
+#goods-item .a-img .a-img-link9 {
+    background-position-y: -142px;
+}
+#goods-item .a-img .a-img-link10 {
+    background-position:-67px -142px;
+}
+#goods-item .a-img .a-img-link11 {
+    background-position:-128px -140px;
+}
+#goods-item .a-img .a-img-link12 {
+    background-position: -192px -140px;
+}
+
+/* 快报图标链接中列表项中文字的存放位置 */
+#goods-item .a-img li span {
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    background-color: #fff;
+}
+/* 快报部分底端的图片 */
+#goods-item .news img {
+    position: relative;
+    bottom: -5px;
+}
+
+/* 今日推荐块 */
+#todayrecommend {
+    width: 1200px;
+    height: 163px;
+    margin: 10px auto 0px;
+
+    /* 绝对margin折叠问题 */
+    border-top: 1px solid transparent;
+    /* background-color: #8785a2; */
+}
+/* 今日推荐钟表部分 */
+#todayrecommend .recommend-clock {
+    /* padding: 0; */
+    margin: 0;
+    width: 205px;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 100px;
+    box-sizing: border-box;
+    color: white;
+    background-image: url('../images/home/clock.png');
+    background-repeat: no-repeat;
+    background-position: 75px 35px;
+    background-color: #5c5251;
+}
+/* 今日推荐推荐商品列表 */
+#todayrecommend .recommend-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#todayrecommend .recommend-list li {
+    float: left;
+}
+#todayrecommend .recommend-list li:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* 排行 */
+#order {
+    width: 1200px;
+    height: 415px;
+    margin: 0 auto;
+    /* text-align: center; */
+
+    position: relative;
+    /* background-color: #cadefc; */
+}
+/* 清除排行列表的默认样式 */
+#order ul {
+    padding:0;
+    margin: 20px 0 0;
+    list-style-type: none;
+    text-align: center;
+}
+/* 清除排行部分p元素的默认样式 */
+#order p {
+    margin: 0;
+    padding: 0;
+}
+/* 排行行头 */
+#order .order-item-li {
+    /* float: left;
+    margin: 0 auto; */
+    display: inline-block;
+}
+/* 清除排行行头的浮动 */
+#order .order-item::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 排行行头的链接 */
+#order .order-item-li a {
+    display: block;
+    margin: 0 auto;
+    padding: 35px 20px 0;
+    position: relative;
+
+    text-decoration: none;
+    color: #999999;
+}
+#order .order-item-li a:hover {
+    color: #e60012;
+}
+/* 排行行头链接中的图片 */
+#order .order-item-li a i {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+     background-image: url('../images/home/bg0.png');
+     position: absolute;
+     left: 32px;
+     top: -10px;
+}
+/* 排行行头链接中hover时改变图片位置 */
+#order .order-item-li.order-item-li2 a i {
+    background-position: -33px 0;
+}
+#order .order-item-li.order-item-li1 a:hover i {
+    background-position: -33px 0;
+}
+#order .order-item-li.order-item-li2 a:hover i {
+    background-position: 0 0;
+}
+#order .order-item-li.order-item-li3 a:hover i {
+    background-position: -33px 0;
+}
+/* 排行具体内容 */
+    /* 一整个排行榜 */
+#order .order-content {
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    display: none;
+}
+
+#order .order-content {
+    display: none;
+}
+#order .order-content.order-content-li1 {
+    display: block;
+}
+#order .order-item-li:hover .order-content {
+    display: block;
+}
+    /* 排行榜中的每一项 */
+#order .order-content li {
+    width: 270px;
+    height: 330px;
+    float: left;
+    border: 1px solid red;
+    margin-right: 10px;
+}
+    /* 排行榜中每一项的图片 */
+#order .order-content li img {
+    width: 200px;
+    margin:10px 20px 0;
+}
+    /* 排行榜中每一项的文字 */
+#order .order-content li p {
+        height: 50px;
+        font-size: 12px;
+        padding-top: 20px;
+        padding-left: 20px;
+        text-align: left;
+        line-height: 1.5;
+}
+/* 排行榜中每一项的定金 */
+#order .order-content li span {
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #e12563;
+}
+/* 猜你喜欢 */
+/* 猜你喜欢的头部 */
+#youlikeheader {
+    width: 1200px;
+    height: 30px;
+    margin: 20px auto 0;
+    /* background-color: #ff9a00; */
+    /* border: 1px solid  #ff9a00; */
+    /* position: relative; */
+    /* top: 390px; */
+}
+/* 清除猜你喜欢头部的浮动 */
+#youlikeheader::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 猜你喜欢文字 */
+#youlikeheader .left {
+    float: left;
+    font-size: 20px;
+    font-weight: bolder;
+}
+/* 换一换背景图 */
+#youlikeheader .right {
+    float: right;
+    height: 30px;
+    width: 66px;
+    background-image: url('../images/home/icons.png');
+    background-position: -400px -102px;
+    position: relative;
+}
+/* 换一换文字 */
+#youlikeheader .right span {
+    position: absolute;
+    left: -22px;
+    top: 8px;
+    font-size: 12px;
+}
+#youlikeheader .right:hover {
+    cursor: pointer;
+    color: red;
+}
+/* 猜你喜欢的具体内容 */
+#youlikecontent {
+    width: 1202px;
+    margin: 0 auto;
+}
+/* 清除列表的默认样式 */
+#youlikecontent ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 250px;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+}
+/* 猜你喜欢列表中具体的每一项 */
+#youlikecontent ul li {
+    width: 200px;
+    float: left;
+}
+/* 每一项中的图片 */
+#youlikecontent ul li img {
+    padding-top: 10px;
+}
+#youlikecontent ul li img:hover {
+    opacity: 0.8;
+}
+
+/* 每一项中的文字说明 */
+#youlikecontent ul li p {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12px;
+    text-indent: 2em;
+    line-height: 1.8;
+    border-right: 1px solid #e4e4e4;
+}
+/* 每一项中的价格 */
+#youlikecontent ul li span {
+    font-size: 20px;
+    color: #df3033;
+    font-weight: 700px;
+}
+/* 家用电器头部 */
+#house-electric .house-header {
+    width: 1200px;
+    margin: 15px auto 0;
+    /* background-color: #bad7df; */
+}
+/* 头部清除浮动 */
+#house-electric .house-header::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 头部左边左浮动 */
+#house-electric .house-header .left {
+    float: left;
+
+    margin: 10px 0;
+    font-size: 20px;
+    color: #c81623;
+    font-weight: 700;
+}
+/* 头部右边右浮动 */
+#house-electric .house-header .right {
+    float: right;
+
+    /* 清除默认样式 */
+    padding: 0;
+    margin-right: 0;
+    list-style-type: none;
+}
+/* 头部列表的每一项 */
+#house-electric .house-header .right li {
+    float: left;
+}
+/* 头部列表的每一项中的a标签*/
+#house-electric .house-header .right li a {
+    padding: 0 10px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #666666;
+    border-right: 1px solid #6699ce;
+}
+#house-electric .house-header .right li.clearborder a {
+    border-right: 1px solid transparent;
+}
+#house-electric .house-header .right li.clearborder a:hover {
+    border-right: 1px solid transparent;
+}
+#house-electric .house-header .right li a:hover {
+    text-decoration: underline;
+    color: #c81623;
+    border-color: #c81623;
+    /* border-right: 1px solid #c81623;  */
+}
+/* 家用电器的具体内容 */
+#house-electric .house-content {
+    width: 1200px;
+    height: 360px;
+    /* background-color: #ff8c94; */
+    margin: 0 auto;
+    border-top: 3px solid #c81623;
+}
+/* 轮播图左边部分 */
+#house-electric .house-content .left {
+    width: 210px;
+    height: 360px;
+    font-size: 0;
+    text-align: center;
+    background-color: #fbfbfb;
+    float: left;
+}
+/* 轮播图左边上半部列表 */
+#house-electric .house-content .left .elec-item {
+    padding: 12px 0;
+    margin:0;
+    list-style-type: none;
+    /* text-align: center; */
+    background-color: #f7f7f7;
+}
+/* 轮播图左边上半部列表具体项 */
+#house-electric .house-content .left .elec-item li{
+    float: left;
+    width: 40%;
+    margin: 5px 10px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    border-bottom: 1px solid #e4e4e4;
+}
+/* 轮播图左边下半部图片 */
+#house-electric .house-content .left img {
+    margin: 0 auto;
+}
+/* 家用电器的轮播图 */
+#house-electric .house-content .lunbo {
+    float: left;
+    width: 329px;
+    height: 360px;
+    position: relative;
+
+    overflow: hidden;
+}
+/* 家用电器的轮播图中列表 */
+#house-electric .house-content .lunbo .lunbo-item {
+    padding: 0;
+    margin: 0;
+    width: 987px;
+    
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* 家用电器的轮播图中列表中具体的每一项 */
+#house-electric .house-content .lunbo .lunbo-item li {
+    float: left;
+}
+/* 轮播图中的小箭头 */
+#house-electric .house-content .lunbo .arrow {
+    width: 40px;
+    height: 70px;
+    position: absolute;
+    background-image: url(../images/home/icon-slides.png);
+    background-repeat: no-repeat;
+    top: 50%;
+    margin-top: -35px;
+    cursor: pointer;
+}
+/* 轮播图中的第一个小箭头 */
+#house-electric .house-content .lunbo .arrow.prev {
+    background-position: -83px 0;
+}
+#house-electric .house-content .lunbo:hover .arrow.prev {
+    background-position: 0px 0;
+}
+/* 轮播图中的第二小箭头 */
+#house-electric .house-content .lunbo .arrow.next {
+    right: 0;
+    background-position: -125px 0;
+}
+#house-electric .house-content .lunbo:hover .arrow.next {
+    right: 0;
+    background-position: -42px 0;
+}
+/* 轮播图中的小圆点 */
+#house-electric .house-content .dot {
+    /* 去掉默认样式 */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: absolute;
+    width: 50px;
+    height: 10px;
+    left: 50%;
+    margin-left: -25px;
+    bottom: 10px;
+    cursor: pointer;
+}
+/* 轮播图中具体的每个点 */
+#house-electric .house-content .dot li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    background-color: #88a9aa;
+    margin: 0 3px;
+    border-radius: 50%;
+}
+#house-electric .house-content .dot li.active {
+    background-color: #e84545;
+}
+/* 轮播图右边 */
+#house-electric .house-content .right {
+    width: 660px;
+    float: left;
+    height: 360px;
+    /* background-color: #0d7377; */
+
+    border-bottom: 1px solid #e4e4e4;
+}
+/* 列表区域 */
+#house-electric .house-content .right ul {
+    /* 清除默认样式 */
+    padding: 0;
+    margin: 0;
+    list-style-type:none;
+    font-size: 0;
+
+}
+/* 列表的每一项 */
+#house-electric .house-content .right ul li {
+    width: 220px;
+    height: 360px;
+    /* background-color: #f6f7d7; */
+    float: left;
+    /* border: 1px solid #355c7d; */
+    /* box-sizing: border-box; */
+}
+/*列表的第一项 */
+ #house-electric .house-content .right ul li.right-li1 .first-img{
+    border-bottom: 1px solid #e4e4e4;
+}
+/* 列表的第二项 */
+#house-electric .house-content .right ul li.right-li2 {
+    /* box-sizing: border-box; */
+    border-right: 1px solid #e4e4e4 ;
+    border-left: 1px solid #e4e4e4 ;
+    
+}
+/* 列表的第三项 */
+#house-electric .house-content .right ul li.right-li3 {
+    width: 218px;
+}
+#house-electric .house-content .right ul li.right-li3 .first-img{
+    border-bottom: 1px solid #e4e4e4;
+}
+
+/* 各大品牌Logo */
+#all-logo {
+    width: 1200px;
+    padding: 15px 0;
+    margin: 20px auto 0;
+    list-style-type: none;
+    background-color: #f5f5f5;
+}
+/* 各大logo列表中具体的每一项logo */
+#all-logo li {
+    width: 120px;
+    height: 37px;
+
+    box-sizing: border-box;
+    border-right: 1px dashed #cccccc;
+    float: left;
+    background-color: #f5f5f5;
+    padding: 0 10px;
+}
+#all-logo li.clearborder {
+    border: 0;
+}
+/* 页脚 */
+#footer {
+    width: 100%;
+    background-color: #eaeaea;
+    margin-top: 20px;
+    min-width: 1200px;
+}
+/* 页脚的导航部分 */
+#footer .footer-nav {
+    width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 30px 50px 20px;
+    border-bottom: 1px solid #e4e1e1;
+
+}
+/* 页脚导航处的每个定义列表 */
+#footer .footer-nav dl {
+    /* 清除默认样式 */
+    margin: 0;
+    padding: 0;
+    width: 183px;
+    line-height: 1.5;
+
+    font-size: 12px;
+    float: left;
+}
+/* 定义列表中每一项 */
+/* 表头 */
+#footer .footer-nav dl dt {
+    font-weight: bold;
+}
+/* 表体 */
+#footer .footer-nav dl dd {
+    margin: 0;
+    padding: 0;
+}
+/* 页脚备注 */
+#footer .footer-copyright {
+    text-align: center;
+}
+/* 页脚备注处的链接 */
+#footer .footer-copyright ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: 0;
+    padding-top: 20px;
+    font-size: 0;
+}
+/* 页脚列表的每一项 */
+#footer .footer-copyright ul li {
+    display: inline-block;
+}
+/*页脚列表的每一项中的a链接*/
+#footer .footer-copyright ul li a{
+    font-size: 12px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: #666666;
+    border-right: 1px solid #666666;
+}
+#footer .footer-copyright ul li a:hover {
+    text-decoration: underline;
+    color: #e61c5d;
+}
+/* 页脚列表的地址 */
+#footer .footer-copyright p {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #666666;
+}
+/* 右侧边固定定位 */
+#fixed {
+    width: 5px;
+    height: 100%;
+    background-color: #7a6e6e;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+#fixed::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #7a6e6e;
+}
+/* 右侧固定定位部分宽高相同的盒子 */
+#fixed .fixed {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+}
+/* 打开/隐藏更多内容 */
+#fixed .content-more {
+    width: 35px;
+    height: 35px;
+    background-color: #7a6e6e;
+    border-radius: 5px 0 0 5px;
+
+    position: absolute;
+    top: 0;
+    left: -30px;
+}
+/* 打开/隐藏更多内容部分插入的图片 */
+#fixed .content-more img {
+    width: 35px;
+    cursor: pointer;
+}
+/* 固定定位的图标列表 */
+#fixed .icon {
+    height: 215px;
+    /* background-color: #7a6e6e; */
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-top: -107px;
+}
+/* 固定定位的图标列表每一项 */
+#fixed .icon li {
+    width: 40px;
+    height: 35px;
+    background-color: #7a6e6e;
+    border-bottom: 1px solid white;
+    border-radius: 4px 0 0 4px;
+    position: relative;
+}
+/* 固定定位的图标列表每一项中的a链接 */
+#fixed .icon li a {
+    display: inline-block;
+    width: 40px;
+    height: 35px;
+    /* box-sizing: border-box; */
+    background-image: url(../images/toolbars.png);
+    background-repeat: no-repeat;
+}
+#fixed .icon li:hover a {
+    background-color: #c81623;
+    border-radius: 4px 0 0 4px;
+}
+/* 固定定位的图标列表每一项中的a链接中的图片 */
+#fixed .icon li.icon-li1 a {
+    background-position: -85px -173px;
+}
+#fixed .icon li.icon-li2 a {
+    background-position: -48px 0;
+}
+#fixed .icon li.icon-li3 a {
+    background-position: -48px -48px;
+}
+#fixed .icon li.icon-li4 a {
+    background-position: -48px -100px;
+}
+#fixed .icon li.icon-li5 a {
+    background-position: -187px -149px;
+}
+#fixed .icon li.icon-li6 a {
+    background-position: -47px -149px;
+}
+/* 固定定位的图标列表每一项中的a链接中的弹出 */
+#fixed .icon li div {
+    width: 64px;
+    height: 100%;
+    line-height: 35px;
+    position: absolute;
+    /* z-index: 2; */
+    z-index: -1;
+    /* visibility: hidden; */
+    left: 0;
+    top: 0;
+    background-color: #c81623;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+    
+    transition-property: left;
+    transition-duration: 1s;
+
+}
+#fixed .icon li a:hover + div{
+    left: -62px;
+}
+/* 回到顶部 */
+#fixed .to-top {
+    bottom: 0;
+    left: -35px;
+    border-radius: 4px 0 0 4px;
+    background-color: #7a6e6e;
+    background-image: url(../images/toolbars.png);
+    background-repeat: no-repeat;
+    background-position: -45px -250px;
+}
+#fixed .to-top:hover {
+    background-color: #c81623;
+    border-radius: 4px 0 0 4px;
+}
+

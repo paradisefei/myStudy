@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" eat="meat">我是一个div</div>
+    <button id="btn">按钮</button>
+
+    <script>
+        //获取元素
+        oBox = document.getElementById("box");
+        oBtn = document.getElementById("btn")
+
+        oBtn.onclick = function(){
+            // //点击按钮创建属性
+                //直接写在标签中的原本没有的也属于自定义属性
+            // var newAttr = document.createAttribute("study");
+            // //给属性赋值
+            // newAttr.value = "DOM";
+            // //将属性添加到元素中
+            // oBox.setAttributeNode(newAttr);
+            //还可以直接设置，不用创建变量存储
+            oBox.setAttribute("study",hello);
+
+
+            //点击按钮获取属性
+                //自定义属性通过getAttribute获取,这种方法当然也能获取自有属性，只是自有属性通过点的方式获取更方便
+            // console.log(oBox.getAttribute("eat"));//要用字符串
+            // console.log(oBox.id);
+
+
+            //删除属性
+            // oBox.removeAttribute("eat")
+        }
+    </script>
+</body>
+</html>

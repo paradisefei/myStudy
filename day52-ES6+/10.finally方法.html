@@ -1,0 +1,45 @@
+<script>
+    /*
+    catch
+        功能
+            处理rejected状态的promise对象
+        返回值
+            和then类似
+    */
+    {
+        const pro1 = new Promise((resolve, reject) => {
+            console.log("准备请求a数据")
+            setTimeout(() => {
+                let flag = false;
+                if (flag) {
+                    console.log("请求成功")
+                    //假设现在请求了数据为data
+                    const data = {
+                        name: "xiaowang"
+                    }
+                    //resolve 和 reject两个同时书写，以第一个为准
+                    resolve(data);
+                    //无论返回成功还是失败，后边的代码都会继续执行完成
+                    console.log("最后的代码")
+                } else {
+                    console.log("请求失败")
+                    //假设现在请求了数据为data
+                    const err = "errorMessage:your code has bug____";
+                    //resolve 和 reject两个同时书写，以第一个为准
+                    reject(err);
+                    //无论返回成功还是失败，后边的代码都会继续执行完成
+                    console.log("最后的代码")
+                }
+
+            }, 1000)
+        });
+        const catchResult = pro1.catch((err)=>{
+            console.log(err)
+            return new Promise((resolve,reject) => {
+                resolve();
+            })
+        })
+        console.log('catchResult',catchResult);
+
+    }
+</script>

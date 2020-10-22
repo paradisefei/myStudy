@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">打开新窗口</button>
+    <button id="btn2">关闭新窗口</button>
+    <button id="btn3">关闭自身</button>
+
+    <script>
+        var oBtn1 = document.getElementById("btn1");
+        var oBtn2 = document.getElementById("btn2");
+        var oBtn3 = document.getElementById("btn3");
+        // var res = null;
+        oBtn1.onclick = function(){
+            //点击导航到一个特定的url
+            var res =  window.open("http://www.baidu.com","_blank");
+            // var res =  window.open("http://www.baidu.com","_self");
+            //点击打开新的窗口
+                //在原页面打开时，没有效果
+            // var res =  window.open("http://www.baidu.com","_self","width = 500,height = 300,left = 30,top = 50");
+                //在新页面打开时才有效果
+            // res =  window.open("http://www.baidu.com","_blank","width = 500,height = 300,left = 30,top = 50");
+            //返回值是新打开的窗口的名称(代表新窗口的window)
+            console.log(res);
+
+            //关闭窗口
+            //每一个窗口的名称都有一个close方法，可以关闭当前的窗口
+            oBtn2.onclick = function(){
+                res.close();
+            }
+        }
+
+        // oBtn2.onclick = function(){
+        //         res.close();
+        // }
+
+        //关闭自身
+        oBtn3.onclick = function(){
+            window.close();
+        }
+        
+    </script>
+</body>
+</html>

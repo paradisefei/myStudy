@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fadeIn</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <style>
+        #inner {
+            width:300px;
+            height:300px;
+            background-color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <div id="outer">
+        <div class="con">
+
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                /*
+                    animate
+                    累加动画
+                */
+                // $("#inner").animate({width:"+=10px",
+                //     opacity:".5"
+                // },2000,function(){
+                //     $(".con").css("background","green")
+                // })
+                // $("#inner").animate({width:"400px",
+                //     opacity:".5"
+                // },2000,function(){
+                //     $(".con").css("background","green")
+                // })
+
+                $(".con").animate({
+                    width:0,height:0,opacity:0
+                },1000)
+            })
+        })
+    </script>
+</body>
+
+</html>

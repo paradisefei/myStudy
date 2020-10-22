@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./font/css/font-awesome.css">
+    <title>彩云之南</title>
+    <style>
+        /* 设置跟字体的大小 */
+        html {
+            font-size: 5.333332vw;
+        }
+        /* 去掉body的边距 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        /* 去掉列表ul的默认样式 */
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        /* 页面头部 */
+        #header {
+            width: 100vw;
+            height: calc(calc(1rem * 120) / 40 );
+            /* border: 1px solid black; */
+            box-sizing: border-box;
+            background-color: #5dcacf;
+
+            padding: 0 calc(calc(1rem * 30) / 40);
+            padding-bottom: calc(calc(1rem * 12) / 40);
+
+            display: flex;
+            align-items: flex-end;
+        }
+        /* 页面头部中使用列表来进行布局 */
+        #header ul {
+            width: calc(calc(1rem * 690) / 40);
+            height: calc(calc(1rem * 58) / 40);
+            box-sizing: border-box;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 页面头部中左边的列表 */
+        #header ul > li:first-of-type{
+            width: calc(calc(1rem * 60) / 40);
+            box-sizing: border-box;
+
+            display: flex;
+        }
+         /* 页面头部中左边的列表中的a链接*/
+        #header ul > li:first-of-type > a {
+            color: white;
+            text-decoration: none;
+            font-size: calc(calc(1rem * 60) / 40);
+        }
+        /* 页面头部中间的文本框 */
+        #header ul > li:nth-of-type(2) > form > input{
+            width: calc(calc(1rem * 515) / 40);
+            height: calc(calc(1rem * 58) / 40);
+            border: 0;
+            font-size: calc(calc(1rem * 28) / 40);
+
+            padding-left: calc(calc(1rem * 15) / 40);
+            box-sizing: border-box;
+
+            border-radius: calc(calc(1rem * 10) / 40);
+
+        }
+        /* 页面头部中右边的头像 */
+        #header ul > li:nth-of-type(3){
+            width: calc(calc(1rem * 60) / 40);
+            box-sizing: border-box;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        /* 页面头部中右边的头像中的图片*/
+        #header ul > li:nth-of-type(3) > img {
+            width: 100%;
+            height: 100%;
+        }
+        /* 圆形图标链接 */
+        #link-circle {
+            /* border: 1px solid cadetblue; */
+            box-sizing: border-box;
+            padding: calc(calc(1rem * 10) / 40)  calc(calc(1rem * 30) / 40) 0;
+            height: calc(calc(1rem * 224) / 40);
+
+            
+        }
+        #link-circle ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 图标链接中列表的每一项 */
+        #link-circle > ul > li {
+            width: calc(calc(1rem * 115) / 40);
+            /* border: 1px solid goldenrod; */
+            height: calc(calc(1rem * 214) / 40);
+            box-sizing: border-box;
+        }
+        /* 图标链接中列表的每一项中a的默认样式*/
+        #link-circle > ul > li > a {
+            text-decoration: none;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            justify-content: space-evenly;
+        }
+        /* 图标 */
+        #link-circle > ul > li > a > span {
+            width: calc(calc(1rem * 115) / 40);
+            height: calc(calc(1rem * 115) / 40);
+
+            color: white;
+            font-size: calc(calc(1rem * 60) / 40);
+            text-align: center;
+            line-height:calc(calc(1rem * 115) / 40);
+            border-radius: 50%;
+        }
+        #link-circle > ul > li:first-of-type > a > span {
+            background-color: #f9699c;
+        }
+        #link-circle > ul > li:nth-of-type(2) > a > span {
+            background-color: #ff797c;
+        }
+        #link-circle > ul > li:nth-of-type(3) > a > span {
+            background-color: #2d9ad7;
+        }
+        #link-circle > ul > li:nth-of-type(4) > a > span {
+            background-color: #ffb802;
+        }
+       /* 图标链接中列表的每一项中a的文字*/
+       #link-circle > ul > li > a > strong {
+           font-size: calc(calc(1rem * 20) / 40);
+           color: #808080;
+           text-align: center;
+       }
+       /* #底部固定导航栏 */
+       #footer {
+           width: 100vw;
+           /* border: 1px solid black; */
+           box-sizing: border-box;
+           padding:  calc(calc(1rem * 20) / 40) calc(calc(1rem * 20) / 40);
+           position: fixed;
+           bottom: 0;
+           left: 0;
+           background-color: #fff;
+           box-shadow: 0 calc(calc(1rem * -10) / 40) calc(calc(1rem * 10) / 40) #ececec;
+       }
+       /* 底部导航栏中的列表ul */
+       #footer > ul {
+           /* height: calc(calc(1rem * 60) / 40); */
+           /* border: 1px solid firebrick; */
+           padding: 0 calc(calc(1rem * 1) / 40);
+           box-sizing: border-box;
+          
+
+           display: flex;
+           justify-content: space-evenly;
+       }
+       #footer > ul > li {
+           /* border: 1px solid skyblue; */
+       }
+       /* 底部导航栏中列表的每一项 */
+       #footer > ul > li > a{
+           /* border: 1px solid black; */
+           height: calc(calc(1rem * 70) / 40);
+           display: flex;
+           text-decoration: none;
+           text-align:center;
+           justify-content: space-between;
+            flex-direction: column;
+            color: #808080;
+       }
+       /* 底部导航栏中列表的每一项a链接中的图片 */
+       #footer > ul > li > a > span {
+       }
+       /* 底部导航栏中列表的每一项a链接中的字 */
+       #footer > ul > li > a > strong {
+           font-size: calc(calc(1rem * 24) / 40);
+           font-weight: normal;
+       }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <div id="header">
+        <ul>
+            <li>
+                <a href="#" class="fa fa-reorder"></a>
+            </li>
+            <li>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="请输入目的地/酒店/景点">
+                </form>
+            </li>
+            <li>
+                <img src="./img/pho.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <!-- 圆形图标链接 -->
+    <div id="link-circle">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="fa fa-building"></span>
+                    <strong>酒店预定</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-plane"></span>
+                    <strong>附近酒店</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-cny"></span>
+                    <strong>今日特价</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-institution"></span>
+                    <strong>景点推荐</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 底部导航栏 -->
+    <div id="footer">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="fa fa-home"></span>
+                    <strong>首页</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-compass"></span>
+                    <strong>发现</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-headphones"></span>
+                    <strong>客服</strong>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-user-o"></span>
+                    <strong>我的</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

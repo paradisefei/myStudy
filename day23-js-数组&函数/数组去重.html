@@ -1,0 +1,21 @@
+<script>
+    var arr = [2,3,5,4,2,3,5,7,8,0];
+    var nArr = [];
+
+    for(var i = 0; i < arr.length; i++){
+        var flag = true;//两种状态分别表示是否与之前的数相等，此处表示不相等
+                                //
+
+        var val = arr[i];
+        for(var j = 0; j < nArr.length;j++){
+            if(val === nArr[j]){
+                flag = false;//此处表示与之前的数有相等
+                break;
+            }
+        }
+        if(flag){
+            nArr[nArr.length] = val;//length比最大下标大1
+        }
+    }
+    console.log(nArr);
+</script>

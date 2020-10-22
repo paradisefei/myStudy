@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+
+    <script>
+        //获取元素对象
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function(){
+            var date = new Date();
+            console.log(date);
+            //获取天数
+            var day = date.getDate();
+            // console.log(day);
+            date.setDate(day + 7);
+            console.log(date.toString());
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 800px;
+            height: 600px;
+            padding: 20px;
+            border: 5px solid black;
+        }
+        #inner {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 40px;
+            overflow:hidden;
+        }
+        #con {
+            width:100px;
+            height:100px;
+            padding:30px;
+            margin:20px;
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">
+        点我
+    </button>
+    <div id="outer">
+        <div id="inner">
+            <div id="con">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oCon = document.getElementById("con");
+
+        oBtn.onclick = function (){
+            console.log(oCon.offsetWidth);
+        }
+    </script>
+</body>
+</html>

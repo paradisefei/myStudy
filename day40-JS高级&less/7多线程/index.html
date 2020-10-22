@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <p id="con">点击按钮获取值</p>
+    <button>测试</button>
+    <script>
+        var oBtn = document.querySelector('#btn');
+        var oCon = document.querySelector('#con');
+
+        // oBtn.onclick = function(){
+        //     var num = 0;
+        //     for(var i = 0; i< 10000000000;i++){
+        //         num += Math.sqrt(i);
+        //     }
+        //     console.log(num);
+        // }
+
+        oBtn.onclick = function(){
+            oCon.innerHTML = "wait";
+
+            var ww = new Worker("./index.js");
+            ww.postMessage(100000000000);
+
+            ww.onmessage = function(e){
+                console.log(e.data);
+                oCon.innerHTML = e.data;
+                ww.terminate();
+            }
+        }
+    </script>
+</body>
+
+</html>

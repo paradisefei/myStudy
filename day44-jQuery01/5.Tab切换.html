@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab切换方法2.html</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #tab {
+            width: 606px;
+            margin: 50px auto 0;
+            border: 1px solid #000;
+        }
+
+        .title {
+            display: flex;
+        }
+
+        .title h2 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            cursor:pointer;
+        }
+
+        /* 交集选择器 选择h2标签，并且h2标签还拥有active类名的 */
+        .title h2.active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content li {
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 40px;
+            display: none;
+        }
+
+        .content li.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <!-- Tab切换外层 -->
+        <div id="tab">
+            <!-- Tab切换标题区域 -->
+            <div class="title">
+                <!-- 如果有特殊的样式，则直接给类名，然后点击切换类名即可 -->
+                <h2 class="active">标题一</h2>
+                <h2>标题二</h2>
+                <h2>标题三</h2>
+            </div>
+            <!-- Tab切换内容区域 -->
+            <ul class="content">
+                <li class="show">内容一</li>
+                <li>内容二</li>
+                <li>内容三</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            //获取所有标题-绑定点击事件
+            $(".title h2").click(function(){
+                //当前按钮添加类名-让该按钮的所有兄弟按钮样式置空
+                //添加类名addClass
+                $(this).addClass("active").siblings().removeClass("active");
+                // console.log($(this));
+                //内容区
+                //要获取当前按钮的下标
+                //jQuery对象的eq方法
+                $(".content li").eq($(this).index()).addClass("show").siblings().removeClass("show");
+            })
+        })
+    </script>
+</body>
+
+</html>

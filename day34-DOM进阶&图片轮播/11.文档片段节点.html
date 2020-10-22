@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.文档片段节点.html</title>
+</head>
+
+<body>
+    <ul id="list">
+
+    </ul>
+    <script>
+        /*
+            文档片段节点是一个容器,可以将新产生的节点放入容器中,再把文档片段节点插入文档中,做到一次插入,提高性能
+            文档片段节点并不是一个父元素,只能说是一个容器
+        */
+        //数据
+        var data = {
+            new:[
+                "第1条数据",
+                "第2条数据",
+                "第3条数据",
+                "第4条数据",
+                "第5条数据",
+                "第6条数据",
+                "第7条数据",
+                "第8条数据",
+                "第9条数据",
+                "第10条数据",
+                "第11条数据",
+                "第12条数据",
+                "第13条数据"
+            ]
+        }
+        //创建一个文档碎片节点
+        var oFrag = document.createDocumentFragment();
+        var oList = document.getElementById("list");
+        //循环创建新的节点
+        for(var i = 0; i < data.new.length;i++){
+            var newLi = document.createElement("li");
+            newLi.innerHTML = data.new[i];
+
+            //将新的节点添加到文档片段节点中
+            oFrag.appendChild(newLi);
+        }
+        //将文档碎片添加到元素中
+        oList.appendChild(oFrag);
+    </script>
+</body>
+</html>

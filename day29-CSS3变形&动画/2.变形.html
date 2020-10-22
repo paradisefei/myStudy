@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #box {
+
+            width: 1100px;
+            height: 900px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        #box li {
+            width: 200px;
+            height: 250px;
+            background-color: rgba(100,100,100,.2);
+            margin-top: 20px;
+
+            transform-style: preserve-3d;
+            perspective: 300px;
+        }
+        #box li div {
+            width: 100%;
+            height: 100%;
+            
+            text-align: center;
+            font-size: 30px;
+
+            transition: all 1s;
+        }
+        /* rotateX() */
+        #box li:nth-child(1) div{
+            background-color: #00adb5;
+
+            /* transform-origin: center bottom; */
+            transform-origin: center top;
+        }
+        #box li:nth-child(1):hover div{
+            /* transform: rotateX(30deg); */
+            /* 改变基点 */
+            transform: rotateX(30deg);
+        }
+
+        /* rotateY() */
+        #box li:nth-child(2) div{
+            background-color: #f08a5d;
+
+            transform-origin: right center;
+            /* transform-origin: left center; */
+        }
+        #box li:nth-child(2):hover div{
+            /* transform: rotateX(30deg); */
+            /* 改变基点 */
+            transform: rotateY(30deg);
+        }
+
+        /* rotateZ() */
+        #box li:nth-child(3) div{
+            background-color: #ffde7d;
+
+            /* transform-origin: right center; */
+            /* transform-origin: left center; */
+            transform-origin: 10px 10px;
+        }
+        #box li:nth-child(3):hover div{
+            transform: rotateZ(30deg);
+        }
+
+        /* translateX() */
+        #box li:nth-child(4) div{
+            background-color: #fcbad3;
+
+
+        }
+        #box li:nth-child(4):hover div{
+            transform: translateX(100px);
+        }
+
+        /* translateY() */
+        #box li:nth-child(5) div{
+            background-color: #46cdcf;
+        }
+        #box li:nth-child(5):hover div{
+            transform: translateY(100px);
+        }
+
+        /* translateZ() */
+        #box li:nth-child(6) div{
+            background-color: #c06c84;
+            transition-duration: 1s;
+        }
+        #box li:nth-child(6):hover div{
+            transform: translateZ(20px);
+        }
+
+        /* translate() */
+        #box li:nth-child(7) div{
+            background-color: #00e0ff;
+        }
+        #box li:nth-child(7):hover div{
+            /* 一个参数 */
+            /* transform: translate(100px); */
+            /* 两个参数 */
+            transform: translate(50px,50px);
+            /* 三个参数无效 */
+            /* transform: translate(50px,50px,50px);  */
+        }
+
+        /* scaleX() */
+        #box li:nth-child(8) div{
+            background-color: #878ecd;
+
+            /* transform-origin: left center; */
+        }
+        #box li:nth-child(8):hover div{
+            transform: scaleX(1.3);
+            /* transform: scaleX(-1); */
+        }
+
+        /* scaleY() */
+        #box li:nth-child(9) div{
+            background-color: #a8e6cf;
+
+            /* transform-origin: left center; */
+        }
+        #box li:nth-child(9):hover div{
+            transform: scaleY(1.5);
+            /* transform: scaleX(-1); */
+        }
+
+        /* scale() */
+        #box li:nth-child(10) div{
+            background-color: #ff9de2;
+        }
+        #box li:nth-child(10):hover div{
+            transform: scale(1.5);
+            /* transform: scaleX(1.5); */
+        }
+
+        /* skew() */
+        #box li:nth-child(11) div{
+            background-color: #1fab89;
+            transform-origin: center top;
+        }
+        #box li:nth-child(11):hover div{
+            /* transform: skewX(-30deg); */
+            transform: skewX(30deg);
+        }
+
+        /* skewY() */
+        #box li:nth-child(12) div{
+            background-color: #005792;
+            /* transform-origin: left center; */
+            transform-origin: right center;
+
+        }
+        #box li:nth-child(12):hover div{
+            /* transform: skewX(-30deg); */
+            transform: skewY(30deg);
+        }
+
+        /* skew() */
+        #box li:nth-child(13) div{
+            background-color: #3fbac2;
+            /* transform-origin: left center; */
+            transform-origin: right center;
+
+        }
+        #box li:nth-child(13):hover div{
+            transform: skew(30deg);
+        }
+        /* 旋转后移动 */
+        #box li:nth-child(14) div{
+            background-color: #f67280;
+
+        }
+        #box li:nth-child(14):hover div{
+            transform: rotateX(30deg) translateY(100px);
+        }
+        #box li:nth-child(15) div{
+            background-color: #a1d9ff;
+
+        }
+        #box li:nth-child(15):hover div{
+            transform: translateY(100px) rotateX(30deg);
+        }
+    </style>
+</head>
+<body>
+    <ul id="box">
+        <li class="item">
+            <div class="con">
+                rotateX()<br>
+                值为正，上面向内，下面向外
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                rotateY()<br>
+                值为正，左边向外，右边向内
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                rotateZ()<br>
+                值为正，顺时针
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                translateX()
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                translateY()
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                translateZ()
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                translate()<br>
+                一个参数，表示x<br>
+                两个参数，表示x和y
+
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                scaleX()
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                scaleY()
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                scale()<br>
+                一个参数，同时控制x和y<br>
+                两个参数，分别控制x和y
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                skewX()
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                skewY()
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                skew()<br>
+                一个参数只代表x
+                两个参数代表x 和 y
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                旋转后移动
+            </div>
+        </li>
+        <li class="item">
+            <div class="con">
+                移动后旋转
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<script>
+    function Car(name,color){
+        this.name = name;
+        this.color = color;
+
+        // return 1;
+        return function(){
+
+        }
+    }
+    Car.prototype.run = function(){
+        console.log("hello");
+    }
+    function writeNew(Car){
+        var obj = {};
+
+        //设置原型链
+        obj.__proto__ = Car.prototype;
+        //this指向
+        var result = Car.apply(obj,Array.prototype.slice.call(arguments,1));
+
+        var isObj = typeof result === "object" && result != null;
+        var isFun = typeof result === "function"; 
+        return (isObj || isFun) ? result : obj;
+    }
+    var my = writeNew(Car,"宝马","red");
+    console.log(my);
+    console.log(my.run);
+    var you = new Car("宝马","red");
+    console.log(you);
+    // console.log(you.run);
+</script>

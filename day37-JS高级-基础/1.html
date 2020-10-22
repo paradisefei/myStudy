@@ -1,0 +1,43 @@
+<script>
+    // var n1 = null;
+    // console.log(typeof n1);
+    // var n2 = {};
+    // console.log(typeof n2);
+
+    // console.log(console.log(1));
+
+    // function add(){
+    //     var sum = 0;
+    // [].forEach.call(arguments,function(item,index){
+    //     sum += item;
+    // })
+    // return sum;
+
+    // Array.prototype.forEach.call(arguments,function(item,index){
+    //     sum += item;
+    // })
+    // return sum;
+
+    //     return Array.prototype.reduce.call(arguments,function(prev,item){
+    //         return prev + item
+    //     },0)
+
+    // }
+
+    // console.log(add(6,7,8,9,10));
+
+    function test() {
+
+    }
+
+    // console.log(test.prototype);
+
+    var t = new test();
+
+    console.log(t.constructor); //此时指向的是实例对象构造函数
+
+//     1.每个函数在创建时都会创建一个名叫prototype的属性，但只有在函数被构造调用时才生效。
+// 2.prototype的constructor属性指向拥有该原型对象的构造函数。
+// 3.作用是由同一个构造函数生成的各个实例对象之间共享属性和方法。
+    console.log(test.prototype.constructor);//此时指向的是拥有这个原型对象的构造函数
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height:10000px;
+        }
+        #returnTop {
+            width:100px;
+            height:50px;
+            line-height:50px;
+            background-color:red;
+            border-radius:10px;
+            text-align:center;
+            color:white;
+            cursor:pointer;
+
+            position:fixed;
+            right:10px;
+            bottom:10px;
+
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="returnTop">
+        回到顶部
+    </div>
+
+    <script>
+        //获取元素对象
+        var oReturnTop = document.getElementById("returnTop");
+        var oReturnTopTimer = null;
+
+        //确定是否显示回到顶部盒子
+        window.onscroll = function(){
+            if(window.pageYOffset >= 500){
+                oReturnTop.style.display = "block";
+            }else {
+                oReturnTop.style.display = "none";
+            }
+        }
+
+        //点击回到顶部
+        oReturnTop.onclick = function(){
+            clearInterval(oReturnTopTimer);
+            //起始位置
+            var startPoint = window.pageYOffset;
+            // console.log(startPoint)
+            //停止位置
+            var endPoint = 0;
+            //每次走的距离(速度)
+                //速度的绝对值越大，走的越快
+                //速度的绝对值越小，走的越慢
+            var feet = (endPoint - startPoint) / 100;
+            // console.log(feet);
+            // var feet = -50;
+
+            //启用间歇调用
+            oReturnTopTimer = setInterval(function(){
+                startPoint += feet;
+                if(startPoint <= 0){
+                    startPoint = 0;
+                    clearInterval(oReturnTopTimer);
+                }
+                //设置系统滚动条的位置
+                window.scrollTo(0,startPoint);
+            },1000 / 60)
+        }
+    </script>
+</body>
+</html>

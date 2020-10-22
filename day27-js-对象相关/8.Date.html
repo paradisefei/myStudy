@@ -1,0 +1,48 @@
+<script>
+    //计算程序执行需要多少时间
+    // var startTime = Date.now();
+    // var str = 'abcdefghijklmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ123456789';
+    // for(var i = 1 ; i <= 100 ; i++){
+    //     var code = '';
+    //     for(var j = 1 ; j <= 4 ; j++){
+    //         code += str[Math.floor(Math.random() * str.length)];
+    //     }//字符串拼接
+    //     console.log(code);
+    // }
+    // var endTime = Date.now();
+
+    // console.log(endTime - startTime);
+
+        function getTime(){
+            //获得当前的日期格式
+            //标准时间
+            var nowDate = new Date();
+            console.log(nowDate);
+            //年
+            var year = nowDate.getFullYear();
+            console.log(year);
+            //月//内部月是从0开始的
+            var month = nowDate.getMonth();
+            console.log(month);
+            //日
+            var day = nowDate.getDate();
+            console.log(day);
+            //星期
+            var weekday = nowDate.getDay();
+            console.log(weekday);
+            //时
+            var hour = nowDate.getHours();
+            console.log(hour);
+            //分
+            var minute = nowDate.getMinutes();
+            console.log(minute);
+            //秒
+            var second = nowDate.getSeconds();
+            console.log(second);
+            //输出格式
+            console.log(year + '年' + (month + 1) + '月' + day + '日' + '(星期' + weekday + ')' + hour + ":" + minute + ':' + second);
+
+    }
+        getTime();
+    
+</script>

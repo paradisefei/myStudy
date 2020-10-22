@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>表单</title>
+    </head>
+    <body>
+        <form action="./3.form.txt" method="GET">
+            用户名<input type="text" name='userName'>
+            <br>
+            密　码<input type="password" name="passwd">
+            <br>
+            性　别 
+            <label for="nan">男</label>  <input type="radio" name="sex" value="man" id="nan">
+            女 <input type="radio" name="sex" value="woman">
+            <br>
+            爱　好
+            钓鱼<input type="checkbox" name="hobby[]" value="diaoyu">
+            抽烟<input type="checkbox" name="hobby[]" value="chouyan">
+            唱歌<input type="checkbox" name="hobby[]" value="changge">
+            跳舞<input type="checkbox" name="hobby[]" value="tiaowu">
+            <br>
+            <input type="file" name="upload">
+            <br>
+            <input type="image" src="./favicon.png">
+            <input type="submit" value="提交">
+            <br>
+            <select name="country" id="">
+                <option value="cn">中国</option>
+                <option value="jp" selected>日本</option>
+                <option value="kr">韩国</option>
+            </select>
+            <button type="button">按钮</button>
+            <textarea name="text" id="" cols="30" rows="10"></textarea>
+
+            <!-- <label>用户名　</label><input type="text" name="userName" placeholder="hello"/>
+            <br>
+            <label>密　码　</label><input type="password" name="passwd"/>
+            <br>
+            <input type="submit" value="登录"/>  -->
+            <!-- <br>
+            男　<input type="radio" name="sex" value="nan">
+            <br>
+            女　<input type="radio" name="sex" value="nv">
+            <br>
+            小学　<input type="radio" name="xueli">
+            初中　<input type="radio" name="xueli">
+            高中　<input type="radio" name="xueli">
+            本科　<input type="radio" name="xueli"> -->
+            <!-- <label for="yuwenwen">语文</label> <input type="checkbox" for = 'yuwenwen' name="course[]" value="yuwen" id="yuwenwen"> <br>
+            <label for="shuxuexue">数学</label> <input type="checkbox" name="course[]" value="shuxue" id="shuxuexue"> <br>
+            <label for="yingyuyu">英语</label> <input type="checkbox" name="course[]" value="yingyu" id="yingyuyu"> <br>
+            <label for="wulili">物理</label> <input type="checkbox" name="course[]" value="wuli" id="wulili"> <br>
+            <label for="huaxuexue">化学</label> <input type="checkbox" name="course[]" value="huaxue" id="huaxuexue"> <br>
+            <input type="image" src="./favicon.png" name="" id="yuwenwen">
+            <input type="file"> -->
+        </form>
+    </body>
+</html>

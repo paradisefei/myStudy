@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <button id="btn">移出事件</button>
+    
+    <div id="box">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+    <script>
+        /*
+        on绑定事件
+        on是一个方法：on()
+        参数1:事件类型
+        参数2:一个选择器字符串过滤选定的元素,如果有第二个参数,那么事件中的this指向该元素
+              如果没有第二个参数,事件中的this指向前面匹配到的元素
+        参数3:当一个事件被触发时传递给event.data的数据
+        参数4:事件被触发时执行的函数
+        */
+        $(function () {
+
+            function fn(){
+                console.log(this);
+                $(this).css("background","red");
+            }
+            $("#box").on("click","p",{name:"hello"},fn)
+
+            // 解绑事件
+            $("#btn").click(function(){
+                $("#box").off("click",fn)
+            })
+        })
+    </script>
+</body>
+
+</html>

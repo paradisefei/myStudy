@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fadeIn</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <style>
+        #outer {
+            width: 500px;
+            height: 500px;
+            background-color: lightgreen;
+
+            /* overflow:auto; */
+            /* position:relative; */
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            padding:20px;
+            margin:10px;
+            border:5px solid black;
+            background-color: red;
+
+            /* position:absolute;
+            left:20px;
+            top:30px; */
+        }
+        .show {
+            height:50px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">按钮</button>
+    <ul id="list">
+        <li>1</li>
+        <li class="item1">2</li>
+        <li>
+            <span>3</span>
+        </li>
+        <li>4</li>
+    </ul>
+    <script>
+        $(function () {
+            
+            $(".btn").click(function(){
+                //创建节点
+                // $("<li class='show'>我是用jQuery创建的新的li</li>").appendTo("#list");
+                //插入节点
+                //append 在后面
+                // 某个元素的子元素的后面插入新创建的元素
+                // $("#list").append($("<li class='show'>我是用jQuery创建的新的li</li>"))
+                //新创建的元素要插入到某个元素的子元素的最后面
+                // $("<li class='show'>我是用jQuery创建的新的li</li>").appendTo("#list");
+                //prepend前面
+                // $("#list").prepend($("<li class='show'>我是用jQuery创建的新的li</li>"))
+                // $("<li class='show'>我是用jQuery创建的新的li</li>").prependTo("#list");
+                //在指定元素的后面插入 后面插前面
+                // $(".item1").after($("<li class='show'>我是用jQuery创建的新的li</li>"))
+                //insertAfter 和after相反 前面插后面
+                // console.log(1);
+                // $("<li class='show'>我是用jQuery创建的新的li</li>").insertAfter($("#list li").eq(2));
+                //before
+                // $(".item1").before($("<li class='show'>我是用jQuery创建的新的li</li>"))
+                // $("<li class='show'>我是用jQuery创建的新的li</li>").insertBefore($("#list li").eq(2));
+
+                // 删除节点
+                // $("#list li.item1").remove();//删除前面匹配到的节点
+                // $("#list li.item1").empty();//清空节点中的内容
+
+                // 替换节点
+                // $("<div>这是一个新的div</div>").replaceAll($("#list li.item1"))
+                $("#list li.item1").mouseenter(function(){
+                    console.log(2)
+                })
+                //复制节点
+                // clone(),加true则新复制出来的元素也绑定了原来节点绑定的事件
+                $("#list li.item1").clone(true).appendTo("#list")
+            })
+        })
+
+    </script>
+</body>
+
+</html>

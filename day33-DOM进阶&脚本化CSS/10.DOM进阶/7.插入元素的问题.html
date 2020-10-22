@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        //获取元素
+        var oBtn = document.getElementById("btn");
+        // var oList = document.getElementById("list");
+        var oList = document.querySelector("#list");
+        // var oListLis = document.querySelectorAll("#list > li")
+        var oListLis = oList.getElementsByTagName("li")
+
+        //点击按钮，给每一个li都添加一个a标签
+        oBtn.onclick = function () {
+            for (var i = 0; i < oListLis.length; i++) {
+
+                var newA = document.createElement("a");
+                newA.innerHTML = "我是新的";
+
+                oListLis[i].appendChild(newA);
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

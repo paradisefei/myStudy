@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .outer {
+            width: 520px;
+            height: 320px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .con {
+            position: relative;
+            height: 320px;
+        }
+
+        .con img {
+            width: 520px;
+            height: 320px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        .con img.show {
+            /*z-index: 1;*/
+            display: block;
+        }
+
+        .left,
+        .right {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .7);
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            border-radius: 50%;
+            z-index: 20;
+        }
+
+        .left {
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .right {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="con">
+            <img class="show" src="./images/01.jpg" alt="">
+            <img src="./images/02.jpg" alt="">
+            <img src="./images/03.jpg" alt="">
+            <img src="./images/04.jpg" alt="">
+            <img src="./images/05.jpg" alt="">
+        </div>
+        <p class="left">&lt;</p>
+        <p class="right">&gt;</p>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        $(function () {
+            var i = 0;
+
+            var timer = setInterval(function () {
+                i++;
+                if (i > 4) {
+                    i = 0;
+                }
+                $(".con img").eq(i).fadeIn(1000).siblings().fadeOut(1000)
+            }, 1000)
+            $(".right").click(function(){
+                clearInterval(timer);
+                i++;
+                if(i >= $(".con img").length){
+                    i = 0;
+                }
+                $(".con img").eq(i).stop().fadeIn(1000).siblings().fadeOut(1000)
+            })
+            $(".left").click(function(){
+                clearInterval(timer);
+                i--;
+                if(i < 0){
+                    i = 4;
+                }
+                $(".con img").eq(i).stop().fadeIn(1000).siblings().fadeOut(1000)
+            })
+        })
+    </script>
+</body>
+
+</html>

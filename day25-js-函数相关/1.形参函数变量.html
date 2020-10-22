@@ -1,0 +1,24 @@
+<script>
+    //函数中声明的函数和形参同名时
+    // function test( fn){
+    //     function fn(){
+    //         console.log('fn');
+    //     }
+
+    //     console.log(fn);
+    // }
+
+    // test('abc');
+    //函数中声明的函数，函数中定义的变量，函数的形参同名
+    function test( fn){
+        function fn(){
+            console.log('我是同名的函数');
+        }
+        // var fn = '我是同名的变量';
+        fn();
+        // var fn = '我是同名的变量';
+        // console.log(fn);
+
+    }
+    test('abc');
+</script>

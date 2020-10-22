@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #f {
+            border: 1px solid black;
+            display: flex;
+            
+        }
+        #f > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid firebrick;
+            flex-grow: 1;
+        }
+        @media screen and (min-width: 768px){
+            #f > div:first-of-type {
+                order: 1;
+            }
+            #f > div:nth-of-type(3){
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <div>视频</div>
+        <div>音乐</div>
+        <div>新闻</div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #f {
+            border: 1px solid black;
+            display: flex;
+
+        }
+        #f > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid firebrick;
+            flex-grow: 1;
+        }
+        /* 当屏幕宽度大于768时，视频放在音乐的后面 */
+        @media screen and (min-width: 768px ){
+            #f > div:first-of-type{
+                order: 1;
+            }
+            #f > div:nth-of-type(2) {
+                order: 0;
+            }
+            #f > div:nth-of-type(3){
+                order: 3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <div>视频</div>
+        <div>音乐</div>
+        <div>新闻</div>
+    </div>
+</body>
+</html> -->

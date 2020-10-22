@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>call应用</title>
+
+
+</head>
+
+<body>
+
+    <script>
+        //1将伪数组转为数组
+        var arrLike = {
+            0:'a',
+            1:'b',
+            2:'c',
+            3:'d',
+            length:4
+        }
+        /*
+        slice如果不给参数的话,返回的是当前数组
+        */
+        var res = Array.prototype.slice.call(arrLike);
+        console.log(res);
+
+        //2.检测数据类型
+        // console.log(Object.prototype.toString.call(null));
+        // console.log(Object.prototype.toString.call(11));
+
+        // 求一组数的最大值和最小值
+        /*
+        第一个参数为null,max中的this指向window
+        */
+    //    var arr = [2,3,5,3,1,97,381];
+        // console.log(Math.max.call(Math,2,3,5,3,1,97,381));
+        // console.log(Math.max(2,3,5,3,1,'d97',381));
+        // console.log(Math.max());
+        // console.log(Math.max.apply(null,arr));
+        // console.log(Math.max.bind(null,2,3,5,3,1,97,381));
+    </script>
+</body>
+
+</html>

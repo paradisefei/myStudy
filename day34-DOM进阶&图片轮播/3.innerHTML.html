@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div id="inner">
+            我是inner
+            <span>我是span</span>
+        </div>
+    </div>
+    <button id="btn">点击</button>
+
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oBox = document.getElementById("box");
+        var oInner = document.getElementById("inner");
+
+        oBtn.onclick = function(){
+        //innerHTML
+            //获取元素内部innerHTML,标签也会当作字符串输出出来
+            //空格都会输出来
+            // console.log(oBox.innerHTML);
+            //设置
+            //会解析标签
+            //把标签中原本的内容全部删除,再添加入新的内容
+            // oInner.innerHTML = "<h2>我是标题</h2>";
+            //在原来的基础上添加新的内容
+            // oInner.innerHTML += "<h2>我是标题</h2>";
+
+        //outerHTML
+            //获取
+            console.log(oBox.outerHTML);
+            //设置
+            oInner.outerHTML = "我是标题";
+        }
+    </script>
+</body>
+</html>

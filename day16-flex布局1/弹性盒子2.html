@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #f {
+            border: 1px solid black;
+
+            display: flex;
+            height: 500px;
+            /* 设置主轴方向 */
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+
+            /* 换行 */
+            /* flex-wrap: nowrap; */
+            flex-wrap: wrap;
+            /* flex-wrap: wrap-reverse; */
+
+            /* 设置弹性元素如何在主轴上分布 */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+
+            /* 设置弹性元素如何在垂直轴上分布 */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            /* align-items: stretch; */
+
+        }
+        #f > div:first-of-type {
+            width: 100px;
+            height: 100px;
+            background-color: #fc5185;
+        }
+        #f > div:nth-of-type(2){
+            width: 100px;
+            height: 100px;
+            background-color: #11999e;
+        }
+        #f > div:nth-of-type(3){
+            width: 100px;
+            height: 100px;
+            background-color: #3f72af;
+
+            align-self: start;
+        }
+        #f > div:nth-of-type(4){
+            width: 100px;
+            height: 100px;
+            background-color: #3490de;
+        }
+        #f > div:nth-of-type(5){
+            width: 100px;
+            height: 100px;
+            background-color: #ffd460;
+        }
+        #f > div:nth-of-type(6){
+            width: 100px;
+            height: 100px;
+            background-color: #dcedc2;
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

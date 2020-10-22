@@ -1,0 +1,73 @@
+<script>
+    /*
+        Object.is()
+        Object.assign()
+    */
+     {
+        /* 
+        Object.is()
+            功能:判断两个值是否为同一个值
+            参数:被比较的两个值
+            返回值:布尔值
+
+        */
+        console.log(Object.is(1,1));//true
+        console.log(Object.is(undefined,undefined));//true
+        console.log(Object.is(null,null));//true
+        console.log(Object.is(undefined,null));//false
+        console.log(Object.is(NaN,NaN));//true
+        console.log(Object.is({},{}));//false
+
+        console.log(NaN === NaN)
+     }
+     {
+         /* 
+Object.assign(target,source1,source2....)
+    功能:将所有可枚举属性的值从一个或多个源对象赋值到目标对象
+    参数:
+        target:目标对象
+        source:一个或多个源对象
+    返回值:返回目标对象
+
+        */
+        const obj1 = {
+            a:1,
+            b:2,
+            c:3
+        }
+        const obj2 = {
+            d:4,
+            b:15
+        }
+        const obj3 = {
+            e:16
+        }
+        console.log(Object.assign(obj1,obj2,obj2))
+     }
+
+     {
+         /* 
+            拷贝
+            1.浅拷贝
+                值拷贝一层属性
+          */
+          const obj4 = {
+              a:1,
+              b:2,
+              c:{
+                  d:4
+              }
+          }
+          const obj5 = {}
+          for(let i in obj4){
+              obj5[i] = obj4[i];
+          }
+          console.log(obj5)
+          console.log(obj5.c === obj4.c);//true//两个对象中的c是同一个东西
+          
+          const obj6 = {};
+          Object.assign(obj6,obj4);
+          console.log(obj6);
+          console.log(obj6.c === obj4.c);//true//Object.assign()是浅拷贝
+     }
+</script>

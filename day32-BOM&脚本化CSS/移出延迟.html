@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #menu {
+            width: 500px;
+            margin: 50px auto;
+            /* border: 1px solid black; */
+        }
+        #menu > h2.title {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: red;
+        }
+        #menu > div.content {
+            height: 300px;
+            background-color: #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <h2 class="title">标题</h2>
+        <div class="content">
+            这是内容
+        </div>
+    </div>
+
+    <script>
+        // var oMenu = document.querySelector("#menu");
+        // var oContent = document.querySelector("#menu > div.content");
+        // var oConTimer = null;
+        // oMenu.onmouseenter = function(){
+        //     clearTimeout(oConTimer);
+        //     oContent.style.display = "block";
+        // }
+        // oMenu.onmouseleave = function(){
+        //     oConTimer = setTimeout(function(){
+        //         oContent.style.display = "none";
+        //     },500)
+        // }
+
+        // var res = setTimeout("console.log(1)",500);
+        console.log(setTimeout("console.log(1)",500));
+    </script>
+</body>
+</html>

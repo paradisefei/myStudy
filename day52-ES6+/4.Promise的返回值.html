@@ -1,0 +1,33 @@
+<script>
+    {
+        /*
+1.Promise构造函数的返回值
+2.executor函数的返回值
+    executor函数的返回值会被忽略,不管有没有return
+3.resolve(),reject()的返回值
+    如果调用了这两个的任意一个
+        给了参数,返回值为这个参数
+        没给参数,返回值为undefined
+    都没调用
+        返回值为undefined
+4.executor函数有异常
+            promise的返回值并不是说执行构造函数之后的return,而是
+        */
+        const pro1 = new Promise((resolve,reject)=>{
+            console.log("准备请求a数据");
+            setTimeout(()=>{
+                console.log("请求成功");
+                const data = {
+                    name:"张三"
+                }
+                throw new Error();
+                resolve(data);
+                // reject(data)
+                
+                console.log("在改变状态后");
+            },1000)
+            // return 1;
+        })
+        console.log(pro1)
+    }
+</script>

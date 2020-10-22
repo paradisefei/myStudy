@@ -1,0 +1,18 @@
+<script>
+    var arr = [1,2,4,6,2,4,8,10,0]
+    var nArr = [];
+    for(var i = 0 ; i < arr.length ; i++){
+        var val = arr[i];
+        var flag = false;//这种状态下表示该数与新数组中的数不相等
+        for(var j = 0 ; j < nArr.length ; j++){
+            if(nArr[j] === val){
+                flag = true;//此时表示该数与新数组中的数相等了
+                break;
+            }
+        }
+        if(!flag){
+            nArr[nArr.length] = val;
+        }
+    }
+    console.log(nArr);
+</script>

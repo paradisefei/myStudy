@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #con {
+            height: 10000px;
+        }
+
+        #btn {
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">
+        点我
+    </button>
+    <div id="con">
+
+    </div>
+    <script>
+        /*
+            系统滚动条是属于html或body的滚动条
+                低版本浏览器的话就是body的滚动条
+                html.scrollTop
+                body.scrollTop
+                如果要获取系统滚动条的话以上两个兼容性不高
+
+            pageYOffset在ie8以下不兼容
+            document.documentElement.scrollTop兼容ie7及以上
+            document.body.scrollTop兼容ie6以下
+
+        */
+        //点击按钮获取系统文档向上边线滚过的区域的高度
+        // var oBtn = document.getElementById("btn");
+
+        // oBtn.onclick = function () {
+        //     // console.log(window.pageYOffset);
+        //     // console.log(document.documentElement.scrollTop);
+        //     // console.log(document.body.scrollTop);
+        //     console.log(getWinScroll());
+        // }
+
+        //获取系统滚动条的兼容性
+        //兼容性封装目的就是要在每一个浏览器中都能得到正确的结果，所以就要先判断不同的浏览器，然后在不同的浏览器中使用不同的方法
+
+        // function getWinScroll() {
+        //     if (window.pageYOffset) {
+        //         return window.pageYOffset;
+        //     }
+        //     else if(document.documentElement.scrollTop){
+        //         return document.documentElement.scrollTop;
+        //     }
+        //     else {
+        //         return document.body.scrollTop;
+        //     }
+        // }
+
+        // 兼容性封装并且获取x,y两个方向的滚动量
+        function getWinScroll() {
+            var docHtml = document.documentElement;
+            var docBody = document.body;
+
+            var x = window.pageXOffset || docHtml.scrollLeft || docBody.scrollLeft;
+            var y = window.pageYOffset || docHtml.scrollTop || docBody.scrollTop;
+
+            return {
+                x: x,
+                y: y
+            }
+        }
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function () {
+             console.log(getWinScroll().y);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 0;
+            height: 0;
+            border: 50px solid #a72525;
+            border-radius: 50%;
+
+            border-right-color: transparent;
+            position: relative;
+        }
+        div::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            left: -10px;
+            top:-37px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 0px;
+            height: 0px;
+            margin: 10px auto;
+            border: 50px solid #00adb5;
+            border-radius: 50%;
+            border-right-color: transparent;
+
+            position: relative;
+        }
+        div::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+
+            top: -40px;
+            left: -15px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html> -->

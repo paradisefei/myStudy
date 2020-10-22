@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textContent</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <div class="box">
+        <span>span标签</span>
+        <span style="display: none;">none</span>
+    </div>
+    <script>
+        var oBox = document.querySelector(".box");
+        var oBtn = document.getElementById('btn');
+
+        oBtn.onclick = function(){
+            //获取textContent
+            //获取的文本带有空格,原来有多少空格就有多少
+            // console.log(oBox.textContent);//不解析标签
+            //可以获取隐藏元素中的文本
+            console.log(oBox.textContent);
+        }
+    </script>
+</body>
+
+</html>

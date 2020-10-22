@@ -1,0 +1,40 @@
+<script>
+    /*
+        1.这个参数是一个对象
+        2.对象中的key是创建的实例化对象的属性名,对象中的value同样也是一个对象,包含了实例化对象的属性值以及对于该值的相关描述
+            1.value
+            2.writable
+            3.enumerable
+            4.configurable
+            后三个默认值都是false
+    */
+
+    var obj = Object.create(Object.prototype,{
+        name:{
+            value:"张三",
+            writable:false,
+            enumerable:false,
+            configurable:false
+        },
+        sex:{
+            value:"男"
+        }
+    })
+    console.log(obj);
+
+    //尝试修改
+    obj.name = "李四";
+    console.log(obj);
+    //尝试枚举
+    for(var i in obj){
+        console.log(i);
+    }
+    //尝试删除
+    delete obj.name;
+    console.log(obj);
+
+    //如果不是在描述中添加的属性,而是在对象上直接扩展的属性,可以被修改,可以被删除
+    obj.age = 33;
+    delete obj.age;
+    console.log(obj);
+</script>

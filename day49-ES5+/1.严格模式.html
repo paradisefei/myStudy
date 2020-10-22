@@ -1,0 +1,18 @@
+<script>
+    "use strict";
+    //1.变量必须声明才能使用
+    // var a = 1;
+    // console.log(a);
+    //2.禁止自定义的函数中的this指向window
+    // function fn(){
+    //     console.log(this);
+    // }
+    // fn();
+    //3.
+    function fn() {
+        fn.arguments;
+        console.log(this);
+        console.log(arguments.callee)
+    }
+    fn(1,2,3)
+</script>

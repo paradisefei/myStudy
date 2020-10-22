@@ -1,0 +1,153 @@
+<script>
+
+
+
+    {
+        /*
+            扩展在数组对象上的方法
+            1.Array.from
+                把伪数组转为数组
+            2.Array.of
+                弥补new Array()一个参数时不能创建该参数的数组
+                1.new Array()创建数组
+                    传入多个参数:创建这些参数组成的数组
+                    传入一个参数:创建一个空数组,数组长度为该数
+        */
+
+
+        {
+            //Array.from
+            const obj1 = {
+                0:"a",
+                1:"b",
+                2:"c",
+                length:3
+            }
+
+            const obj2 = Array.from(obj1);
+
+            console.log(obj2)
+        }
+        {
+            
+            //new Array()创建
+            // const arr1 = new Array(1,2,3);
+            // console.log(arr1);
+            // const arr2 = new Array(3);
+            // console.log(arr2);
+
+            // Array.of:使用这个创建数组时不需要用new
+            const arr1 = Array.of(1);
+            console.log(arr1);
+
+        }
+    }
+
+    {
+        /* 在数组的原型对象上扩展的方法
+            1.copyWithIn(t,s,e)
+                功能:浅复制数组中的一部分到另一部分
+                参数
+                    t:被复制的起始位置
+                    s:开始复制元素的起始位置
+                    e:开始复制元素的结束位置
+                会改变当前数组
+            2.fill()
+                功能:用一个固定的值填充从起始位置到结束位置内的全部元素,不包括结束位置
+
+            3.find()
+                功能:返回回调函数第一次返回true的item
+            4.findIndex()
+                功能:返回回调函数第一次返回true的index
+            5.includes()
+                功能:查找数组是否包含某个值
+                要好好总结以下这种判断是否包含的方法,有好几个呢
+                find():回调函数第一次返回true的item;参数是一个回调函数;返回item
+                findIndex():回调函数第一次返回true的index;参数是一个回调函数;返回index
+                includes():查找数组时候有某个值;参数是传入某个值;返回值是布尔值
+                indexOf():在数组中找到一个给定元素的第一个索引;参数是传入某个值;返回值是索引,不存在则返回-1
+                lastIndexOf():返回指定元素在数组中的最后一个索引;参数是传入某个值;返回值是索引,不存在则返回-1
+            6.flat(depth)
+                功能:数组扁平化(降维)
+                参数:
+                    depth:指定要提取嵌套数组的结构深度,默认值为1(最外面为0)
+            7.entries()
+                1.调用方法返回一个Iterator对象
+                2.Iterator对象中有一个next()方法,可以遍历iterator中的内容
+
+        */
+        {
+            // copyWithIn()
+            const arr = [1,2,3,4,5,6];
+            const res = arr.copyWithin(1,4)
+
+            console.log(arr);//[1,5,6,4,5,6]
+            console.log(res);//[1,5,6,4,5,6]
+        }
+        {
+            // fill()
+            const arr = [1,2,3,4,5,6];
+            const res = arr.fill("1");
+            console.log(arr);
+            console.log(res);
+        }
+        {
+            // find()
+            // findIndex()
+            const arr = [2,3,4,5,6,7,87,9];
+            const res = arr.find(function(item,index){
+                return item > 10;
+            })
+            const res1 = arr.findIndex(function(item,index){
+                return item > 10;
+            })
+            console.log(res,res1)
+        }
+        {
+            //includes()
+            const arr = [2,3,4,5,6,[5]];
+            console.log(arr.includes(2));
+            console.log(arr.includes(3));
+            console.log(arr.includes(5));
+            console.log(arr.includes([5]));//比较是地址值的比较
+            
+        }
+        {
+            // flat()
+            const arr = [2,3,4,[5],[6,7,[8,9,10]]];
+            console.log(arr.flat(1));//[2,3,4,5,6,7,[8,9,10]]
+            console.log(arr.flat(2));//[2,3,4,5,6,7,8,9,10]
+            console.log(arr.flat(3))
+            console.log(arr.flat(Infinity))
+
+        }
+
+        {
+            // entries()
+            const arr = ['a',"b","c","d","e"];
+            const res1 = arr.entries();
+            console.log(res1)
+            const res2 = arr.keys();
+            console.log(res2)
+            // console.log(res);//返回的是一个Iterator对象
+            // console.log(res.next());//下标 下标对应的元素
+            // console.log(res.next());
+            // console.log(res.next());
+            // console.log(res.next());
+            // console.log(res.next());
+            // console.log(res.next());
+
+            for(var i of arr.entries()){
+                console.log(i)
+            }
+            for(var key of arr.keys()){
+                console.log(key);
+            }
+            for(var key of arr.values()){
+                console.log(key);
+            }
+        }
+
+    }
+
+</script>

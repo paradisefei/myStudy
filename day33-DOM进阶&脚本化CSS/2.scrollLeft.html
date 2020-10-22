@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 500px;
+            height: 300px;
+            background-color: red;
+
+            overflow: auto;
+        }
+
+        #inner {
+            width: 3000px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+
+        </div>
+    </div>
+    <button id="btn1">点我获取</button>
+    <button id="btn2">点我设置</button>
+    <script>
+        //outer有滚轮，所以获取outer这个盒子的scrollLeft
+        /*
+            滚过的区域的宽度
+        */
+        var oOuter = document.getElementById("outer");
+        var oBtn1 = document.getElementById("btn1");
+        var oBtn2 = document.getElementById("btn2");
+        //点击按钮获取scrollLeft
+        oBtn1.onclick = function(){
+            console.log(oOuter.scrollLeft);//
+        }
+
+        //也可以设置
+        oBtn2.onclick = function () {
+            // console.log(oOuter.scrollLeft);
+            oOuter.scrollLeft = 1314;
+        }
+
+
+    </script>
+</body>
+
+</html>

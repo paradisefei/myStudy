@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            margin-top: 20px;
+
+            transform-style: preserve-3d;
+            perspective: 300px;
+        }
+        .inner {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: red;
+
+            transition:all .5s;
+        }
+        .inner:hover {
+            transform: translateZ(20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+
+        </div>
+    </div>
+</body>
+</html>

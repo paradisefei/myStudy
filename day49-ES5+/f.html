@@ -1,0 +1,17 @@
+<script>
+    function numN(n){
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        var i = 3,sum= 0,h = 1,k = 1,temp = 0;
+        while(i <= n){
+            sum =h +k;
+            temp = k;
+            k = h + k;
+            h = temp;
+            i++;
+        }
+        return sum;
+    }
+    console.log(numN(8));
+</script>

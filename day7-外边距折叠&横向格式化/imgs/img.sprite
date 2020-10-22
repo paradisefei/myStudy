@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="../images" ImageName="img" IsPhone="false" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="caa83ce9b881cd24.png" LocationX="0" LocationY="0" />
+    <Sprite Path="cebbff76b25dc22e.png" LocationX="28" LocationY="0" />
+    <Sprite Path="d4d1151b09b5553b.png" LocationX="56" LocationY="0" />
+    <Sprite Path="afb4399323fe3b76.png" LocationX="84" LocationY="0" />
+    <Sprite Path="b8a8418d5418f471.png" LocationX="112" LocationY="0" />
+    <Sprite Path="b61f083872a7a1de.png" LocationX="140" LocationY="0" />
+    <Sprite Path="eed6f6cbf1de3aaa.png" LocationX="168" LocationY="0" />
+    <Sprite Path="f1f6dc5c207329f9.png" LocationX="196" LocationY="0" />
+    <Sprite Path="f12276b17e5dcf3b.png" LocationX="224" LocationY="0" />
+    <Sprite Path="d6f3909618c6307a.png" LocationX="252" LocationY="0" />
+    <Sprite Path="dd4d9ef7ce8fc169.png" LocationX="280" LocationY="0" />
+    <Sprite Path="e6976f3cb30c9a8a.png" LocationX="308" LocationY="0" />
+    <Sprite Path="0004c1b85fbf7bde.png" LocationX="336" LocationY="0" />
+    <Sprite Path="4b49b55af25a7bdf.png" LocationX="364" LocationY="0" />
+    <Sprite Path="5da079255c6dfabe.png" LocationX="392" LocationY="0" />
+    <Sprite Path="0aff0a42cece09ee.png" LocationX="420" LocationY="0" />
+    <Sprite Path="1c590322ece537ba.png" LocationX="448" LocationY="0" />
+    <Sprite Path="1d0957d7f2ae01a2.png" LocationX="476" LocationY="0" />
+    <Sprite Path="671f7c186c5e9b01.png" LocationX="504" LocationY="0" />
+    <Sprite Path="9570fdd46ecd3a76.png" LocationX="532" LocationY="0" />
+    <Sprite Path="97917a2daa34be0f.png" LocationX="560" LocationY="0" />
+    <Sprite Path="5fee386254dd2ebc.png" LocationX="588" LocationY="0" />
+    <Sprite Path="8f3f63ae04ff19af.png" LocationX="616" LocationY="0" />
+    <Sprite Path="90a218f053e903d2.png" LocationX="644" LocationY="0" />
+  </SpriteList>
+</SpriteFile>

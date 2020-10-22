@@ -1,0 +1,25 @@
+<script>
+    function fn(){
+        function fn4(){
+            console.log(1)
+        }
+        console.log(this);
+    }
+
+    //1.自调用
+    fn();
+    //2.隐式绑定
+    var obj = {
+        name:"hello",
+        f:fn
+    }
+    obj.f();
+    //3.隐式丢失
+    var fn2 = obj.f;
+    fn2();
+    //4.实例化绑定
+    var fn3 = new fn();//this指向fn3变量保存的对象
+    console.log(fn3);
+    //5.硬绑定
+    fn.call(window);
+</script>

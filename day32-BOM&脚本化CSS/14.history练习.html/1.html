@@ -1,0 +1,56 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+</head>
+<body>
+<h1>01</h1>
+<a href="02.html">02</a>
+<a href="03.html">03</a>
+<button id="forward">前进</button>
+<button id="back">后退</button>
+<button id="go">走你</button>
+<script>
+    var oForward = document.getElementById("forward");
+    var oBack= document.getElementById("back");
+    var oGo = document.getElementById("go");
+    oForward.onclick = function () {
+        history.forward();
+    }
+    oBack.onclick = function () {
+        history.back();
+    }
+    oGo.onclick = function () {
+        history.go(-2)
+    }
+</script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>01.html</h2>
+    <a href="./2.html">02.html</a>
+    <a href="./3.html">03.html</a>
+    <button id="btn">点击</button>
+
+    <script>
+        //获取元素对象
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function(){
+            // window.history.back();
+            // window.history.forward();
+            window.history.go(-1);
+        }
+    </script>
+</body>
+</html> 

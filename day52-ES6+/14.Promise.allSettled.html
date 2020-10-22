@@ -1,0 +1,42 @@
+<script>
+    /*
+        需求:同时请求三个数据,当全部请求完以后,接受所有请求的状态
+        Promise.allSettled(iterable)
+            结果
+1.返回一个promise对象
+2.只要里面的promise对象没有执行完成,则该方法返回的就是pending状态的promise对象
+3.只要里边的promise对象全部完成了,则该方法返回fulfilled状态的promise对象(无论里边的是成功还是失败),此时[[PromiseResult]]中保存的是数组,数组中保存包含每个promise对象两个值的普通对象
+
+
+
+    */
+
+    {
+        const pro1 = new Promise((resolve, reject) => {
+            console.log("请求a~")
+            setTimeout(() => {
+                console.log("a请求成功");
+                // resolve("a数据");
+                reject("GG");
+            }, 100)
+        })
+        const pro2 = new Promise((resolve, reject) => {
+            console.log("请求b~")
+            setTimeout(() => {
+                console.log("b请求成功")
+                resolve("b数据");
+
+            }, 2000)
+        })
+        const pro3 = new Promise((resolve, reject) => {
+            console.log("请求c~")
+            setTimeout(() => {
+                console.log("c请求成功")
+                resolve("c数据");
+            }, 500)
+        })
+
+        const resultProAll = Promise.allSettled([pro1,pro2,pro3]);
+        console.log(resultProAll);
+    }
+</script>

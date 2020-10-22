@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">删除</button>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        //获取元素对象
+        var oBtn = document.getElementById("btn");
+        var oList = document.getElementById("list");
+        
+        //用这种方法得到的是一个NodeList对象,伪数组,自身有forEach方法
+        var oListLis = document.querySelectorAll("#list li");
+        //用这种方法得到的是一个HTMLColletion对象,伪数组,没有forEach方法
+        // var oListLis = oList.getElementsByTagName("#list li");
+
+        //循环点击事件
+        oListLis.forEach(function(item,index){
+            console.log(item);
+            // console.log(this);//oListLis调用的是forEach方法,forEach中的方法是window调用的
+
+            //被点击则改变背景颜色
+            item.onclick = function(){
+                this.style.backgroundColor = "red";
+
+            //给被点击的项添加一个删除属性
+                this.setAttribute("del","true");
+            }
+
+
+        })
+
+        //删除按钮点击事件
+        oBtn.onclick = function(){
+            oListLis.forEach(function(item,index){
+                console.log(item.getAttribute("del"));
+                //判断
+                if(item.getAttribute("del") === "true"){
+                    //删除节点
+                    item.parentNode.removeChild(item);
+                }
+            })
+        }
+    </script>
+</body>
+</html>

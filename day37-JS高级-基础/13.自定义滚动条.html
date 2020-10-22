@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义滚轮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+        }
+
+        #track {
+            width: 30px;
+            height: 100%;
+            background-color: red;
+
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+
+        #con {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #box {
+            width: 100%;
+            height: 30px;
+            background-color: #ccc;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="outer">
+        <div id="con"></div>
+        <div id="track">
+            <div id="box"></div>
+        </div>
+    </div>
+
+    <script>
+        //获取元素
+        var oCon = document.querySelector("#con");
+        var oTrack = document.querySelector("#track");
+        var oBox = document.querySelector("#box");
+
+        //给内容区增加内容
+        var str = "";
+        for (var i = 0; i < 300; i++) {
+            str += i + "<br>"
+        }
+        oCon.innerHTML = str;
+
+        /*滑块的高度自动变化*/
+        //计算比例
+        var scale = document.documentElement.clientHeight / oCon.offsetHeight;
+        //计算滑块高度
+        var heiOfBox = scale * oTrack.offsetHeight;
+        //将高度赋给滑块
+        oBox.style.height = heiOfBox + 'px';
+
+        /*实现滑块的拖拽*/
+        oBox.onmousedown = function (e) {
+            e.preventDefault();
+            //获取鼠标的offsetY
+            var mouseY = e.offsetY;
+            document.onmousemove = function (e) {
+                e.preventDefault();
+                var resOfMouse = e.clientY - mouseY;
+
+                //判断滑块临界值
+                if (resOfMouse < 0) {
+                    resOfMouse = 0;
+                } else if (resOfMouse > oTrack.clientHeight - oBox.offsetHeight) {
+                    resOfMouse = oTrack.clientHeight - oBox.offsetHeight;
+                }
+                //滑块定位
+                oBox.style.top = resOfMouse + 'px';
+
+                //确定文档的定位
+                var resOfCon = resOfMouse / scale;
+                oCon.style.top = -resOfCon + 'px';
+            }
+            //鼠标抬起事件
+            document.onmouseup = function (e) {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+        /*实现滚轮*/
+        function mouseScroll(e) {
+            //如果是火狐
+            if (e.detail) {
+                //获取滑块的当前位置
+                var oBoxMove = oBox.offsetTop;
+                if (e.detail > 0) {
+                    oBoxMove += 10;
+                } else {
+                    oBoxMove -= 10;
+                }
+            }
+            else {
+                //获取滑块的当前位置
+                var oBoxMove = oBox.offsetTop;
+                if (e.wheelDelta > 0) {
+                    oBoxMove -= 10;
+                } else {
+                    oBoxMove += 10;
+                }
+            }
+            //临界值判断
+            if (oBoxMove < 0) {
+                oBoxMove = 0;
+            } else if (oBoxMove > oTrack.clientHeight - oBox.offsetHeight) {
+                oBoxMove = oTrack.clientHeight - oBox.offsetHeight;
+            }
+            //计算文档定位
+            var oConMove = oBoxMove / scale;
+            oBox.style.top = oBoxMove + 'px';
+            oCon.style.top = -oConMove + 'px';
+        }
+        //绑定事件
+        document.onmousewheel = mouseScroll;
+        document.addEventListener("DOMMouseScroll", mouseScroll)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移除事件</title>
+    <style>
+        #con {
+            width:100px;
+            height:100px;
+            background-color:black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <button id="btn">点击</button>
+    <script>
+        var oCon = document.getElementById("con");
+        var oBtn = document.getElementById("btn");
+
+
+        //DOM0级事件的移除
+        // oCon.onclick = function(){
+        //     alert("con");
+        // }
+        // oBtn.onclick = function(){
+        //     oCon.onclick = null;
+        // }
+        //DOM2级事件的移除
+        function fn(){
+            alert("con");
+        }
+        oCon.addEventListener("click",fn)
+        oBtn.onclick = function(){
+            oCon.removeEventListener("click",fn)
+        }
+    </script>
+</body>
+
+</html>

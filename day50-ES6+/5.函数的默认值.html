@@ -1,0 +1,24 @@
+<script>
+    /*
+        参数的默认值
+        在没有传入实参的情况下,给形参一个默认值
+            使用条件表达式来实现
+
+    */
+    {
+        //ES5
+        function fn1(a,b){
+            b = b === undefined ? 3 : b;
+
+            console.log(a + b)
+        }
+        fn1(1);
+    }
+    {
+        //ES6
+function fn2(a,b = 10){
+    console.log(a + b);
+}
+fn2(11,12);
+    }
+</script>

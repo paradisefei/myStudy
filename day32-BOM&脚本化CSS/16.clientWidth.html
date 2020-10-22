@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid black;
+            background-color: red;
+            /* display: none; */
+            /* visibility: hidden; */
+        }
+
+        .con {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">hello</button>
+
+    <div class="box">
+        这是第一句话 <br>
+        这是第二句话 <br>
+        这是第三句话 <br>
+        这是第四句话
+        <!-- <div class="con"></div> -->
+    </div>
+
+    <script>
+
+        var oBtn = document.getElementById("btn");
+        var oBox = document.querySelector(".box");
+        var oCon = document.querySelector(".con");
+
+        oBtn.onclick = function(){
+            console.log(oBox.clientWidth);
+            console.log(oBox.clientHeight);
+        }
+    </script>
+</body>
+</html>

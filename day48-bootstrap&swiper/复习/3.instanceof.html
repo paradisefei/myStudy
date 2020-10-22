@@ -1,0 +1,14 @@
+<script>
+    function instanceOf(a,b){
+        var bPrototype = b.prototype;
+        while(a.__proto__){
+            if(a.__proto__ === bPrototype){
+                return true;
+            }
+            a = a.__proto__;
+        }
+        return false;
+    }
+    console.log(instanceOf(Array,Function))
+    console.log(instanceOf(1,Function))
+</script>

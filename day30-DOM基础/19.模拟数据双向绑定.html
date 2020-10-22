@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea  id="text" ></textarea>
+    <p id="left"></p>
+
+    <script>
+        var oText = document.getElementById("text");
+        var oLeft = document.getElementById("left");
+
+        oText.oninput = function(){
+            oLeft.innerHTML = oText.value;
+        }
+    </script>
+</body>
+</html>

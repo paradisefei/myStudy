@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea  id="text" ></textarea>
+    <!-- <input type="text" id="text"> -->
+    <p >剩余<span id="left">30</span>字</p>
+
+    <script>
+        var oText = document.getElementById("text");
+        var oLeft = document.getElementById("left");
+
+        // oText.onkeydown = function (){
+        //     var textLen = 30 - oText.value.length;
+
+        //     if(textLen < 0){
+        //         oLeft.style.color = "red";
+        //     }
+
+        //     oLeft.innerHTML = textLen;
+        // }
+
+        oText.onchange = function(){
+            var textLen = 30 - oText.value.length;
+
+            if(textLen < 0){
+                oLeft.style.color = "red";
+            }
+
+            oLeft.innerHTML = textLen;
+        }
+    </script>
+</body>
+</html>

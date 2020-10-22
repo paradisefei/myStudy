@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+    <div id="box3" class="box"></div>
+    <div id="box4" class="box"></div>
+
+    <script>
+        function Drag(id) {
+            this.box = document.querySelector("#" + id);
+
+            var that = this;
+            this.box.onmousedown = function (e) {
+                that.mousedown(e);
+            }
+        }
+        Drag.prototype.mousedown = function (e) {
+            this.start = {
+                x: e.offsetX,
+                y: e.offsetY
+            }
+            var that = this;
+            document.onmousemove = function (e) {
+                that.mousemove(e);
+            }
+            document.onmouseup = function () {
+                that.mouseup();
+            }
+        }
+        Drag.prototype.mousemove = function (e) {
+            var end = {
+                x: e.clientX,
+                y: e.clientY
+            }
+
+            //相减得到结果
+            var res = {
+                x: end.x - this.start.x,
+                y: end.y - this.start.y
+            }
+
+            //定位
+            this.box.style.left = res.x + "px";
+            this.box.style.top = res.y + "px";
+        }
+        Drag.prototype.mouseup = function (e) {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+        var box1 = new Drag("box1");
+        var box2 = new Drag("box2");
+        var box3 = new Drag("box3");
+        var box4 = new Drag("box4");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>只能在父盒子中浮动</title>
+        <style>
+            .content {
+                width: 500px;
+                height: 500px;
+                background-color: #e23e57;
+            }
+            .container {
+                width: 300px;
+                /* height: 300px; */
+                border: 1px solid black;
+            }
+            .container .one {
+                width: 50px;
+                height: 50px;
+                background-color: #e84545;
+            }
+            .container .two {
+                width: 50px;
+                height: 50px;
+                background-color: #ffde7d;
+            }
+            .container div {
+                margin-top: 20px;
+                float: left;
+            }
+        </style>
+        <body>
+            <div class="content">
+
+            </div>
+            <div class="container">
+                <div class="one"></div>
+                <div class="two"></div>
+            </div>
+        </body>
+    </head>
+</html>

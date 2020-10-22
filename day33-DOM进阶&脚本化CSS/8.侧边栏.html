@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        #aside {
+            width:80px;
+            height:50px;
+            /* background-color:red; */
+
+            position:fixed;
+            /* right:10px; */
+            right:0px;
+            top:50%;
+            transform:translateY(-50%);
+            cursor:pointer;
+        }
+        #aside span {
+            width:80px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            color:white;
+            background-color:red;
+            /* border-radius:10px; */
+            position:absolute;
+            z-index:1;
+        }
+        #move {
+            width:200px;
+            height:50px;
+            line-height:50px;
+            background-color:skyblue;
+            font-size:30px;
+            text-align:center;
+
+
+            position:absolute;
+            /* 盒子的右边离包含块的右边 */
+            /* right:80px; */
+            left:0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="aside">
+        <span>反馈</span>
+        <div id="move">我的反馈</div>
+    </div>
+    <script>
+        //获取元素对象
+        var oAside = document.getElementById("aside");
+        var oMove = document.getElementById("move");
+        var oMoveTimer = null;
+        console.log(oMove.offsetLeft);
+
+        //鼠标移入事件
+        oAside.onmouseenter = function(){
+            clearInterval(oMoveTimer);
+            //获取当前的位置
+            var startPoint = oMove.offsetLeft;
+            //获取最终要到的位置
+            var endPoint = -200;
+            //走过的步数
+            var startStep = 0;
+            //一共要走的步数
+            var entStep = 40;
+            //每一步要走的
+            var everyStep = (endPoint - startPoint) / (entStep - startStep);
+
+            //间歇调用
+            oMoveTimer = setInterval(function(){
+                startStep++;
+                if(startStep >= entStep){
+                    startStep = 0;
+                    clearInterval(oMoveTimer);
+                }
+                startPoint += everyStep;
+                oMove.style.left = startPoint + "px";
+            },1000 / 60)
+        }
+
+        //鼠标移出事件
+        oAside.onmouseleave = function(){
+            clearInterval(oMoveTimer);
+            //获取当前的位置
+            var startPoint = oMove.offsetLeft;
+            //获取最终要到的位置
+            var endPoint = 0;
+            //走过的步数
+            var startStep = 0;
+            //一共要走的步数
+            var entStep = 40;
+            //每一步要走的
+            var everyStep = (endPoint - startPoint) / (entStep - startStep);
+
+            //间歇调用
+            oMoveTimer = setInterval(function(){
+                startStep++;
+
+                if(startStep >= entStep){
+                    startStep = 0;
+                    clearInterval(oMoveTimer);
+                }
+                startPoint += everyStep;
+                oMove.style.left = startPoint + "px";
+                
+            },1000 / 60)
+        }
+    </script>
+</body>
+</html>

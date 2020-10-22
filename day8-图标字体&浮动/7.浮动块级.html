@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>浮动之后变成块级</title>
+        <style>
+            span {
+                background-color: #30e3ca;
+                float: left;
+                width: 100px;
+                height: 100px;
+                margin-right: 5px;
+            }
+            .container {
+                width: 500px;
+                border: 1px solid #30e3ca;
+            }
+            .container div {
+                width: 100px;
+                height: 100px;
+                float: left;
+                background-color: #3f72af;
+                margin: 20px;
+                padding: 50px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div>这是一个div</div>
+            <div>这也是一个div</div>
+            <div>这还是一个div</div>
+        </div>
+        <!-- <span>这是一个span</span>
+        <span>这也是一个span</span>
+        <span>这还是一个span</span> -->
+        
+    </body>
+</html>

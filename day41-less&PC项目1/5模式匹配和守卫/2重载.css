@@ -1,0 +1,9 @@
+/*根据传递的参数个数来确定使用哪一个混合
+重载时就没有所谓的必选项了
+*/
+.outer {
+  width: 200px;
+  height: 200px;
+  color: #333;
+  line-height: 10px;
+}

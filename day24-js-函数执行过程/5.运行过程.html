@@ -1,0 +1,30 @@
+<script>
+    // //函数调用了两次的话，就会产生两个执行环境
+    // function test(){
+    //     var a = 1;
+    //     var b = 2;
+    // }
+    // test();
+    // test();
+
+
+    // //局部变量只能在自己的作用域中起作用，外部用不了
+    // function test(){
+    //     var a = 1;
+    //     var b = 2;
+    //     console.log(a);
+    // }
+    // test();//1
+    // console.log(a);//a is not defined
+
+
+    //全局变量在整个程序任何地方都可以起作用，任何地方都可以对它进行操作
+
+    var a = 1;
+    function test (){
+        console.log(a);//1
+        a = 'hello';
+    }
+    test();
+    console.log(a);//'hello'
+</script>

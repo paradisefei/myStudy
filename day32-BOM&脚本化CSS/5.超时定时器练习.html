@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 500px;
+            margin: 50px auto;
+        }
+        .title {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: red;
+        }
+        .content {
+            background-color: blue;
+            height: 300px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2 class="title">
+            标题
+        </h2>
+        <div class="content">
+            内容
+        </div>
+    </div>
+    <script>
+        //获取元素对象
+        var oBox = document.querySelector("#box");
+        var oContent = document.querySelector(".content");
+        var timer = null;
+
+        //鼠标移入
+        oBox.onmouseenter = function(){
+            clearTimeout(timer);//取消上一个定时器,第一次移入时timer为null,并没有生成任何句柄。
+        	oContent.style.display = "block";
+        }
+
+        //鼠标移出
+        oBox.onmouseleave = function(){
+            //内容区过1s再消失
+            timer = setTimeout(function(){
+                oContent.style.display = "";
+            },1000)
+            console.log(timer);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<script>
+    //当一个对象能够用另一个对象的属性和方法时，就称为继承
+    var obj1 = {
+        name:"lily",
+        do:function(){
+            console.log("我是obj1中的方法");
+        }
+    }
+    var obj2 = Object.create(obj1);
+    obj2.sex = "nv";
+    console.log(obj2);
+    console.log(obj2.name);
+</script>

@@ -1,0 +1,19 @@
+<script>
+    /* 
+        需求:
+            随机打印0~z之间的字符,生成一个十位数
+        1.随机输出一个36进制的数,输出十次,拼接字符串
+            1.随机生成一个[0,36)的整数,转换成36进制数,就可以得到0~z之间的一个字符
+        A.toString(B)
+            把A转换成B进制的数
+        parseInt(A,B)
+            A是B进制的,把A转成十进制的数
+    */
+    {   let str = "";
+        for(let i = 0; i < 10;i++){
+            str += Math.floor(Math.random() * 36).toString(36);
+        }
+        console.log(str);
+    }
+
+</script>

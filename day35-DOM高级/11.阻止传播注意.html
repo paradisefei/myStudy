@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止传播</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 10px solid #000;
+            margin: 50px;
+        }
+
+        #con {
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="con"></div>
+    </div>
+    <script>
+        var oBox = document.getElementById('box')
+        var oCon = document.getElementById('con')
+        var body = document.body;
+
+        // 使用DOM0
+        oCon.onmousedown = function(){
+            alert("con");
+        }
+        oBox.onclick = function(e){
+            // e.stopPropagation();
+            alert("box");
+        }
+        body.onclick = function(){
+            alert("body");
+        }
+
+    </script>
+</body>
+
+</html>

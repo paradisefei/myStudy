@@ -1,0 +1,77 @@
+<script>
+    // var color = new Array();
+    // console.log(typeof color);
+    //数组的创建
+    //使用关键字new
+    // var color = new Array();
+    // var color = new Array('red','green','blue');
+
+    // //可以省略关键字
+    // var color = Array();
+    // var color = Array('red','green','blue');
+
+    // //通过数组字面量的方式来创建数组(最常用)
+    // var color = [];
+    // var color = ['red','green','blue']
+
+    // var color = new Array(20);
+    // console.log(color);
+    // var color2 = new Array('red');
+    // console.log(color2);
+
+    //数组元素的个数
+    // var color = ['red','green','blue'];
+    // // console.log(color);
+
+    // // console.log(color.length)
+
+    // console.log(color[color.length]);
+
+//查看元素的值
+    // var color = ['red','green','blue','black'];
+    // console.log(color[2]);
+    // console.log(color[20]);
+    // console.log(color[-2]);
+
+    // console.log(color['2']);//'blue'
+    // console.log(color[1 + 2]);//'black'
+
+    // for(var len = 0; len < color.length; len++){
+    //     // console.log(len);
+    //     console.log(color[len]);
+    // }
+
+
+//添加元素
+    var color = ['red','green','blue','black'];
+    // // color[4] = 'white';
+    // // console.log(color);
+    // // color[10] = 'white';
+    // // console.log(color);
+    // color[color.length] = 'white';
+    // color[color.length] = 'yellow';
+    // color[color.length] = 'purple';
+    // console.log(color);
+//在开头处添加
+        // for(var len = color.length - 1; len >= 0; len--){
+        //     color[len+1] = color[len];
+        // }
+        // console.log(color);
+        // color[0] = 'white';
+        // console.log(color);
+//在中间添加
+        // for(var len = color.length - 1;len >= 0;len--){
+        //     if(len === 1){
+        //         break;
+        //     }
+        //     color[len + 1] = color[len];
+        // }
+        // console.log(color);//["red", "green", "blue", "blue", "black"]
+        // color[2] = 'white';
+        // console.log(color);//["red", "green", "white", "blue", "black"]
+
+//删除元素
+            // color.length = 3;
+            color.length--;
+            console.log(color);
+</script>

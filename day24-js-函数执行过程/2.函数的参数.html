@@ -1,0 +1,91 @@
+<script>
+    //没有设置参数
+    // function printTable(){
+    //     var str = '<table border="1" width ="800">';
+    //         for(var i = 1 ; i <= 5 ; i++){
+    //             str += '<tr>'
+    //                 for(var j = 1 ; j <= 5 ; j++){
+    //                     str += '<td>&nbsp;</td>' 
+    //                 }
+    //                 str += '</tr>';
+    //         }
+    //         str += '</table>'
+    //         document.write(str);
+    // }
+    // printTable();
+    
+    //将可能会变的量提出来
+    // function printTable(){
+    //     var r = 5;
+    //     var c = 5
+    //     var str = '<table border="1" width ="800">';
+    //         for(var i = 1 ; i <= r ; i++){
+    //             str += '<tr>'
+    //                 for(var j = 1 ; j <= c ; j++){
+    //                     str += '<td>&nbsp;</td>' 
+    //                 }
+    //                 str += '</tr>';
+    //         }
+    //         str += '</table>'
+    //         document.write(str);
+    // }
+    // printTable();
+
+
+    //将可能会变的量作为参数
+    // function printTable(r,c){
+    //     var str = '<table border="1" width ="800">';
+    //         for(var i = 1 ; i <= r ; i++){
+    //             str += '<tr>'
+    //                 for(var j = 1 ; j <= c ; j++){
+    //                     str += '<td>&nbsp;</td>' 
+    //                 }
+    //                 str += '</tr>';
+    //         }
+    //         str += '</table>'
+    //         document.write(str);
+    // }
+    // printTable(1,2);
+    // printTable(3,4);
+    // printTable(20,10);
+
+    // 函数的length表示函数有多少个形参
+    // console.log(printTable.length);
+
+//形参和实参的个数可以不相等
+    //形参个数 > 实参个数//多出来的形参自动赋值为undefined
+    // function printTable(r,c,z,b){
+    //     console.log(arguments);
+    //     var str = '<table border="1" width ="800">';
+    //         for(var i = 1 ; i <= r ; i++){
+    //             str += '<tr>'
+    //                 for(var j = 1 ; j <= c ; j++){
+    //                     str += '<td>&nbsp;</td>' 
+    //                 }
+    //                 str += '</tr>';
+    //         }
+    //         str += '</table>'
+    //         document.write(str);
+    //         // console.log(arguments[3]);
+    // }
+    // // console.log(arguments);
+    // printTable(3,4)
+    // //实参个数 > 形参个数//多出来的实参可以用arguments对象来获得
+    // printTable(2,3,4,5,6,7)
+
+    // function test(){
+    //     console.log(arguments.length);//3
+    //     console.log(arguments.callee);
+    // }
+    // test(1,'hello','你好');
+
+    //定义一个函数，计算传入的值的和，但是不知道具体传入多少个值
+    function sum(){
+        var sum = 0;
+        for(var i = 0;i < arguments.length;i++){
+            sum += arguments[i];
+        }
+        console.log(sum);
+    }
+    sum(1,2,3,4,5,6,7,8,9,10);
+</script>

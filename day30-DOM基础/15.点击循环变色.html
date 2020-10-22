@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        var oBox = document.getElementById("box");
+
+        var flag = false;//false为红色
+        oBox.onclick = function(){
+            
+            if(!flag) {
+                oBox.style.backgroundColor = "yellow";
+
+            }
+            else {
+                oBox.style.backgroundColor = "red";
+            }
+            flag = !flag;
+        }
+    </script>
+</body>
+</html>

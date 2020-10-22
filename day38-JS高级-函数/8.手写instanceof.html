@@ -1,0 +1,109 @@
+<script>
+    // function instanceOf(A,B){
+    //     //首先获取B的原型对象
+    //     var BPrototype = B.prototype;
+    //     while(A.__proto__){
+    //         if(A.__proto__ === BPrototype){
+    //             return true;
+    //         }
+    //         A = A.__proto__;
+    //     }
+
+    //     return false;
+    // }
+    // 一
+    // function instanceOf(a,b){
+    //     //获取b的原型对象
+    //     var bPrototype = b.prototype;
+    //     //循环
+    //     while(a.__proto__){
+    //         if(a.__proto__ === bPrototype){
+    //             return true;
+    //         }
+    //         a = a.__proto__;
+    //     }
+    //     return false;
+    // }
+    // 二
+    // function instanceOf(a,b){
+    //     //先获取b的原型对象
+    //     var bPrototype = b.prototype;
+    //     //循环去寻找原型链上是否有和b的原型对象重合的
+    //     while(a.__proto__){
+    //         if(a.__proto__ === bPrototype){
+    //             return true;
+    //         }
+    //         a = a.__proto__;
+    //     }
+    //     return false;
+    // }
+    // 三
+    // function instanceOf(a,b){
+    //     var bPrototype = b.prototype;
+    //     while(a.__proto__){
+    //         if(a.__proto__ === bPrototype){
+    //             return true;
+    //         }
+    //         a = a.__proto__;
+    //     }
+    //     return false;
+    // }
+    // 四
+    // function instanceOf(a,b){
+    //     var bPrototype = b.prototype;
+    //     while(a.__proto__){
+    //         if(a.__proto__ === bPrototype){
+    //             return true;
+    //         }
+    //         a = a.__proto__;
+    //     }
+    //     return false;
+    // }
+    // 五
+    // function instanceOf(a,b){
+    //     var bPrototype = b.prototype;
+    //     while(a.__proto__){
+    //         if(a.__proto__ === bPrototype){
+    //             return true;
+    //         }
+    //         a = a.__proto__;
+    //     }
+    //     return false;
+    // }
+    // 六
+    // function instanceOf(a,b){
+    //     var bPrototype = b.prototype;
+    //     while(a.__proto__){
+    //         if(a.__proto__ === bPrototype){
+    //             return true;
+    //         }
+    //         a = a.__proto__;
+    //     }
+    //     return false;
+    // }
+    // 七
+    // function instanceOf(a,b){
+    //     var bPrototype = b.prototype;
+    //     while(a.__proto__){
+    //         if(a.__proto__ === bPrototype){
+    //             return true;
+    //         }
+    //         a = a.__proto__;
+    //     }
+    //     return false
+
+    // }
+    // console.log(instanceOf(Object,Array));
+    // 八
+    function instanceOf(a,b){
+        var bPrototype = b.prototype;
+        while(a.__proto__){
+            if(a.__proto__ === bPrototype){
+                return true;
+            }
+            a = a.__proto__;
+        }   
+        return false;
+    }
+    console.log(instanceOf(Object,Function));
+</script>

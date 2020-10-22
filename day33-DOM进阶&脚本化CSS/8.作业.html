@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        .box {
+            width: 606px;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+
+        #title {
+            display: flex;
+        }
+
+        #title>h2 {
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: red;
+        }
+
+        #content {
+            height: 300px;
+            overflow: auto;
+        }
+
+        #content ul {
+            height: 900px;
+            /* background-color:yellow; */
+        }
+
+        #content ul>li {
+            height: 300px;
+        }
+
+        #content ul>li:nth-of-type(1) {
+            background-color: yellow;
+        }
+
+        #content ul>li:nth-of-type(2) {
+            background-color: green;
+        }
+
+        #content ul>li:nth-of-type(3) {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="title">
+            <h2 class="active">标题一</h2>
+            <h2>标题二</h2>
+            <h2>标题三</h2>
+        </div>
+        <div id="content">
+            <ul id="list">
+                <li>内容一</li>
+                <li>内容二</li>
+                <li>内容三</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        //获取元素对象
+        var oTitle = document.getElementById("title");
+        var oTitleH2s = oTitle.getElementsByTagName("h2");
+        var oList = document.getElementById("list");
+        var oListLis = oList.getElementsByTagName("li");
+        var oContent = document.getElementById("content");
+        var oConTimer = null;
+
+        //循环点击事件
+        for (var i = 0; i < oTitleH2s.length; i++) {
+            oTitleH2s[i].index = i;
+            oTitleH2s[i].onclick = function () {
+                // console.log(oListLis[this.index].offsetHeight);
+                clearInterval(oConTimer);
+                for (var i = 0; i < oTitleH2s.length; i++) {
+                    oTitleH2s[i].className = "";
+                }
+                this.className = "active";
+
+                //获取起始位置
+                var startPoint = oContent.scrollTop;
+                //获取结束位置
+                    //不定高
+                    var liHeight = oListLis[this.index].offsetHeight;
+                var endPoint = this.index * liHeight;
+                //步数
+                // var feet = (endPoint - startPoint) / 30;
+                //走过的步数
+                var startStep = 0;
+                //总步数//用总步数来控制速度
+                // var endStep = 30;
+                var endStep = 60;
+                //每一步走的 = 总长度/总步数//走到最后一步就一定是走到终点的
+                var everyStep = (endPoint - startPoint) / (endStep - startStep);
+                // var everyStep = (endPoint - startPoint) / 100;
+                // if(endPoint - startPoint > 0){
+                //     everyStep = 10;
+                // }
+                // else if(endPoint - startPoint < 0){
+                //     everyStep = -10;
+                // }
+
+                //间歇调用
+                oConTimer = setInterval(function () {
+                    //改变滚轮位置
+                    startStep++;
+                    
+                    //用步数作为条件来判断什么时候清除计时器
+                    if (startStep >= endStep) {
+                        startStep = 0;
+                        clearInterval(oConTimer);
+                    }
+                    //用位置像素作为条件来判断什么时候清除计时器
+                    //设置滚轮位置
+                    startPoint += everyStep;
+                    oContent.scrollTo(0, startPoint);
+                    // oContent.scrollTop = startPoint;
+                }, 1000 / 60)
+
+            }
+        }
+    </script>
+</body>
+
+</html>

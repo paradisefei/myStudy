@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid black;
+            background-color: red;
+            /* display: none; */
+            visibility: hidden;
+        }
+
+        .con {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">hello</button>
+
+    <div class="box">
+        这是第一句话 <br>
+        这是第二句话 <br>
+        这是第三句话 <br>
+        这是第四句话
+        <!-- <div class="con"></div> -->
+    </div>
+
+    <script>
+
+        var oBtn = document.getElementById("btn");
+        var oBox = document.querySelector(".box");
+        var oCon = document.querySelector(".con");
+
+        //offsetWidth、offsetHeight获取到的元素宽高包括：content+padding+border
+        //无论有没有设置宽高，offsetWidth、offsetHeight都能获取到这个元素真实渲染的宽高
+        // oBtn.onclick = function(){
+        //     console.log(oBox.offsetWidth);
+        //     console.log(oBox.offsetHeight);
+        // }
+
+        //当元素display:none时，是将元素从DOM树中删除，其中的子元素也是不存在的，这样offsetWidth和offsetHeight是不能获得宽高的，返回的值为0
+        // oBtn.onclick = function(){
+        //     console.log(oBox.offsetWidth);//0
+        //     console.log(oBox.offsetHeight);//0
+        // }
+
+        //当元素visibility:hidden时，offsetWidth和offsetHeight可以获得其宽高。子元素是因为继承了这个属性和值才没显示的，如果给子元素visibility:visible;时子元素还是能正常显示。
+        oBtn.onclick = function(){
+            console.log(oBox.offsetWidth);
+            console.log(oBox.offsetHeight);
+        }
+    </script>
+</body>
+</html>

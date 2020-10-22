@@ -1,0 +1,49 @@
+<script>
+    /*
+        then
+        1.promise实例对象上的方法
+        2.功能
+            返回一个promise对象
+        3.参数pro.then(onFulfilled[, onRejected])
+            onFulfilled
+                功能
+                    当pro为fulfilled状态时调用的函数
+                参数
+                    可选
+                    为此时pro对象的result值
+                返回值
+    */
+    {
+        const pro1 = new Promise((resolve, reject) => {
+            console.log("准备请求a数据")
+            setTimeout(() => {
+                console.log("已经请求完成")
+                //假设现在请求了数据为data
+                const data = {
+                    name: "xiaowang"
+                }
+                //resolve 和 reject两个同时书写，以第一个为准
+                reject("请求出错信息~~~~~");
+                // resolve(data);
+                //无论返回成功还是失败，后边的代码都会继续执行完成
+                console.log("最后的代码")
+            }, 1000)
+        });
+        /*
+        两个都写,如果为成功时,则调用第一个函数;如果失败时,就调用第二个函数
+        */
+        pro1.then(
+            //当pro为成功状态时
+            () => {
+                console.log('success');
+            },
+            //当pro为失败状态时
+            (err) => {
+                console.log(err);
+            })
+        /*
+        更多时候then只写一个参数,处理fulfilled状态,rejected状态交给catch处理
+        */
+        console.log(pro1)
+    }
+</script>

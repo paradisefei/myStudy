@@ -1,0 +1,32 @@
+<script>
+    function Car(color, speed) {
+        this.color = color;
+        this.speed = speed;
+    }
+    Car.prototype.run = function () {
+        console.log("running");
+    }
+
+//传入一个对象
+function writeNew(Obj) {
+    //1.开辟一个空间
+    var obj = {};
+
+    //2.先设置原型链
+    obj.__proto__ = Obj.prototype;
+
+    //3.原本第三步是设置this的指向,由于返回的是创建的对象或执行构造函数返回的对象,所以这里省略了
+    //4.执行函数代码
+    //这里是把参数写入到创建的对象obj中
+    var res = Obj.call(obj, Array.prototype.slice(arguments, 1));
+
+    //考虑构造函数的返回值
+    var isObj = typeof res === "object" && typeof res != null;
+    var isFun = typeof res === "function";
+
+    return (iObj || isFun) ? res : obj;
+}
+    var cat1 = new Car;
+    var cat = writeNew(Car);
+    console.log(cat)
+</script>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义滚轮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 70px;
+            height: 70px;
+            border-radius:50%;
+            background-color: red;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        //获取元素对象
+        var oBox = document.querySelector("#box");
+
+        oBox.onmousedown = function (e) {
+            e.preventDefault();
+
+            var start = {
+                x: e.offsetX,
+                y: e.offsetY
+            }
+
+            document.onmousemove = function (e) {
+                e.preventDefault();
+                var end = {
+                    x: e.clientX,
+                    y: e.clientY
+                }
+
+                //相减得到结果
+                var res = {
+                    x: end.x - start.x,
+                    y: end.y - start.y
+                }
+                
+                //定位
+                oBox.style.left = res.x + "px";
+                oBox.style.top = res.y + "px";
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

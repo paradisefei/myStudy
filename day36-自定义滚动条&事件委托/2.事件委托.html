@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oList = document.getElementById("list");
+        var oListLis = oList.getElementsByTagName("li");
+
+        // Array.from(oListLis).forEach(function (item, index) {
+        //     item.onclick = function () {
+        //         item.style.backgroundColor = "red";
+        //     }
+        // })
+        // //按钮点击事件添加li
+        // oBtn.onclick = function () {
+        //     var newLi = document.createElement("li");
+        //     newLi.innerHTML = "我是新的li";
+
+        //     oList.appendChild(newLi);
+
+        //     Array.from(oListLis).forEach(function (item, index) {
+        //         item.onclick = function () {
+        //             item.style.backgroundColor = "red";
+        //         }
+        //     })
+        // }
+
+        /*
+            事件委托：祖辈绑定事件
+                事件的冒泡导致祖辈的同类型事件会被触发,子辈不需要绑定事件,但并不是说点击
+                li时就不会冒泡,li没有绑定点击事件冒泡依然存在
+        */
+        // 点击li背景颜色变红,但并不是li的事件,而是其父辈的事件
+        //要让每一个li都有点击事件,那就给oList绑定(这样无论点击哪一个li,oList都会触发)
+        oList.onclick = function (e) {
+            if (e.target.nodeName === "LI") {
+                e.target.style.backgroundColor = 'red';
+            }
+        }
+        oBtn.onclick = function () {
+            var newLi = document.createElement("li");
+            newLi.innerHTML = "我是新的li";
+
+            oList.appendChild(newLi);
+        }
+    </script>
+</body>
+
+</html>

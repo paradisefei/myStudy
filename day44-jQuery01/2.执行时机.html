@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+
+</head>
+
+<body>
+    <div>box1</div>
+    <div>box2</div>
+    <div>box3</div>
+    <div>box4</div>
+    <script>
+        //ready函数
+        // $(document).ready(function(){
+        //     console.log("待所有DOM节点加载完之后执行");
+        // })
+        $(function(){
+            //获取到元素对象,这里获取到的是类数组
+            //给元素绑定点击事件,调用原型对象上的方法,直接把事件函数传入,当事件发生时就会执行
+            $("div").click(function(){
+                alert("弹出");
+            })
+        })
+    </script>
+</body>
+
+</html>

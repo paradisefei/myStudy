@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="dan">蛋黄的长裙</p>
+        <p>但我记得你的叮嘱</p>
+        <p class="dan">蓬松的头发</p>
+    </div>
+    <script>
+        //获取单个元素（无论选择器选中是多个还是单个，都是获取的是第一个）
+        var oBox = document.querySelector("#box");
+        console.log(oBox);
+
+        //获取的是一个集合（哪怕选择器选择的只是一个元素 也是一个集合）
+        var oDan = document.querySelectorAll("#box > p.dan");
+        console.log(oDan);
+
+        //（得到NodeList对象，NodeList对象自身是伪数组，但是他的原型对象上有一个forEach的方法可以遍历）
+        oDan.forEach(function (key,index,arr){
+            console.log(key);
+        })
+    </script>
+</body>
+</html>

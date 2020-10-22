@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            position:fixed;
+        }
+        #con {
+            height:4000px;
+            width:4000px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">
+        点我
+    </button>
+    <div id="con">
+
+    </div>
+
+    <script>
+        //点击按钮获取文档的高度
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function(){
+            //获取到的是文档的高度
+            console.log(document.documentElement.offsetHeight);
+            //获取到的是浏览器显示内容的区域的高度，不包括横向滚动条的高度
+            console.log(document.documentElement.clientHeight);
+            //获取到的是浏览器显示内容的区域的宽度，不包括纵向滚动条的宽度
+            console.log(document.documentElement.clientWidth);
+            console.log(document.documentElement.offsetWidth);
+        }
+    </script>
+</body>
+</html>

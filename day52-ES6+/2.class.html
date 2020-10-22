@@ -1,0 +1,60 @@
+<script>
+    /*
+        class的继承extends
+            1.可以看作是一个语法糖
+            2.东西都是ES5中有的东西,只是改变了形式,使用一种更简易的形式
+            3.原理:原型链+构造函数
+                使用了extends关键字就不需要像原来一样改变原型链等操作
+            - JS中没有类的概念,这里的类其实就是一个构造方法
+        继承
+            - 一个类可以使用另一个类的属性和方法,则为继承
+            - 继承并不是一个extends就实现的,但extends只是一个表示继承的关键字,在类中没有部署任何代码时,两个类完全一样
+            - 子类必须在constructor中调用super方法
+            - 因为子类自己的this对象
+    */
+    {
+        // 一个Person类
+        class Person{
+            //constructor构造方法
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            //原型对象上扩展的属性或方法
+            eat(){
+                console.log("我是类中扩展在原型对象上的公有方法的eat");
+            }
+            sex = "男";
+
+            // 对象上扩展的静态方法
+            static say = function(){
+                console.log("我是直接扩展在对象上的静态方法say");
+            }
+        }
+        Person.prototype.do = function(){
+            console.log("我是类外扩展在原型对象上的公有方法的do");
+        }
+        console.dir(Person);
+        // 需要一个Student类,该类是继承自Person类的
+        /*
+            super
+            1.调用父类的构造函数,新建父类的this对象
+            2.实例化子类时,用子类的构造函数修改this
+        */
+        class Student extends Person {
+            constructor(sex,name,age){
+                super(name,age);//调用父对象的构造函数
+                this.sex = sex;
+            }
+            study(){
+                console.log("我是Student类中扩展在原型对象上的公有方法study");
+            }
+        }
+        /*
+        Student实例化对象的__proto__指向Person
+        */
+        const stu = new Student("男","张三",33);
+        console.log(stu);
+    }
+</script>

@@ -1,0 +1,37 @@
+{
+  "id": "1979991",
+  "name": "0721",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "538880",
+      "name": "腾讯",
+      "font_class": "tengxun",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "5203226",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "12687176",
+      "name": "购物车",
+      "font_class": "icon-",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "15307312",
+      "name": "百度",
+      "font_class": "baidu",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    }
+  ]
+}

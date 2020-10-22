@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        a {
+            padding: 0;
+            margin: 0;
+        }
+        #menu {
+            /* border: 1px solid black; */
+            text-align: center;
+        }
+        #menu > li {
+            display: inline-block;
+            margin: 0 100px;
+
+            position: relative;
+        }
+        #menu > li > ul {
+            border: 1px solid hotpink;
+            width: 200px;
+            position: absolute;
+            left: -67px;
+
+            height: 0;
+            overflow: hidden;
+        }
+        #menu > li > ul > li {
+            height: 30px;
+            line-height: 30px;
+            position: relative;
+            background-color: rgb(211, 214, 8);
+        }
+        #menu > li > ul > li > a{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(4, 200, 235);
+            left: 0;
+            opacity: 0;
+
+            transition-property: left,opacity;
+            transition-duration: 2s;
+        }
+        #menu > li > ul > li > a.odd {
+            left: -200px;
+        }
+        #menu > li > ul > li > a.even {
+            left: 200px;
+        }
+        #menu > li:hover > ul {
+            height: auto;
+        }
+        #menu > li:hover > ul > li > a {
+            left: 0;
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>
+            <a href="#">一级菜单1</a>
+            <ul>
+                <li>
+                    <a href="#" class="odd">二级菜单1</a>
+                </li>
+                <li>
+                    <a href="#" class="even">二级菜单2</a>
+                </li>
+                <li>
+                    <a href="#" class="odd">二级菜单3</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">一级菜单2</a>
+            <ul>
+                <li>
+                    <a href="#" class="odd">二级菜单1</a>
+                </li>
+                <li>
+                    <a href="#" class="even">二级菜单2</a>
+                </li>
+                <li>
+                    <a href="#" class="odd">二级菜单3</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">一级菜单3</a>
+            <ul>
+                <li>
+                    <a href="#" class="odd">二级菜单1</a>
+                </li>
+                <li>
+                    <a href="#" class="even">二级菜单2</a>
+                </li>
+                <li>
+                    <a href="#" class="odd">二级菜单3</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<script>
+    /* 
+        symbol
+        1.一种新的基本数据类型,表示独一无二
+        2.使用一个像类的函数Symbol()来创建symbol数据类型实例
+
+        Symbol([des])
+        功能:
+            创建symbol数据类型的实例
+        参数
+            des:可选,字符串类型,对创建出来的symbol数据的描述,可用于调试但不是访问symbol本身
+
+        特性
+        1.symbol 实例可以被赋值到一个左值变量，还可以通过标识符检查类型
+
+        用途
+        1.变量的属性名,保证不会与其它属性名产生冲突
+
+        1.Symbol()创建出来的是一个独一无二的symbol数据
+        2.用作对像的属性名的话绝对不可能与其它任何值产生冲突
+        3.这个独一无二的数据存入变量中的话,这个变量就变成了独一无二的了
+        4.对象的属性名是Symbol()形式的,并不是那个变量,变量只是为了方便对该属性的值进行操作,这种形式只是保证属性名是独一无二的
+     */
+
+    {
+        /* 
+        场景
+        1.对象中的属性后续不能被覆盖
+         */
+
+        const obj = {
+            name: "张三",
+            age: 23,
+            sex: "男",
+            do: "eat",
+            think: "pad"
+        }
+
+        //如果再一次拿出对象的属性来赋值的话,能赋值成功,原本的值就改变了
+        // obj.name = "李四";
+        // console.log(obj);
+
+        //为了让值不能被覆盖,可以使用Symbol类型数据,每次创建的Symbol类型的值都使独一无二的
+
+        /* 创建 */
+        //   const sy1 = Symbol("sy1");
+        //   const sy2 = Symbol("sy2");
+        //   console.log(sy1);
+        //   console.log(sy2);
+        //   console.log(typeof sy1);
+        //   console.log(typeof sy2);
+        //   console.log(sy2 === sy1);
+
+
+        /* 
+        给对象扩展一个不能被覆盖的属性
+         */
+        // obj[Symbol("haha")] = "haha";
+        // console.log(obj);
+        /* 
+        获取这个永远都不能被覆盖的属性
+         */
+        const sy1 = Symbol("sy1");//Symbol("sy1")创建了一个独一无二的值,此时sy1就是独一无二的
+        const sy2 = Symbol("sy2");
+        obj[sy1] = 'Hello';
+        obj[Symbol()] = 'World';
+        console.log(obj);
+        // console.log(obj[sy1])
+
+
+    }
+    {
+        /*
+        Symbol的特点
+        1.Symbol()方法中传入的参数没有意义,只是为了方便识别
+        2.Symbol()不能用new调用,而是直接使用
+        3.symbol数据不能转数字
+        4.要用变量保存这个Symbol()创建出来的数据,否则以后拿不到
+        5.symbol值默认情况下不能被遍历
+        */
+
+        const sy1 = Symbol();
+        console.log(String(sy1)); "Symbol()"
+        console.log(Boolean(sy1));//true
+        // console.log(Number(sy1));//报错
+    }
+    {
+        //遍历
+
+        const obj = {
+            name: "张三",
+            age: 23,
+            sex: "男",
+            do: "eat",
+            think: "pad"
+        }
+        for (let key in obj) {
+            console.log(key)
+        }
+
+        const sy1 = Symbol("sy1");
+        const sy2 = Symbol("sy2");
+        obj[sy1] = 'Hello';
+        obj[sy2] = 'World';
+        console.log(obj[sy2]);
+        const symbolArr = Object.getOwnPropertySymbols(obj);
+        console.log(obj);
+        console.log(symbolArr);
+        console.log(obj[symbolArr[0]]);
+        obj[symbolArr[0]] = 'haha';
+        console.log(obj[symbolArr[0]]);
+    }
+</script>

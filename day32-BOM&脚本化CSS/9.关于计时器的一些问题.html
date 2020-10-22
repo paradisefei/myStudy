@@ -1,0 +1,37 @@
+<script>
+    // setInterval(function(){
+    //     console.log(this);//window
+    // },1000)
+
+    // document.onclick = function(){
+    //         console.log(this);//document
+    //         setInterval(function(){
+    //         console.log(this);//window
+    //     },1000)
+    // }
+
+    // var obj = {
+    //     name:"lily",
+    //     fn:function (){
+    //             console.log(this);//obj
+    //             setInterval(function(){
+    //             console.log(this);//window
+    //         },1000)
+    //     }
+    // }
+    // obj.fn();
+
+    for(var i = 0;i < 5; i++){
+        setTimeout(function (){
+            console.log(i);//5 5 5 5 5
+        },1000)
+    }
+
+    for(var i = 0;i < 5; i++){
+        (function(a){
+            setTimeout(function (){
+                console.log(a);//0 1 2 3 4
+            },1000)
+        })(i)
+    }
+</script>

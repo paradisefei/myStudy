@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>宠物列表</title>
+        <style>
+            .container {
+                width: 260px;
+                background-image: url(./imgs/bg.gif);
+                border: 1px solid transparent;
+
+            }
+            h3 {
+                width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+                border-left: 5px solid #c9e143;
+                text-indent: 5px;
+                color: #fff;
+            }
+            ul {
+                width: 240px;
+                padding: 0;
+                background-color: #fff;
+                margin: 0 auto 10px;
+                list-style-type: none;
+              
+               
+            }
+            ul li {
+                width: 220px;
+                height: 30px;
+                line-height: 30px;
+                margin: 0 auto;
+                font-size: 12px;
+                list-style-image: url(./imgs/tb.gif);
+                border-bottom: 1px dashed #7ba5b6; 
+                list-style-position: inside;
+            }
+            ul li.clearbottom {
+                border-bottom: 0;
+            }
+            ul li a {
+                text-decoration: none;
+                color: #0066cc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h3>这是一个列表</h3>
+            <ul>
+                <li>
+                    <a href="#">这是列表的第1项</a>
+                </li>
+                <li>
+                    <a href="#">这是列表的第2项</a>
+                </li>
+                <li>
+                    <a href="#">这是列表的第3项</a>
+                </li>
+                <li>
+                    <a href="#">这是列表的第4项</a>
+                </li>
+                <li class="clearbottom">
+                    <a href="#">这是列表的第1项</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

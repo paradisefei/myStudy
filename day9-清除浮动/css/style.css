@@ -1,0 +1,146 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+#link-menu {
+    height: 30px;
+    background-color: #eaeaea;
+    min-width: 1200px;
+}
+#link-menu .link {
+    width: 1200px;
+    margin: 0 auto;
+}
+#link-menu .welcome {
+    line-height: 30px;
+    font-size: 12px;
+     float: left;
+}
+#link-menu .welcome a {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-right: 1px solid #b3aeae;
+    text-decoration: none;
+    color: #333333;
+}
+#link-menu .welcome a:hover {
+    color: #e1255e;
+}
+#link-menu .welcome a.clear {
+    border-right: 0;
+}
+#link-menu .link-menu {
+    float: right;
+}
+#link-menu .link-menu ul {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    list-style-type: none;
+}
+#link-menu .link-menu ul li {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+#link-menu .link-menu ul li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    border-right: 1px solid #b3aeae;
+    color: #333333;
+    text-decoration: none;
+    
+}
+#link-menu .link-menu ul li a:hover {
+    color: #e1255e;
+}
+
+#link-menu .link-menu ul li a.clear {
+    border: 0;
+}
+
+#logo {
+    width: 1200px;
+    margin: 0 auto;
+    height: 110px;
+    font-size: 0;
+    /* background-color: #a6e3e9; */
+}
+#logo .logo {
+    width: 250px;
+    text-align: center;
+    float: left;
+    line-height: 110px;
+}
+#logo .logo img {
+    vertical-align: middle;
+}
+#logo .search {
+    font-size: 0;
+    float: right;
+    line-height: 110px;
+    
+}
+#logo .search input {
+    width: 490px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 2px solid #ea4a36;
+    outline: none;
+    vertical-align: middle;
+    border-right: 0;
+}
+#logo .search button {
+    height: 32px;
+    width: 68px;
+    cursor: pointer;
+    background-color: #ea4a36;
+    color: white;
+    font-size: 12px;
+    border: 0;
+    vertical-align: middle;
+}
+#menu {
+    border-bottom: 2px solid #e1251b;
+}
+#menu .menu {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+#menu ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 46px;
+}
+#menu ul li {
+    padding: 0;
+    margin:0;
+    float: left;
+    /* width: 92px;  */
+    line-height: 46px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+#menu ul li.first-li {
+   width: 210px;
+   background-color: #e1251b;
+   color: white;
+   font-weight: bolder;
+   font-size: 14px;
+   padding: 0;
+}
+#menu ul li a{
+    text-decoration: none;
+    color: #333333;
+
+ }
+ #menu ul li a:hover{
+    color: #e1251b;
+
+ }

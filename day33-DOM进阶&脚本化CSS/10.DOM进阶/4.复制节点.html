@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        //获取元素
+        var oBtn = document.getElementById("btn");
+        // var oList = document.getElementById("list");
+        var oList = document.querySelector("#list");
+        var oListLis = document.querySelectorAll("#list > li")
+
+        //点击按钮复制第2个节点
+        oBtn.onclick = function(){
+            //默认情况下为浅复制，只复制当前节点，完全不会涉及到节点中的子节点
+            // var newoListLis2 = oListLis[1].cloneNode();
+            // console.log(newoListLis2);
+
+            //当参数为true时为深复制，会复制当前节点及其所有内部节点
+            var newoListLis2 = oListLis[1].cloneNode(true);
+            console.log(newoListLis2);
+            //将新节点插入到列表中
+            oList.appendChild(newoListLis2);
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 0 20px;
+  height: 60px;
+  min-width: 768px;
+  background-color: lightgreen;
+  display: flex;
+  align-items: center;
+}
+header .left {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+header .left img {
+  height: 40px;
+  text-align: center;
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  header .left img:nth-child(3) {
+    display: block;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  header .left img:nth-child(2) {
+    display: block;
+  }
+}
+@media screen and (max-width: 992px) {
+  header .left img:nth-child(1) {
+    display: block;
+  }
+}
+header form {
+  width: 50%;
+  display: flex;
+}
+header form input {
+  width: 80%;
+  height: 40px;
+  box-sizing: border-box;
+}
+header form button {
+  width: 20%;
+  height: 40px;
+}
+header .right {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+header .right a {
+  text-decoration: none;
+  color: #333;
+}
+header .right a:hover {
+  color: red;
+}
+@media screen and (min-width: 992px) {
+  header .right span {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  header .right a {
+    display: none;
+  }
+  header .right span {
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+  header .right span:before {
+    content: "";
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    top: -10px;
+  }
+  header .right span:after {
+    content: "";
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+  }
+}

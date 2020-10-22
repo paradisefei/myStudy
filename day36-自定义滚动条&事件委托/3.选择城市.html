@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #con {
+            width: 300px;
+            margin: 20px auto;
+            /* background-color:red; */
+        }
+
+        .title {
+            height: 30px;
+        }
+
+        .choose {
+            height: 50px;
+            background-color: #ccc;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .city {
+            background-color: red;
+            height: 100px;
+
+            display: none;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .city li {
+            width: 80px;
+            text-align: center;
+            /* background-color:#83f; */
+            cursor: pointer;
+            /* align-self:center */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="con">
+        <h2 class="title">北京</h2>
+        <div class="choose" id="choose">请选择城市</div>
+        <ul class="city" id="city">
+            <li>北京</li>
+            <li>上海</li>
+            <li>广州</li>
+            <li>深圳</li>
+            <li>南昌</li>
+            <li>郑州</li>
+            <li>南京</li>
+            <li>杭州</li>
+            <li>苏州</li>
+        </ul>
+    </div>
+    <script>
+        //获取元素对象
+        var oTitle = document.querySelector(".title");
+        var oChoose = document.querySelector(".choose");
+        var oCity = document.querySelector(".city");
+
+        //事件委托
+        document.onclick = function(e){
+            //如果点击的是选项框的话,内容框显示,并结束此次事件,再点击的话就是下一次事件了
+            if(e.target.id === "choose"){
+                oCity.style.display = "flex";
+                return ;
+            }
+            //如果点击到某个城市的话,就把这个城市写到头部,结束此次事件
+            if(e.target.nodeName === "LI" && e.target.parentNode.getAttribute("id") === "city"){
+                oTitle.innerHTML = e.target.innerHTML;
+                // oCity.style.display = "none";
+                return;
+            }
+            //如果上面两个条件都没有满足的话,也就是说既没有点击在选项框中,也没有点击某个城市,点的是其它的位置,那么就把内容框隐藏
+            oCity.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

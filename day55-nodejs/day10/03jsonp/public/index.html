@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">发送</button>
+    <script>
+        /* 
+        跨域只允许Ajax请求跨域
+        浏览器只在Ajax强求时才设置了block，才有跨域的问题
+            jsonp
+                1.使用vscode服务器打开index.html
+                2.定义全局函数
+                3.index.html页面中嵌入script请求服务器
+                    script中的src可以实现跨域请求
+                    src的请求方式是get请求
+                4.将script嵌入页面中
+                    打开页面就会加载script标签
+                5.服务器返回一个带数据的函数
+                6.最终script中就是执行这个函数
+        */
+        const oBtn = document.getElementById("btn");
+        oBtn.onclick = function () {
+            window.fn = function(data){
+                console.log(data)
+            }
+            const oBody = document.getElementsByTagName("body")[0];
+            //创建script标签
+            const script = document.createElement("script");
+            //script的src属性
+            script.src = `http://127.0.0.1:3000/use?name=lily&callback=fn&_t` + Date.now();
+            //将标签插入页面中
+            oBody.appendChild(script);
+        }
+    </script>
+</body>
+
+</html>

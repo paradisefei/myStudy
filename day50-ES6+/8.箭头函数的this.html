@@ -1,0 +1,47 @@
+<script>
+    /* 
+        箭头函数自己没有this,箭头函数中的this是函数在定义时候它父级作用域的this,在定义的时候就已经确定了
+     */
+
+    {
+        const fn1 = () => console.log(this);
+        fn1();
+
+        document.onclick = fn1;
+
+        const obj = {
+            name:"lily",
+            do:fn1
+        }
+        obj.do();
+
+        const obj2 = {
+            name:"lily",
+            do:() => {
+                fn1();
+            }
+        }
+        obj2.do();
+
+        const obj3 = {
+            name:"lily",
+            do:() => {
+                const fn2 = () => {
+                    console.log(this);
+                }
+                fn2()
+            }
+        }
+        obj3.do()
+        const obj4 = {
+            name:"lily",
+            do:function(){
+                const fn2 = () => {
+                    console.log(this);
+                }
+                fn2()
+            }
+        }
+        obj4.do()
+    }
+</script>

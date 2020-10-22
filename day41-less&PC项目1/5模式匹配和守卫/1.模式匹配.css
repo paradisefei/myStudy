@@ -1,0 +1,8 @@
+.outer {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  display: flex;
+}

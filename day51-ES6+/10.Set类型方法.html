@@ -1,0 +1,78 @@
+<script>
+    /*
+        Set的属性
+            size
+        Set的方法
+            add()
+            delete()
+                参数为要删除的值
+                返回布尔值,表示是否成功删除
+            has()
+            clear()
+            entries()
+            keys()
+            values()
+            forEach()
+
+    */
+    {
+        // size
+        const set = new Set([1,2,3,4,4,3,5,8]);
+        console.log(set.size);
+        //add()
+        set.add(11)
+        const res = set.add(22);
+        set.add(100)
+        console.log(res)
+        console.log(set)
+        //delete()
+        const res1 = set.delete(11);
+        const res2 = set.delete(101);
+        console.log(res1,res2)
+        //has()
+        const res3 = set.has(1);
+        console.log(res3);
+        //clear()
+        console.log(set.clear());//没有返回值
+        console.log(set);
+    }
+    {
+        /*
+            Set对象中的每一个
+            set数据特殊在key和value相等
+            set有iterator接口
+                for..of..遍历set
+            entries()得到的是源对象的[key,value]
+                for...of...遍历entries()得到的结果就是是拿出遍历对象的[key,value];
+            keys()是拿出遍历对象的key
+            values()是拿出遍历对象的value
+        */
+        const set = new Set(['1','2','3','4','4','3','5','8']);
+        console.log(set)
+        for(let i of set){
+            console.log(i);
+        }
+
+        const setEntries = set.entries();
+        console.log(setEntries);
+        for(let i of setEntries){
+            console.log(i);
+        }
+        // const setKeys = set.keys()
+        // console.log(setKeys);
+        // for(let i of setKeys){
+        //     console.log(i);
+        // }
+        // const setValues = set.values()
+        // console.log(setValues);
+        // for(let i of setValues){
+        //     console.log(i);
+        // }
+    }
+    {
+        const set = new Set(['1','2','3','4','4','3','5','8']);
+        set.forEach(function(item,index){
+            console.log(item,index);
+        })
+    }
+</script>

@@ -1,0 +1,89 @@
+<script>
+    //工厂模式声明
+    //产生重复代码
+    // var nan = {
+    //     name:'Joey',
+    //     age:26,
+    //     height:1.78,
+    //     weight:60
+    // }
+    // var nv = {
+    //     name:'Monica',
+    //     age:25,
+    //     height:1.68,
+            // say: function (){
+            //     console.log('说话');
+            // }
+    // }
+//     function createPerson(name,age,sex){
+//         var o = new Object();
+//         o.name = name;
+//         o.age = age;
+//         o.sex = sex;
+//         o.say = function (){
+//             console.log('说话');
+//     }
+
+//     return o;
+// }
+// var Joey = createPerson('Joey',26,'男');
+// var Monica = createPerson('Monica',25,'女');
+
+// console.log(Joey);
+// console.log(Monica);
+
+    // var arr = new Array();
+    // console.log(arr instanceof Array);//true
+    // console.log(arr instanceof Object);//true
+
+    // var obj = new Object()
+    // console.log(obj instanceof Array);//false
+    // console.log(obj instanceof Object);//true
+
+    // function Person(){
+
+    // }
+    // function Dog(){
+
+    // }
+
+    // var xiaoming = new Person();
+    // console.log(xiaoming);
+
+    // var laifu = new Dog();
+    // console.log(laifu)
+
+    // console.log(xiaoming instanceof Person);//true
+    // console.log(xiaoming instanceof Dog);//false
+
+    //加入属性
+    // function Person(name,age,sex){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sex = sex;
+    // }
+
+    // var p1 = new Person('Joey',26,'男');
+    // var p2 = new Person('Monica',25,'女');
+
+    // console.log(p1);
+    // console.log(p2);
+
+    //构造函数创建对象时，如果返回是基本数据类型，则会被忽略
+    function People(){
+        return 1;
+    }
+
+    var a = new People();
+
+    console.log(a);
+
+    //如果返回的是对象数据类型，不会被忽略
+    function People(){
+        return [1,2,3];
+    }
+
+    var a = new People();
+
+    console.log(a);
+</script>

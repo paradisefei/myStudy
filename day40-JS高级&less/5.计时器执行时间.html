@@ -1,0 +1,12 @@
+<script>
+    setTimeout(function(){
+        var endTime = Date.now();
+
+        console.log(endTime - startTime);
+    },1000);
+    var startTime = Date.now();
+    var num = 0;
+    for(var i = 0;i< 1000000000;i++){
+        num += i;
+    }
+</script>

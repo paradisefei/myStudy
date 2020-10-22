@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width:400px;
+            height:400px;
+            margin:50px;
+            padding:20px;
+            border:5px solid black;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">
+        点我
+    </button>
+    <div id="box">
+
+    </div>
+
+    <script>
+        //获取对象
+        var oBtn = document.getElementById("btn");
+        var oBox = document.getElementById("box");
+
+        //点击按钮得到这个对象//这是元素对象的属性
+        oBtn.onclick = function(){
+            console.log(oBox.getBoundingClientRect);
+            console.log(oBox.getBoundingClientRect().width);//450
+            console.log(oBox.getBoundingClientRect().height);//450
+            console.log(oBox.getBoundingClientRect().left);//58
+            console.log(oBox.getBoundingClientRect().top);//58
+            console.log(oBox.getBoundingClientRect().right);//58
+            console.log(oBox.getBoundingClientRect().bottom);//58
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="wrap">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+    /*    //1.传统方法
+        var oWrap = document.getElementById("wrap");
+        var oLis = document.getElementsByTagName("li");
+
+        //每次遍历都创建一个新的li插入到ul中
+        for(var i = 0; i < oLis.length; i++){
+            var newLi = document.createElement("li");
+            oWrap.appendChild(newLi);
+        }
+        //程序出现死循环，由于通过这种方法获取节点之后还会实时的监听原来获取到的东西，而每循环一次新增了一个li，oLis.length一直在变大，循环不会停止，从而出现死循环
+        */
+
+        // 2.新方法
+        var oWrap = document.querySelector("#wrap");
+        var oLis = document.querySelectorAll("#wrap > li");
+        for(var i = 0; i < oLis.length; i++){
+            var newLi = document.createElement("li");
+            oWrap.appendChild(newLi);
+        }
+        //会新增4个li，因为通过这种方法获取元素，一旦获取到了就不会再监听了，所以即使新增了li，oLis.length始终不变，还是原来的长度。
+
+    </script>
+</body>
+</html>

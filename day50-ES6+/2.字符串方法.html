@@ -1,0 +1,28 @@
+<script>
+    /*
+    去空格
+    不会改变原数组,
+    */
+    {
+        let str = "hi";
+        //删除两端空格
+        // const res = str.trim();
+        //删除首部空格
+        // const res = str.trimStart();
+        //删除尾部空格
+        // const res = str.trimEnd();
+        // 判断开头有没有包含某个字符串:从第一个位置开始,
+        // const res =str.startsWith(" el")
+        // 判断结尾有没有包含某个字符串:要包含最后一个位置
+        // const res =str.endsWith("rld")
+        //判断是否包含某个字符串
+        // const res = str.includes(" to")
+        //重复当前字符串,不给参数标识一次都不重复,啥也没有
+        // const res = str.repeat(2)
+        //在字符串前面补充字符,第一个参数表示最后得到的字符串的长度
+        const res = str.padStart(4,"0")
+        // const res = str.padEnd(4,"0")
+        console.log("原字符串"+str);
+        console.log("使用了方法之后的结果"+res);
+    }
+</script>

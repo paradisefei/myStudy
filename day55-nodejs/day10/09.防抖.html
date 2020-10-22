@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        /* 
+            防抖
+                在搜索框输入一个1会进行一次请求，在一个时间之后输入2又会有一个请求，这样在短时间段内进行了多次请求是没有必要的，所以要进行防抖
+                让函数在单位时间内只调用一次，最后一次调用生效
+            N
+                每次鼠标移动时，如果停住了200ms就输出
+                每次移动鼠标都重新开始计时器，这种情况下就是每次如果有输出的话就是最后一次的鼠标移动事件所触发的了
+            L
+                1.防抖函数
+                    返回值函数是一个计时器
+                2.鼠标移动事件
+
+        */
+        const oBox = document.querySelector("#box");
+
+        function move(e){
+            console.log(Date.now());
+            console.log(this);
+            console.log(e);
+        }
+        function debounce(fn,time){
+            let timerId = null;
+            return function (){
+                clearTimeout(timerId);
+                timerId = setTimeout(() => {
+                    fn.call(this,arguments[0]);
+                },time)
+            }
+        }
+        const result = debounce(move,200);
+        oBox.onmousemove = result;
+    </script>
+</body>
+
+</html>

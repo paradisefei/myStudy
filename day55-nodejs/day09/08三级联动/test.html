@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>三级联动</title>
+</head>
+
+<body>
+    <select id="province">
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+    </select>省
+    <select id="city">
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+    </select>市
+    <select id="county">
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+        <option>北京市</option>
+    </select>区(县)
+
+    <script>
+
+        /* 
+            省份栏点击事件
+                1.创建Ajax请求
+                2.建立连接
+                3.发送请求
+        */
+        const oProvince = document.querySelector("#province");
+        const oProOption = oProvince.querySelectorAll("option");
+        console.log(oProOption);
+        oProvince.onchange = function () {
+
+            const index = oProvince.selectedIndex;
+            console.log(index)
+            const province = oProOption[index].text;
+            console.log(province)
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

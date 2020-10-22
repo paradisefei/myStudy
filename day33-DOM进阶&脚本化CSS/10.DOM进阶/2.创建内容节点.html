@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        //获取元素
+        var oBtn = document.getElementById("btn");
+        var oList = document.getElementById("list");
+        var oListLis = document.querySelectorAll("#list > li")
+        //点击按钮创建内容节点
+        // oBtn.onclick = function () {
+        //     //创建
+        //     var newText = document.createTextNode("我是通过js创建的内容节点");
+        //     var newLi = document.createElement("li");
+        //     // console.log(newLi);
+        //     newLi.appendChild(newText);
+        //     //插入
+        //     oList.appendChild(newLi);
+        // }
+            oBtn.onclick = function(){
+                var newLi = document.createElement("li");
+                newLi.innerHTML = "我是直接通过innerHTML创建的内容节点";
+
+                oList.appendChild(newLi);
+            }
+    </script>
+</body>
+
+</html>

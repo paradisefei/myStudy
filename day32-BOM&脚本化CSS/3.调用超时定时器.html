@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            /*
+                setTimeout(code,time)；
+                    code:是字符串类型的代码才是我们要的效果
+                1. 只有一次，到了设定的时间点调用code执行了就算完了
+            */
+            //计时器code写法:把要执行的代码直接写在这个位置
+                // 字符串
+                // setTimeout("alert(1)",1000);//会延迟指定时间再去执行code中字符串的代码
+                //非字符串
+                // setTimeout(alert(1),1000);//不会延迟，会立即执行
+            //计时器code写法2:在这个位置写函数,写在字符串中
+            function fn1 (a,b){
+                alert(a+b);
+            }
+                var res1 =  setTimeout("fn1(1,2)",500);
+                console.log(res1);
+            //计时器code写法3：在code位置放函数名来执行函数，此时此处放的依然是一个函数字符串
+            // setTimeout(fn,1000);
+            //计时器code写法4：用函数名引用是需传入参数的话
+            // setTimeout(fn,1000,2,3)
+            //计时器code写法5：函数返回一个函数字符串时
+            function fn (a,b){
+                    return function (){
+                        alert(a+b);
+                    }
+            }
+            var res = setTimeout(fn(2,10),1000);
+            console.log(res);
+
+            /*
+                总结：要保证code位置是字符串类型的代码
+                扩展：eval()函数可以把字符串中的代码拿出来执行
+            */
+
+        </script>
+</body>
+</html>

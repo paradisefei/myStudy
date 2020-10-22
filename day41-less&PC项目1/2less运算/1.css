@@ -1,0 +1,14 @@
+/*
+less里面是可以进行计算的
+*/
+.outer {
+  width: 70%;
+  width: calc(100% - 30px);
+  height: 500px;
+}
+.outer .con {
+  width: 1030px;
+  width: 20000px;
+  border: 1px solid #5b5b5b;
+  height: 80px;
+}

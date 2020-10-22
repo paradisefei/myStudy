@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js'></script>
+    <style>
+        .con {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">走你</button>
+    <div class="con">
+
+
+    </div>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                $(".con").animate({ left: "1000px" }, 100).animate({ top: "300px" }, 1000).animate({ left: "0px" }, 100).animate({ top: "100px" }, 1000)
+            })
+
+        })
+    </script>
+</body>
+
+</html>

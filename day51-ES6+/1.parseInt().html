@@ -1,0 +1,28 @@
+<script>
+    /* 
+        parseInt(string,radix)
+        功能
+            1.解析字符串
+            2.返回一个十进制数
+        参数
+            string
+                1.字符串
+                2.如果传入的不是字符串,则先隐式转换为字符串
+            radix
+                1.被解析的进制
+     */
+
+     {
+         /* 
+            stringify
+            1.最后得到的是json字符串
+            2.原本的属性未给双引号时,最后得到的json字符串会自动加上双引号
+        */
+         const obj = {
+             name:"张三",
+             age:23,
+             sex:"男"
+         }
+         console.log(JSON.stringify(obj));
+     }
+</script>

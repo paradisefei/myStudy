@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fadeIn</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <style>
+        #outer {
+            width: 500px;
+            height: 500px;
+            background-color: lightgreen;
+
+            /* overflow:auto; */
+            /* position:relative; */
+        }
+
+        #outer div.con {
+            width: 200px;
+            height: 200px;
+            padding:20px;
+            margin:10px;
+            border:5px solid black;
+            background-color: red;
+
+            /* position:absolute;
+            left:20px;
+            top:30px; */
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">按钮</button>
+    <div id="outer">
+        <!-- <div>内容</div> -->
+        <div class="con">内容</div>
+    </div>
+    <script>
+        $(function () {
+            //css(name):获取元素的某个css样式的值,得到的是一个字符串
+            // $(".btn").click(function () {
+            //     console.log($(".con").css("width"));
+            // })
+            //css(name,value):给元素设置css样式
+            // $(".btn").click(function () {
+            //     $(".con").css("backgroundColor","#fff");
+            // })
+            //css({name1:value1,name2:value2}):一次给元素设置多个样式
+            // $(".btn").click(function () {
+            //     $(".con").css({"backgroundColor":"#fff","font-size":"40px"});
+            // })
+
+            /*类名*/
+            // $(".btn").click(function () {
+                // //给某个元素加类
+                // $("#outer div").addClass("con");
+                // //给某个元素移除类
+                // $("#outer div").removeClass("con");
+                //切换 有类名的时候移除类名 没类名的时候加类名
+            //     $("#outer div").toggleClass("con");
+            // })
+
+            /**/
+            // $(".btn").click(function () {
+                //获取元素宽度 获取到的是数值而不是字符串
+                console.log($("#outer div").width());
+
+                //给元素设置宽度 
+                    // 不加单位
+                // $("#outer div").width(500)
+                    // 加单位 也可以设置 要以字符串的形式
+                // $("#outer div").width("500px");
+
+                //innerWidth() 获取元素宽度 content+padding
+                console.log($("#outer div").innerWidth());
+                //outerWidth() 获取元素宽度 content+padding+border
+                // console.log($("#outer div").outerWidth());
+                //outerWidth(true) 获取元素宽度 content+padding+border+margin
+                // console.log($("#outer div").outerWidth(true));
+
+                //offset() 得到一个普通对象 包含top、left的两个属性 相对于文档的定位 从该元素的border的外边缘开始
+                // console.log($("#outer div").offset());
+                //position() 得到一个普通对象 包含top、left的两个属性 相对于包含块的定位 从该元素的border的外边缘开始
+                // console.log($("#outer div").position());
+
+                //滚动条
+                //获取滚动条的位置
+                // console.log($("#outer").scrollLeft());
+                //设置滚动条的位置
+                // $("#outer").scrollLeft("400px");
+        //     })
+        })
+
+    </script>
+</body>
+
+</html>

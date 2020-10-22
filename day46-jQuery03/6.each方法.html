@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <button id="btn">移出事件</button>
+
+    <div id="box">box</div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        /*
+        在jQuery的原型对象上扩展了一个
+            原型对象上扩展的话直接在jQuery实例对象上使用
+            这个返回的还是jQuery对象上的
+        在jQuery对象上扩展了一个
+            jQuery对象上扩展的话是用jQuery调用each,然后再传入对象/数组
+        */
+        $(function () {
+
+            //数组
+            var arr = [1,2,3,4,5];
+            //对象
+            var obj = {
+                name:'lily',
+                age:18
+            }
+            //使用jQuery对象上的
+            $.each(arr,function(index,item){
+                console.log(item)
+            })
+        
+            $.each(obj,function(index,item){
+                console.log(item)
+            })
+
+            //jQuery的原型对象上
+            $("ul li").each(function(index,item){
+                console.log(item);
+            })
+        })
+    </script>
+</body>
+
+</html>

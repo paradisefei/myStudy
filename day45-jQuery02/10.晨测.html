@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <style>
+        #outer div.con {
+            width: 400px;
+            /* height:400px; */
+            background-color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+
+    </div>
+    <script>
+        // $(function () {
+        //     $("<div class='con'><a>删除</a></div>").appendTo($("div.out")).children().click(function () {
+        //         $(".con").remove();
+        //     })
+        // })
+            var arr = [{name:"lily",age:18},{name:"lucy",age:19},{name:"laowang",age:12}];
+
+            arr.sort(function(value1,value2){
+                return value1.age - value2.age;
+            })
+            console.log(arr);
+    </script>
+</body>
+
+</html>

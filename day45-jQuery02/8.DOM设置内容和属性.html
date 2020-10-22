@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fadeIn</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js"></script>
+    <style>
+        #outer {
+            width: 500px;
+            height: 500px;
+            background-color: lightgreen;
+
+            /* overflow:auto; */
+            /* position:relative; */
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            padding:20px;
+            margin:10px;
+            border:5px solid black;
+            background-color: red;
+
+            /* position:absolute;
+            left:20px;
+            top:30px; */
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">按钮</button>
+    <div class="box" study='jq'>
+        <a href="##">hello world</a>
+        <input type="text" value="请输入">
+    </div>
+    <script>
+        $(function () {
+            
+            $(".btn").click(function(){
+                // //html()-获取innerHTML
+                // console.log($(".box").html());
+                // //html(value)-设置innerHTML
+                // $(".box").html("<span>span</span>");
+                //text()-获取innerText
+                // console.log($(".box").text());
+                //html(value)-设置innerText
+                // $(".box").text("<span>span</span>");
+                //val()-获取表单中的value值
+                // console.log($("input").val());
+                //val(value)-设置表单中的value值
+                // $("input").val("tel");
+
+                //prop/attr 获取某个元素的某个属性的值
+                // console.log($("input").prop("type"));
+                // console.log($("input").attr("type"));
+
+                //设置某个属性
+                //自有属性时两者都可
+                // $("input").prop("type","submit")
+                // $("input").attr("type","submit");
+                //自定义属性时prop无法设置,attr可以
+                // $("input").prop("study","jq")
+                // $("input").attr("study","jq");
+                //因此prop更适合用来设置自有属性,attr更适合用来设置自定义属性
+
+                //删除指定属性
+                $("input").removeAttr("type");
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid firebrick;
+            height: 600px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+        #container > div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        
+        .hong {
+            width: 40px;
+            height: 40px;
+            background-image: radial-gradient(#ff0000,#560000);
+            border-radius: 50%;
+        }
+        .lan {
+            width: 40px;
+            height: 40px;
+            background-image: radial-gradient(#0000eb,#560000);
+            border-radius: 50%;
+        }
+        #yi {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #er {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #san {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        #san > div:nth-of-type(2) {
+            align-self: center;
+        }
+        #san > div:nth-of-type(3) {
+            align-self: flex-end;
+        }
+        #si {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #si div {
+            margin: 0 20px;
+        }
+        #wu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #wu .lan {
+            margin: 0 20px;
+        }
+        #wu > div:nth-of-type(3) {
+            margin: 0 60px;
+        }
+        #liu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #liu .lan {
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <!-- 一筒 -->
+        <div id="yi">
+            <div class="yi hong">
+
+            </div>
+        </div>
+        <!-- 二筒 -->
+        <div id="er">
+                <div class="er1 lan">
+
+                </div>
+                <div class="er2 lan">
+
+                </div>
+        </div>
+        <!-- 三筒 -->
+        <div id="san">
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+        </div>
+        <!-- 四筒 -->
+        <div id="si">
+            <div class="hong"></div>
+            <div class="hong"></div>
+            <div class="hong"></div>
+            <div class="hong"></div>
+        </div>
+        <!-- 五筒 -->
+        <div id="wu">
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+        </div>
+        <!-- 六筒 -->
+        <div id="liu">
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+            <div class="lan"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

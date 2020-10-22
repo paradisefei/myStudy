@@ -1,0 +1,119 @@
+<script>
+    var arr = [3,5,4,1,2]
+
+    for(var i = 1 ; i < arr.length ; i++){
+        for(var j = 0 ; j < arr.length - i ; j++){
+            if(arr[j] > arr[j + 1]){
+                var temp;
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j+ 1] = temp;
+            }
+        }
+    }
+    console.log(arr);
+
+    //1. 我要先确定比较的位置下标
+    // for(var i = 0;i < arr.length -1; i++){
+    //     console.log(i);
+    //     console.log(i + 1);
+    //     console.log('-----------');
+    // }
+    //2. 要开始进行比较,大的数放在后面，小的数放在前面
+    // for(var i = 0;i < arr.length - 1; i++){
+    //     if(arr[i] > arr[i + 1]){
+    //         var temp;
+    //         temp = arr[i];
+    //         arr[i] = arr[i + 1];
+    //         arr[i + 1] = temp;
+    //     }
+    // }
+    // console.log(arr);
+    // //3. 通过上面一次比较之后，把最大的数已经放在最后面了，然后再进行一次比较，此时最后一个数就不用参与比较了
+    // for(var i = 0;i < arr.length - 2; i++){
+    //     if(arr[i] > arr[i + 1]){
+    //         var temp;
+    //         temp = arr[i];
+    //         arr[i] = arr[i + 1];
+    //         arr[i + 1] = temp;
+    //     }
+    // }
+    // console.log(arr);
+    // //4. 再在剩下的数中进行同样的操作
+    // for(var i = 0;i < arr.length - 3; i++){
+    //     if(arr[i] > arr[i + 1]){
+    //         var temp;
+    //         temp = arr[i];
+    //         arr[i] = arr[i + 1];
+    //         arr[i + 1] = temp;
+    //     }
+    // }
+    // console.log(arr);
+
+    // for(var i = 0;i < arr.length - 4; i++){
+    //     if(arr[i] > arr[i + 1]){
+    //         var temp;
+    //         temp = arr[i];
+    //         arr[i] = arr[i + 1];
+    //         arr[i + 1] = temp;
+    //     }
+    // }
+    // console.log(arr);
+
+    // for(var i = 0;i < arr.length - 5; i++){
+    //     if(arr[i] > arr[i + 1]){
+    //         var temp;
+    //         temp = arr[i];
+    //         arr[i] = arr[i + 1];
+    //         arr[i + 1] = temp;
+    //     }
+    // }
+    // console.log(arr);
+    // //6个数进行5次就可以了，因为倒数第二个数出来之后，最小的自然就出来了，因此就是要进行5次这样的比较操作，也就是5轮
+    // for(var i = 1 ; i < arr.length ; i++){
+    //     for(var j = 0 ; j < arr.length - i ; j++){
+    //         if(arr[j] > arr[j + 1]){
+    //             var temp;
+    //             temp = arr[j];
+    //             arr[j] = arr[j + 1];
+    //             arr[j + 1] = temp;
+    //         }
+    //     }
+    // }
+    // console.log(arr);
+
+
+    //冒泡排序
+    var arr = [3,9,4,7];
+
+    //length = 4;
+    //一轮中通过进行两两比较找出剩下的数中最大的数
+    //一轮中通过比较找出最大数的下标，只是这里两两比较之后数字本身是没有动的，而冒泡的话数字本身是会动的。
+
+    //i = 1 第一轮//i = 2//i = 3//i = 4
+    //i < 4 true//2 < 4 true//3 < 4 true//4 < 4 false 终止外部循环
+    for(var i = 1 ; i < arr.length ; i++){//控制轮数，5个数需要比较4轮
+         //j = 0//j = 1//j = 2//j = 3
+        //0 < 3 比较3次 true//1 < 3 true//2 < 3 true//3 < 3 false
+        //j = 0//j = 1//j = 2
+        //0 < 2 true//1 < 2 true//2 < 2 false
+        //j = 0//j = 1
+        //0 < 1 true//1 < 1 false 终止内部循环
+        for(var j = 0 ; j < arr.length - i ; j++){
+            //3 > 9 false//9 > 4 true//9 > 7 true
+            //3 4 9 7//3 4 7 9
+            //3 > 4 false//4 > 7 false
+            //3 > 4 false
+            if(arr[j] > arr[j + 1]){
+                var temp;
+            temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+            } 
+        }
+    }
+
+    // // 最重要的就是两两比较那里你没有搞明白
+    // //还有就是难道一轮下来其它也还没有排好吗，还是对两两比较没有搞明白，两两比较的话交换只会出现在比较的两个数中。
+    console.log(arr);
+</script>

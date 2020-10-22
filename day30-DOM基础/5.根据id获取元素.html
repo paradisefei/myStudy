@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        // var oBox = document.getElementById("box");
+        // console.log(oBox);//得到的是一个对象
+        // console.dir(oBox);//查看对象中的方法
+        // console.log(typeof oBox);
+
+        // oBox.style.width = "200px";
+        // oBox.style.height = "200px";
+        // oBox.style.backgroundColor = "red";
+
+        // //
+        // box.style.backgroundColor = "green";
+
+        try{
+            var oBox = document.getElementById("box1");
+            oBox.style.backgroundColor = "red"; 
+            console.log("因为上面有错，在try中，出错后面的代码就不执行了。");
+        }catch (err) {
+            console.log("oo,出错了");
+        }
+        console.log('这里还是会执行');
+    </script>
+</body>
+</html>

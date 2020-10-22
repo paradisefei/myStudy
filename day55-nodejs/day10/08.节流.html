@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        /* 
+            场景：
+                鼠标移动事件，只要鼠标移动就会执行事件函数得到相应的内容
+                这里节流的目的就是控制执行
+            节流：让函数在单位时间内只调用一次
+                发送验证码：在1分钟内只允许请求一次，减少请求次数
+            N
+                鼠标移动事件，每隔200ms时间间隔输出内容而不是每一次移动都有输出
+            L
+                1.鼠标移动事件
+                2.事件函数为一个节流函数
+                    在每一次鼠标移动时节流函数都会执行
+                    节流函数返回一个返回值函数作为最终的事件处理函数
+                    页面加载进来就会执行节流函数得到返回值函数
+                    鼠标每次移动都会执行该返回值函数
+                    执行该返回值函数时，就可以设置单位时间的处理函数来执行了
+            P
+                1.move中的this执行问题
+                2.move中的参数事件
+         */
+         const oBox = document.querySelector("#box");
+
+         function move(e){
+             console.log(Date.now());
+             console.log(this);
+             console.log(e);
+         }
+         
+         //节流函数
+         function throttle(fn,time){
+             let lastTime = 0;
+            return function () {
+                let nowTime = Date.now();
+
+                if(nowTime - lastTime < time){
+                    return;
+                }
+                // fn.call(this,e);
+                fn.call(this,arguments[0]);
+                lastTime = nowTime;
+            }
+         }
+         const result = throttle(move,200)
+         oBox.onmousemove = result;
+    </script>
+</body>
+
+</html>

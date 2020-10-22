@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #taiji {
+            width: 500px;
+            height: 500px;
+            margin: 10px auto;
+            border: 1px solid black;
+            overflow: hidden;
+
+            position: relative;
+            border-radius: 50%;
+            /* box-sizing: border-box; */
+        }
+        #taiji::before {
+            content: '';
+            width: 250px;
+            height: 500px;
+            float: left;
+            background-color: #fff;
+        }
+        #taiji::after {
+            content: '';
+            width: 250px;
+            height: 500px;
+            float: right;
+            background-color: #000;
+        }
+        #taiji .a {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            left: 50%;
+            margin-left: -125px;
+            border-radius: 50%;
+            /* border: 1px solid red; */
+        }
+        #taiji .l {
+            background-color: white;
+        }
+        #taiji .l::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            margin-left: -25px;
+            top: 50%;
+            margin-top: -25px;
+            border-radius: 50%;
+        }
+        #taiji .r {
+            background-color: #000000;
+            bottom: 0;
+        }
+        #taiji .r::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            margin-left: -25px;
+            top: 50%;
+            margin-top: -25px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="taiji">
+        <div class="a l"></div>
+        <div class="a r"></div>
+    </div>
+</body>
+</html>

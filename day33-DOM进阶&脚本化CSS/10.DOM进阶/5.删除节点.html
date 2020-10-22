@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        //获取元素
+        var oBtn = document.getElementById("btn");
+        // var oList = document.getElementById("list");
+        var oList = document.querySelector("#list");
+        // var oListLis = document.querySelectorAll("#list > li")
+        var oListLis = oList.getElementsByTagName("li")
+
+        //点击按钮删除第2个节点
+        oBtn.onclick = function(){
+            //用新方法获取的是静态的，节点在文档中的下标为几获得的就为几，所以删了一个以后再点击的话不会再删
+            oList.removeChild(oListLis[0]);
+        }
+        
+    </script>
+</body>
+
+</html>

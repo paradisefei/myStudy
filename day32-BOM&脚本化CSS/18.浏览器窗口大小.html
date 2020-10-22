@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        document.onclick = function(){
+            //clientHeight用在html上，表示浏览器窗口的高度
+            console.log(document.documentElement.clientHeight);
+            //宽度不包含右侧滚动条的宽度
+            console.log(document.documentElement.clientWidth);
+            console.log(document.body.clientHeight);
+        }
+    </script>
+</body>
+</html>

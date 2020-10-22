@@ -1,0 +1,96 @@
+<script>
+
+    /*
+    let
+    1.一个花括号就是一个块,直接在花括号里面运行代码并不会报错
+    2.子块可以用父块的变量,父块不可以用子块的
+    */
+    // {
+    //     let a = 1;
+    //     console.log(a);
+    //     {
+    //         let b = 2;
+
+    //         console.log(a,b);
+    //         {
+    //             let c = 3;
+    //             console.log(a,b,c)
+    //         }
+    //     }
+    // }
+
+    /*
+    for,if等这些中的块
+    函数的块
+    if中,代码块中的块级变量在外面不能用
+    */
+    // {
+
+    //     var a = 1;
+    //     console.log(b)
+    //     if(a > 0){
+    //         let b = 2
+    //     }
+    // }
+
+    /*
+    let的特点
+    */
+    //1.没有声明提升
+    // {
+    //     console.log(a);// Cannot access 'a' before initialization
+    //     let a = 1;
+    // }
+    // 2.同一级的块级作用域中不能重复let
+    // {
+    //     let a = 1;
+    //     let a = 2;//Identifier 'a' has already been declared
+    //     console.log(a); 
+    // }
+
+    /*
+    常量const
+    1.优先考虑const,再考虑let
+    */
+    // {
+    //     const PI = 3.14;
+    //     console.log(PI);
+    //     PI = 354; //Assignment to constant variable.
+    // }
+
+
+    /*
+    不要再块级作用域中定义函数,而应该定义在函数作用域或全局中
+    1.function定义的变量并不存在块级作用域一说
+    2.函数会提升
+    如果非要在某一块中使用某个函数的话,function声明是办不到的,就只有用函数表达式的方式声明,并把该函数存在一个块级作用域的变量中
+    */
+    // {
+    //     if(true){
+    //         function fn(){
+    //             console.log(1);
+    //         }
+    //     }
+    //     console.log(fn);
+    // }
+    
+
+    /*数组解构*/
+    // {
+    //     [a,b,c,d] = [1,2,3,4]
+    //     console.log(a,b,c,d)
+    // }
+    /*对象解构*/
+    {
+        var obj = {
+            name:"张三",
+            age:33,
+            sex:"男"
+        }
+        const {
+            name,age,sex
+        } = obj;
+        console.log(name,age,sex)
+
+    }
+</script>

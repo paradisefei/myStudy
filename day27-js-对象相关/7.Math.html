@@ -1,0 +1,29 @@
+<script>
+    // var a = 1.1;
+    // var b = 2.9;
+    // var c = -10;
+    // console.log(Math.abs(c))
+    // console.log(Math.ceil(a));
+    // console.log(Math.ceil(b));
+    // console.log(Math.floor(a));
+    // console.log(Math.floor(b));
+    // console.log(Math.round(a));
+    // console.log(Math.round(b));
+
+    //得到在1~66范围的区间
+    // for(var i = 1 ; i <= 100 ; i++){
+    //         console.log(Math.floor(Math.random() * (66 - 1 + 1) + 1));
+    // }
+    // 随机输出四个字符
+    var str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    //输出下标
+    for(var i = 1 ; i <= 10 ; i++){
+        var code = ''
+        for(var j = 1 ; j <= 4 ; j++){
+            code += str[Math.floor(Math.random() * str.length)];
+        }
+        console.log(code);
+    }
+
+     
+</script>

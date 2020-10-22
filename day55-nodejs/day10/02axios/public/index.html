@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button id="btn">发送</button>
+    <script>
+        const oBtn = document.getElementById("btn");
+        oBtn.onclick = function () {
+            // 为给定 ID 的 user 创建请求
+            /*             axios.get('/user?ID=12345')
+                            .then(function (response) {
+                                console.log(response);
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            }); */
+
+            // 上面的请求也可以这样做
+            /*             axios.get('/user', {
+                            params: {
+                                ID: 12345
+                            }
+                        })
+                            .then(function (response) {
+                                console.log(response);
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            }); */
+
+            /*             axios.post('/user', {
+                            firstName: 'Fred',
+                            lastName: 'Flintstone'
+                        })
+                            .then(function (response) {
+                                console.log(response);
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            }); */
+            function getUserAccount() {
+                return axios.get('/user');
+            }
+
+            function getUserPermissions() {
+                return axios.get('/user/12345/permissions');
+            }
+
+            axios.all([getUserAccount(), getUserPermissions()])
+                .then(axios.spread(function (acct, perms) {
+                    // 两个请求现在都执行完成
+                }));
+        }
+    </script>
+</body>
+
+</html>

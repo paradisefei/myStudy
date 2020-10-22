@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            background-color: red;
+        }
+
+        #inner {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background-color: black;
+        }
+
+        #con {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="con">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var oOuter = document.querySelector("#outer");
+        var oInner = document.querySelector("#inner");
+        var oCon = document.querySelector("#con");
+
+        // oOuter.onclick = function(){
+        //     alert(1);
+        // }
+        // oOuter.onclick = function(){
+        //     alert(2);
+        // }
+        // oOuter.onclick = function(){
+        //     alert(3);
+        // }
+        // oOuter.onclick = function(){
+        //     alert(4);
+        // }
+
+        oOuter.onclick = function () {
+            alert("outer");
+        }
+        oInner.onclick = function () {
+            alert("inner");
+        }
+        oCon.onclick = function () {
+            alert("con");
+        }
+    </script>
+</body>
+
+</html>

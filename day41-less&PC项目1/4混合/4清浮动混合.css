@@ -1,0 +1,31 @@
+.outer {
+  width: 100px;
+  height: 500px;
+  position: absolute;
+  background-color: #ccc;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.outer > .con1 {
+  width: 300px;
+  height: 300px;
+  width: 300;
+  height: 300;
+  position: absolute;
+  background-color: lightgreen;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.outer > .con1:nth-child(1) {
+  width: 200px;
+}
+.outer > .con1 .con2 {
+  width: 200px;
+  height: 200px;
+}

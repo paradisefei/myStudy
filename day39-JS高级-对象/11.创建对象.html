@@ -1,0 +1,49 @@
+<script>
+    //Object构造函数模式
+    // var car = new Object();
+    //工厂模式
+    // function car(name,color,speed){
+    //     var o = {};
+    //     o.name = name;
+    //     o.color = color;
+    //     o.speed = speed;
+    //     o.run = function(){
+    //         console.log('我是run');
+    //     }
+    //     return o;
+    // }
+    // var car1 = car("BMX-X1", "red", 300);
+    // var car2 = car("BMX-X2", "red", 320);
+    //构造函数模式
+    // function Car(name,color,speed){
+    //     this.name = name;
+    //     this.color = color;
+    //     this.speed = speed;
+    //     this.run = function(){
+    //         console.log("我是run");
+    //     }
+    // }
+    // 原型模式
+    /*function Car(){
+
+    }
+    Car.prototype.name = "BMX-X1";
+    Car.prototype.color = "red";
+    Car.prototype.speed = "200";
+    Car.prototype.run = function(){
+        console.log("我是run");
+    };
+    
+    var car1 = new Car();*/
+    //构造函数+原型
+    function Car(name,color,speed){
+        this.name = name;
+        this.color = color;
+        this.speed = speed;
+    }
+    Car.prototype.run = function(){
+        console.log("我是run");
+        }
+
+
+</script>

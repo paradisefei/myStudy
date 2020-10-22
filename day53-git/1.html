@@ -1,0 +1,19 @@
+<script>
+    /*
+        json字符串
+            1.整个是一个字符串
+            2.里面对象的属性要用双引号引起来
+    */
+    const obj = `{
+        "name":"张三",
+        "age":23
+    }`
+    const obj1 = {
+        name:"李四",
+        age:34
+    }
+    const res1 = JSON.stringify(obj1)
+    console.log(res1)
+    const res = JSON.parse(obj);
+    console.log(res)
+</script>

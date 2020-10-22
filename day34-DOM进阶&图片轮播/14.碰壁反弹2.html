@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        #ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="go">走你</button>
+    <button id="stop">停</button>
+    <div id="outer">
+        <div id="ball"></div>
+    </div>
+    <script>
+        var oOuter = document.getElementById("outer");
+        var oBall = document.getElementById("ball");
+        var oGo = document.getElementById("go");
+        var oStop = document.getElementById("stop");
+        var timer = null;
+
+        var flagX = false;
+        var flagY = false;
+        var l = 20;
+        var a = 2;
+        oGo.onclick = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                
+                if ((oBall.offsetLeft >= (oOuter.clientWidth - oBall.offsetWidth)) || oBall.offsetLeft <= 0) {
+                    a = -a;
+                }
+                l += a;
+                oBall.style.left = l + 'px';
+            }, 15)
+        }
+        oStop.onclick = function () {
+            clearInterval(timer);
+        }
+    </script>
+</body>
+
+</html>

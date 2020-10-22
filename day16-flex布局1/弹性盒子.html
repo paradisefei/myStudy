@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #f {
+            /* width: 602px; */
+            /* height: 500px; */
+            border: 1px solid black;
+            /* box-sizing: border-box; */
+
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+
+            /* flex-wrap: nowrap; */
+            /* flex-wrap: wrap; */
+            /* flex-wrap: wrap-reverse; */
+
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            /* justify-content: space-evenly; 每个空白区大小相等 */
+            /* justify-content: space-around; 每个弹性元素左右两面（周围）的大小相等 */
+
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            /* align-items: stretch; */
+            
+        }
+        #f > div {
+            /* width: 100px;
+            height: 100px; */
+            
+        }
+        #f > div:first-of-type{
+            background-color: #00adb5;
+            /* width: auto; */
+
+            display: flex;
+            width: 100px;
+            height: 100px;
+        }
+        #f > div:nth-of-type(2){
+            width: 100px;
+            height: 100px;
+            background-color: #f6f7d7;
+            /* margin: 10px 20px; */
+
+            align-self: center;
+        }
+        #f > div:nth-of-type(3){
+            width: 100px;
+            height: 100px;
+            background-color: #f08a5d;
+        }
+        #f > div:nth-of-type(4){
+            width: 100px;
+            height: 100px;
+            background-color: #ff2e63;
+        }
+        #f > div:nth-of-type(5){
+            width: 100px;
+            height: 100px;
+            background-color: #a8d8ea;
+        }
+        #f > div:nth-of-type(6){
+            width: 100px;
+            height: 100px;
+            background-color: #ffcfdf;
+        }
+        #f > div > div {
+            width: 30px;
+            height: 30px;
+        }
+        #f > div > div:first-of-type{
+            background-color: #99ddcc;
+        }
+        #f > div > div:nth-of-type(2){
+            background-color: #928a97;
+        }
+        #f > div > div:nth-of-type(3){
+            background-color: #ffe2e2;
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <div>
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+        </div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

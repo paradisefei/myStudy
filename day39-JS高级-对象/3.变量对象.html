@@ -1,0 +1,90 @@
+<script>
+    //全局变量对象
+    // window = {
+    //     a:undefined,
+    //     doIt:undefined
+    // }
+    // a = 1;
+    // doIt = function(){
+
+    // }
+    // console.dir(window)
+
+function fn(a, b) {
+
+    /*
+    创建变量对象
+    var VO = {
+        //实参
+        arguments : {
+            0:1,
+            1:2,
+            2:3,
+            length:3
+        }
+        //形参
+        a:1,
+        b:2,
+        //提升的函数
+        doIt:function (){console.log("do");},
+        num:function() {console.log(num);},
+        //提升的变量
+        num:undefined,
+        count:undefined
+    }
+    
+    */
+
+    console.log(num);
+    var num = 2;
+    var count = 3;
+    function doIt() {
+        console.log("do");
+    }
+    function num() {
+        console.log(num);
+    }
+}
+
+    //练习
+    // function fn1(a) {
+    //     console.log(a);
+    //     var a = 2;
+    //     console.log(a);
+    // }
+    // fn1(1);
+
+    // function fn2() {
+    //     console.log(foo);
+    //     function foo() { }
+    //     var foo = 1;
+    // }
+    // fn2();
+
+    // /*
+    //    测试题1: 先预处理函数, 后预处理变量, 如果已经存在就会被忽略
+    //    */
+    // function a() { }
+    // var a;
+    // console.log(typeof a)
+
+
+    // /*
+    // 测试题2: 变量预处理, in操作符
+    //  */
+    if (!(b in window)) {
+        var b = 1;
+    }
+    console.log(b)
+
+    /*
+    测试题3: 预处理, 顺序执行
+     */
+    // var c = 1
+    var c;
+    function c(c) {
+        console.log(c)
+        var c = 3
+    }
+    c(2)
+</script>

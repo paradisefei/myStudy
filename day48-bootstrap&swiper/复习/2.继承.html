@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>继承</title>
+
+
+</head>
+
+<body>
+
+    <script>
+        /*
+        构造函数+原型链
+
+        什么叫继承:一个类能使用另一个的属性和方法,那么就说这个类继承了另一个类
+        */
+
+        // 父类
+        function Animal(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Animal.prototype.say = function () {
+    console.log("我是Animal的say")
+}
+//构造函数继承
+function Cat(color,name, age) {
+    Animal.call(this,name,age)
+    this.color = color;
+}
+Cat.prototype.do = function(){
+    console.log("我是Cat的do")
+}
+// 原型链继承
+Cat.prototype = new Animal();
+Cat.prototype.constructor = Cat;
+
+var cat = new Cat("white","wanzi",18);
+console.log(cat);//该对象的__proto__:Animal
+console.log(Cat.prototype);//Animal
+
+
+    </script>
+</body>
+
+</html>

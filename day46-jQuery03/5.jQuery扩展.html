@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <button id="btn">移出事件</button>
+
+    <div id="box">box</div>
+    <script>
+        /*
+        可以在jQuery的原型对象上扩展
+        也可以直接在jQuery对象上扩展
+        */
+        $(function () {
+
+            // 在jQuery原型对象上扩展
+            $.fn.extend ( {
+                fly: function () {
+                    console.log("我要飞");
+                }
+            })
+
+            $.extend (
+                {
+                    eat:function(){
+                    console.log("看起来很好吃")
+                }
+            })
+            // $("#btn").click(function(){
+            $("#box").fly();
+            $.eat();
+            // $.fly()
+            // })
+
+        })
+    </script>
+</body>
+
+</html>

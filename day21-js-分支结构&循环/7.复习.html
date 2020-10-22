@@ -1,0 +1,147 @@
+<script>
+//分支结构
+    //单一分支结构
+    //括号中是条件表达式 
+    // var a = '星期天';
+    // if(a === '星期天'){
+    //     console.log('放假');
+    // }
+    
+    //括号中不是条件表达式
+    // var a = 1;
+    // if(a){//会用Boolean()将数值转为布尔值
+    //     console.log('会用Boolean()把数字转为布尔值');
+    // }
+    // var b = '不是空字符串';
+    // if(b) {
+    //     console.log('这个时候也是会用Boolean()把字符串转为布尔值');//可想而知之前的类型转换那里有多重要了
+    // }
+    // if(undefined){
+    //     console.log('这个是不会输出的');
+    // }
+
+//双向分支结构
+    //  var a = '星期天';
+    // var b;
+    // if(b === '星期六'){
+    //     console.log('滚去宿舍学习');
+    // }
+    // else{
+    //     console.log('继续滚去学校学习');
+    // }
+    // console.log(a === '星期天' ? '滚去宿舍学习' : '滚回学校学习');//这就是一个条件表达式，条件表达式就是会得到一个结果，然后才是把这个结果赋值给另一个变量。
+
+//多向分支结构
+        //if通常用来进行判断的条件是某个范围，区间里面的值
+        // var a = '80';
+        // if(a <=100 && a >=86){
+        //     console.log('别人家的孩子');
+        // }
+        // else if(a >=76 && a <=85){
+        //     console.log('老王的孩子');
+        // }
+        // else if(a >= 75 && a <= 85){
+        //     console.log('我就是老王');
+        // }
+        // else if(a >=60 && a <=75){
+        //     console.log('自家孩子');
+        // }
+        // else {
+        //     console.log('老人上人了');
+        // }
+        //switch语句通常用来进行判断的是某个值
+        // var a = 4;
+        // switch(a){
+        //     case 1:
+        //         console.log('星期一');
+        //         break;
+        //     case 2:
+        //         console.log('星期二');
+        //         break;
+        //     case 3:
+        //         console.log('星期三');
+        //         break;
+        //     case 4:
+        //         console.log('星期四');
+        //         // break;
+        //     case 5:
+        //         console.log('星期五');
+        //         // break;
+        //     case 6:
+        //         console.log('星期六');
+        //         // break;
+        //     case 7:
+        //         console.log('星期天');
+        //         // break;
+        //     default:
+        //         console.log('啥也不是');
+        //         // break;
+        // }
+
+//循环结构
+            // var a = 1
+            //a = 1
+            //1 <= 3 true//2 <= 3 true//3 <= 3 true//4 <= 3 false
+            // while(a <= 3) {
+            //     console.log(a);//1//2//3
+            //     a++;//2//3//4
+            // }
+            //打印等腰三角形的星星
+            // var i = 1;
+            // while(i <= 9){
+            //     // console.log(i);
+            //     // i += 2;
+            //     var k = 1;
+            //     while(k <= (9 - i) / 2){
+            //         // document.write(k)
+            //         document.write('&nbsp;')
+            //         k++;
+            //     }
+            //     var j = 1;
+            //     while(j <= i){
+            //         // document.write(j);
+            //         document.write('*');
+            //         j++;
+            //     }
+            //     document.write('<br>')
+            //     i += 2;
+            // }
+
+            //打印九九乘法表
+            // var i = 1;
+            // while(i <= 9){
+            //     var j = 1;
+            //     while(j <= i){
+            //         // document.write(j);
+            //         document.write(j + '*' + i + '=' + j*i + '\t');
+            //         j++;
+            //     }
+            //     // document.write(i);
+            //     document.write('<br>')
+            //     i++;
+            // }
+//for循环
+                //i = 1//i = 2//i = 3//i = 4
+                //1 <= 3 true//2 <= 3 true//3 <= 3 true//4 <= 4 false，循环终止
+                // for(var i = 1; i <= 3;i++){
+                //     console.log(i);//1//2//3
+                // }
+//do...while循环
+                    // var a = 1;
+                    // do{
+                    //     console.log('死了' + a + '次');
+                    //     a++;
+                    // }while(a <=3)
+
+//break
+                        // for(var i = 1;i <= 5;i++){
+                        //     console.log('我是外层循环的' + i);
+                        //     for(var j = 1;j <= 3;j++){
+                        //         if(j === 2){
+                        //             // break;
+                        //             continue;
+                        //         }
+                        //         console.log('里层循环' + j)
+                        //     }
+                        // }
+</script>

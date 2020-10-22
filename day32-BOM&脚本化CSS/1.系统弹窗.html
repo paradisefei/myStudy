@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function call(){
+            //prompt弹出，将返回值保存在变量中
+            //返回值是文本框的输入内容，如果取消则返回null
+            var res = prompt("叫爸爸","爸爸");
+            if(res){
+                if(res === "爸爸"){
+                    //弹出确认框confirm
+                    //将返回值保存在变量中，点击确定返回true，点击取消返回false
+                    var conf = confirm("你确定叫的是我吗？");
+                    if(conf){
+                        alert("儿子乖");
+                    }
+                    else{
+                        call();
+                    }
+                }
+                else{
+                    call();
+                }
+            }
+            else{
+                    call();
+            }
+
+
+
+        }
+
+        call();
+    </script>
+</body>
+</html>

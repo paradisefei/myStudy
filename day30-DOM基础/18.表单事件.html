@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Ipt">
+    <script>
+        var oIpt = document.getElementById("Ipt");
+
+        //input事件//表单内容改变时触发
+        // oIpt.oninput = function(){
+        //     console.log(oIpt.value);
+        // }
+        //onchange
+        oIpt.onchange = function(){
+            console.log(oIpt.value);
+        }
+    </script>
+</body>
+</html>

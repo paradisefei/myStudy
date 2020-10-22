@@ -1,0 +1,16 @@
+.center(@_){
+    background-color:red;
+    position:absolute;
+    left:0;
+}
+.center(none){
+    display:none;
+}
+.center(flex){
+    display:flex;
+}
+.outer {
+    width:200px;
+    height:200px;
+    .center(flex);
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #f {
+            /* height: 500px; */
+            /* border: 1px solid black; */
+
+            display: flex;
+            /* flex-wrap: wrap; */
+        }
+        #f > div {
+            width: 100px;
+            height: 100px;
+        }
+        #f > div:first-of-type {
+            width: 200px;
+            background-color: #ffd3b6;
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+        }
+        #f > div:nth-of-type(2){
+            background-color: #8c82fc;
+            /* flex-grow: 2; */
+            /* flex-shrink: 2; */
+        }
+        #f > div:nth-of-type(3){
+            background-color: #61c0bf;
+            /* flex-grow: 3; */
+            /* flex-shrink: 3; */
+        }
+        #f > div:nth-of-type(4){
+            background-color: #3490de;
+        }
+        #f > div:nth-of-type(5){
+            background-color: #ff8c94;
+        }
+        #f > div:nth-of-type(6){
+            background-color: #fdffab;
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <!-- <div>4</div>
+        <div>5</div>
+        <div>6</div> -->
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #f {
+            /* width: 800px; */
+            /* height: 500px; */
+            border: 1px solid black;
+            display: flex;
+
+        }
+        #f > div {
+            width: 100px;
+            height: 100px;
+            flex-grow: 1;
+        }
+        #f > div:first-of-type {
+            width: 100px;
+            height: 100px;
+            background-color: #fc5185;
+            flex-grow: 1;
+        }
+        #f > div:nth-of-type(2){
+            width: 100px;
+            height: 100px;
+            background-color: #11999e;
+            flex-grow: 2;
+        }
+        #f > div:nth-of-type(3){
+            width: 100px;
+            height: 100px;
+            background-color: #3f72af;
+
+            flex-grow: 3;
+        }
+        #f > div:nth-of-type(4){
+            width: 100px;
+            height: 100px;
+            background-color: #3490de;
+            flex-grow: 4;
+        }
+        #f > div:nth-of-type(5){
+            width: 100px;
+            height: 100px;
+            background-color: #ffd460;
+            flex-grow: 5;
+        }
+        #f > div:nth-of-type(6){
+            width: 100px;
+            height: 100px;
+            background-color: #dcedc2;
+            flex-grow: 6;
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html> -->

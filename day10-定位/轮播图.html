@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>幻灯片</title>
+        <style>
+/* 幻灯片的存放盒子 */
+            #box {
+                width: 1130px;
+                height: 286px;
+                margin: 0 auto;
+                /* background-color: #00adb5; */
+                overflow: hidden;
+                border-radius: 8px;
+
+                position: relative;
+            }
+    /* 存放图片的整个无序列表 */
+            #box ul {
+                padding: 0;
+                margin: 0;
+                width: 5650px;
+                list-style-type: none;
+            }
+    /* 列表具体的项 */
+            #box ul li {
+                /* width: 5650px; */
+                float: left;
+            }
+            #box ul li img {
+                width: 1130px;
+                height: 286px;
+                
+            }
+
+    /* 前后箭头 */
+            #box .arrow {
+                width: 40px;
+                height: 70px;
+                /* background-color: #fce38a; */
+
+                background-image: url('./imgs/icon-slides.png');
+                background-repeat: no-repeat;
+
+                position: absolute;
+                top: 50%;
+                /* margin-top: -35px; */
+            }
+            #box .prev {
+                background-position: -84px 0;
+            }
+            #box:hover .prev {
+                background-position: 0 0;
+            }
+            #box .next {
+                right: 0;
+                background-position: -126px 0;
+            }
+            #box:hover .next {
+                background-position: -42px 0;
+            }
+
+    /* 小圆点 */
+            #box .dot {
+                padding: 0;
+                margin: 0;
+                width: 100px;
+                height: 10px;
+                /* background-color: #ff2e63; */
+
+                position: absolute;
+                top: 256px;
+                left: 50%;
+                margin-left: -50px;
+            }
+            #box .dot li {
+                width: 10px;
+                height: 10px;
+                background-color: #535352;
+                margin: 0 5px;
+                border-radius: 50%;
+            }
+
+            #box .dot li.active {
+                background-color: #ededec;
+            }
+        </style>
+    </head>
+    <body>
+<!-- 幻灯片的存放盒子 -->
+        <div id="box">
+    <!-- 存放图片的整个无序列表 -->
+            <ul>
+    <!-- 列表中的具体项 -->
+                <li>
+                    <img src="./imgs/0121365f23ed70a80120a82197289b.jpg" alt="">
+                </li>
+                <li>
+                    <img src="./imgs/012f595f23ab03a80120a8218c8e64.png" alt="">
+                </li>
+                <li>
+                    <img src="./imgs/0148a25f23aaf6a801215aa038b8a3.png" alt="">
+                </li>
+                <li>
+                    <img src="./imgs/0149115f23ab31a80120a8212535f0.png" alt="">
+                </li>
+                <li>
+                    <img src="./imgs/015e9c5f23ab15a801215aa0795d4e.png" alt="">
+                </li>
+            </ul>
+    <!-- 前后箭头 -->
+            <div class="arrow prev"></div>
+            <div class="arrow next"></div>
+    <!-- 小圆点 -->
+            <ul class="dot">
+                <li></li>
+                <li></li>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </body>
+</html>

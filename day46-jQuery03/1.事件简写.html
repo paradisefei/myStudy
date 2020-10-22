@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <script>
+        /*
+        jQuery中对于js中的一些事件进行了绑定,传入事件关键字,在jQuery的底层就是用DOM0级事件进行绑定的
+        jQuery中可能并没有把所有的事件关键字都写进去,如果要用的话只用把关键字写进去即可
+        只要是js中能用DOM0级绑定的事件都可以使用这种方式进行简写。
+        */
+        $(function () {
+            //源码没有提供input事件简写，可以在源码中添加
+            $("input").input(function () {
+                console.log("表单改变")
+            })
+        })
+    </script>
+</body>
+
+</html>

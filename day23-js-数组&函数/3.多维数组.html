@@ -1,0 +1,41 @@
+<script>
+    var performeres = [
+            //编号,演员姓名,饰演角色,性格
+            [1, '孙红雷', '何辅堂', '为人正直不阿，欺强怜弱，善于机变。'],
+            [2, '巍子', '魏正先', '鹰视狼顾，心狠手黑。']
+        ];
+        //需求：把数据存入表格中
+        //2行4列
+        // //直接写入
+        // document.write('<table border="1" width = "800">');
+        //     for(var i = 0 ; i < performeres.length; i++){
+        //         document.write('<tr>');
+        //             for(var j = 0 ; j < performeres[1].length ; j++){
+        //                 document.write('<td>');
+        //                     document.write(performeres[i][j]);
+        //                 document.write('</td>');
+        //             }
+        //         document.write('</tr>');
+        //     }
+        // document.write('</table>');
+
+        //使用字符串拼接直接写入
+        var str = '';
+        str += '<table width = "800" border = "1">';
+            for(var i = 0 ; i < performeres.length ; i++){
+                str += '<tr>';
+                    for(var j = 0 ; j < performeres[1].length ; j++){
+                        str += '<td>' + performeres[i][j] + '</td>';
+                    }
+                str += '</tr>';
+            }
+        str += '</table>';
+        document.write(str);
+
+        // var arr = [
+        //     [1,2],[2,3],[3,[
+        //         'hello','you',['2',"it's me"]
+        //     ]]
+        // ]
+        // console.log(arr[2][1][2][1]);
+</script>

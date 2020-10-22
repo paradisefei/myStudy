@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        //[3, 4, 2, 5, 1]
+        //[1]
+        function quickSort(arr) {
+            /* 
+        
+            */
+           //arr.length = 5 1
+            if (arr.length <= 1) {
+                return arr;
+            }
+            //2 1
+            const baseValueIndex = Math.floor(arr.length / 2);
+            /* 
+                1.获取被删除的数值
+                2.改变原数组，把基准值从原数组中删除
+            */
+           //baseValue 2 4
+           //arr [3,4,5,1] [3,5]
+            const baseValue = arr.splice(baseValueIndex, 1)[0];
+
+            const left = [];
+            const right = [];
+
+            arr.forEach((item, index) => {
+                //[1]
+                //[3]
+                if (item < baseValue) {
+                    left.push(item);
+                } 
+                //[3,4,5]
+                //[5]
+                else {
+                    right.push(item);
+                }
+            });
+            //[1].concat(2,quickSort([3,4,5])) [1,2,3,4,5]
+            //这里return的是一个数组，return到调用这个函数的地方
+            return quickSort(left).concat(baseValue, quickSort(right));
+        }
+        const res = quickSort([3, 4, 2, 5, 1]);
+        console.log(res);
+    </script>
+</body>
+
+</html>

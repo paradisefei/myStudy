@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" data-study="DOM">我是一个div</div>
+    <button id="btn">按钮</button>
+    <button id="btn2">删除</button>
+
+    <script>
+        /*
+            dataset对象中保存了所有的自定义属性
+        */
+        //获取元素
+        oBox = document.getElementById("box");
+        oBtn = document.getElementById("btn");
+        oBtn2 = document.getElementById("btn2");
+
+        oBtn.onclick = function(){
+            //获取自定义属性的值
+            console.log(oBox.dataset.study);
+
+            //自定义新的属性
+            oBox.dataset.eat = "meat";
+
+            //删除自定义属性
+            // delete oBox.dataset.eat;
+        }
+        oBtn2.onclick = function(){
+
+            //删除自定义属性
+            delete oBox.dataset.eat;
+        }
+    </script>
+</body>
+</html>

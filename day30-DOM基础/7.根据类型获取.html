@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="dan">蛋黄的长裙</p>
+        <span>粒粒皆辛苦</span>
+        <p class="dan">蓬松的头发</p>
+        <strong>谁知盘中餐</strong>
+    </div>
+    <div class="dan">你牵着我的手看最新展出的油画</div>
+    <script>
+        var oDan = document.getElementsByClassName("dan");
+        console.log(oDan);
+        for(var i = 0; i < oDan.length ; i++){
+            oDan[i].style.background = "yellow";
+        }
+    </script>
+</body>
+</html>

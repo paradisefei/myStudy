@@ -1,0 +1,39 @@
+<script>
+    /*
+        Promise.race(iterable)
+            功能
+                获取到数据中第一个执行完成的promise对象
+            返回值
+                第一个promise的state和result
+
+    */
+
+    {
+        const pro1 = new Promise((resolve, reject) => {
+            console.log("请求a~")
+            setTimeout(() => {
+                console.log("a请求成功");
+                // resolve("a数据");
+                reject("GG");
+            }, 100)
+        })
+        const pro2 = new Promise((resolve, reject) => {
+            console.log("请求b~")
+            setTimeout(() => {
+                console.log("b请求成功")
+                resolve("b数据");
+
+            }, 2000)
+        })
+        const pro3 = new Promise((resolve, reject) => {
+            console.log("请求c~")
+            setTimeout(() => {
+                console.log("c请求成功")
+                resolve("c数据");
+            }, 500)
+        })
+
+        const resultProAll = Promise.race([pro1,pro2,pro3]);
+        console.log(resultProAll);
+    }
+</script>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #outer {
+            width: 600px;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        #inner {
+            width: 600px;
+            /* height:400px; */
+            margin: 20px auto;
+            /* overflow: auto; */
+            overflow: hidden;
+
+            /* position:relative; */
+        }
+
+        .pic {
+            width: 3000px;
+
+            display: flex;
+        }
+
+        .pic img {
+            width: 600px;
+            height: 400px;
+        }
+
+        .arrow {
+            font-size: 30px;
+            color: yellow;
+            background-color: green;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .left {
+            left: 10px;
+        }
+
+        .right {
+            right: 10px;
+        }
+
+        .dot {
+
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            display: flex;
+            bottom: 30px;
+            width: 130px;
+            justify-content: space-between;
+        }
+
+        .dot li {
+            background-color: rgba(255, 255, 255, .5);
+            text-align: center;
+            width: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .dot li.active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <ul class="pic">
+                <li><img src='./imgs/06.jpg' /></li>
+                <li><img src='./imgs/07.jpg' /></li>
+                <li><img src='./imgs/08.jpg' /></li>
+                <li><img src='./imgs/09.jpg' /></li>
+                <li><img src='./imgs/10.jpg' /></li>
+            </ul>
+            <div>
+                <div class="arrow left">&lt;</div>
+                <div class="arrow right">&gt;</div>
+            </div>
+            <ul class="dot">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        //获取元素对象
+        var oInner = document.getElementById("inner");
+        var oPicLists = document.querySelectorAll(".pic > li");
+        var oLeft = document.querySelector(".left");
+        var oRight = document.querySelector(".right");
+        var oDotLis = document.querySelectorAll(".dot > li");
+        var moveTimer = null, changeTimer = null;
+        //表示第几张图片
+        var i = 0;
+
+
+        //启用间歇调用
+        moveTimer = setInterval(function () {
+            i++;
+            console.log(i);
+            if (i > 4) {
+                i = 0;
+            }
+            for (var k = 0; k < oDotLis.length; k++) {
+                oDotLis[k].className = ""
+            }
+            oDotLis[i].className = "active";
+            //初始位置
+            var startPoint = oInner.scrollLeft;
+            //结束位置
+            var endPoint = i * oPicLists[0].offsetWidth;
+            //走过的步数
+            var startStep = 0;
+            //一共要走的步数
+            var endStep = 20;
+            //每一步要走的
+            var everyStep = (endPoint - startPoint) / (endStep - startStep);
+            //启用计时器
+            changeTimer = setInterval(function () {
+                startStep++;
+                startPoint += everyStep;
+                if (startStep >= endStep) {
+                    startStep = 0;
+                    clearInterval(changeTimer);
+                }
+                oInner.scrollLeft = startPoint;
+            }, 20)
+
+        }, 2000)
+
+        //左箭头点击事件
+        oLeft.onclick = function () {
+            //清除计时器
+            clearInterval(moveTimer);
+            clearInterval(changeTimer);
+
+            i--;
+            if (i < 0) {
+                i = 4;
+            }
+            //圆点样式
+            for (var k = 0; k < oDotLis.length; k++) {
+                oDotLis[k].className = ""
+            }
+            oDotLis[i].className = "active";
+            //初始位置
+            var startPoint = oInner.scrollLeft;
+            //结束位置
+            var endPoint = i * oPicLists[0].offsetWidth;
+            //走过的步数
+            var startStep = 0;
+            //一共要走的步数
+            var endStep = 20;
+            //每一步要走的
+            var everyStep = (endPoint - startPoint) / (endStep - startStep);
+            //启用计时器
+            changeTimer = setInterval(function () {
+                startStep++;
+                startPoint += everyStep;
+                if (startStep >= endStep) {
+                    startStep = 0;
+                    clearInterval(changeTimer);
+                }
+                oInner.scrollLeft = startPoint;
+            }, 20)
+
+            //继续启用自动轮播
+            moveTimer = setInterval(function () {
+                i++;
+                if (i > 4) {
+                    i = 0;
+                }
+                //圆点样式
+                for (var k = 0; k < oDotLis.length; k++) {
+                    oDotLis[k].className = ""
+                }
+                oDotLis[i].className = "active";
+                //初始位置
+                var startPoint = oInner.scrollLeft;
+                //结束位置
+                var endPoint = i * oPicLists[0].offsetWidth;
+                //走过的步数
+                var startStep = 0;
+                //一共要走的步数
+                var endStep = 20;
+                //每一步要走的
+                var everyStep = (endPoint - startPoint) / (endStep - startStep);
+                //启用计时器
+                changeTimer = setInterval(function () {
+                    startStep++;
+                    startPoint += everyStep;
+                    if (startStep >= endStep) {
+                        startStep = 0;
+                        clearInterval(changeTimer);
+                    }
+                    oInner.scrollLeft = startPoint;
+                }, 20)
+
+            }, 2000)
+        }
+        //右箭头点击事件
+        oRight.onclick = function () {
+            //清除计时器
+            clearInterval(moveTimer);
+            clearInterval(changeTimer);
+
+            i++;
+            if (i > 4) {
+                i = 0;
+            }
+            //圆点样式
+            for (var k = 0; k < oDotLis.length; k++) {
+                oDotLis[k].className = ""
+            }
+            oDotLis[i].className = "active";
+            //初始位置
+            var startPoint = oInner.scrollLeft;
+            //结束位置
+            var endPoint = i * oPicLists[0].offsetWidth;
+            //走过的步数
+            var startStep = 0;
+            //一共要走的步数
+            var endStep = 20;
+            //每一步要走的
+            var everyStep = (endPoint - startPoint) / (endStep - startStep);
+            //启用计时器
+            changeTimer = setInterval(function () {
+                startStep++;
+                startPoint += everyStep;
+                if (startStep >= endStep) {
+                    startStep = 0;
+                    clearInterval(changeTimer);
+                }
+                oInner.scrollLeft = startPoint;
+            }, 20)
+
+            //继续启用自动轮播
+            moveTimer = setInterval(function () {
+                i++;
+                if (i > 4) {
+                    i = 0;
+                }
+                //圆点样式
+                for (var k = 0; k < oDotLis.length; k++) {
+                    oDotLis[k].className = ""
+                }
+                oDotLis[i].className = "active";
+                //初始位置
+                var startPoint = oInner.scrollLeft;
+                //结束位置
+                var endPoint = i * oPicLists[0].offsetWidth;
+                //走过的步数
+                var startStep = 0;
+                //一共要走的步数
+                var endStep = 20;
+                //每一步要走的
+                var everyStep = (endPoint - startPoint) / (endStep - startStep);
+                //启用计时器
+                changeTimer = setInterval(function () {
+                    startStep++;
+                    startPoint += everyStep;
+                    if (startStep >= endStep) {
+                        startStep = 0;
+                        clearInterval(changeTimer);
+                    }
+                    oInner.scrollLeft = startPoint;
+                }, 20)
+
+            }, 2000)
+        }
+
+        //绑定圆点点击事件
+        oDotLis.forEach(function (item, index) {
+
+
+            //运动动画
+            item.onclick = function () {
+                //清除所有圆点的点击样式
+                for (var i = 0; i < oDotLis.length; i++) {
+                    oDotLis[i].className = ""
+                }
+                i = index;
+                this.className = "active";
+                //清除计时器
+                clearInterval(moveTimer);
+                clearInterval(changeTimer);
+                //初始位置
+                var startPoint = oInner.scrollLeft;
+                //结束位置
+                var endPoint = index * oPicLists[0].offsetWidth;
+                //走过的步数
+                var startStep = 0;
+                //一共要走的步数
+                var endStep = 20;
+                //每一步要走的
+                var everyStep = (endPoint - startPoint) / (endStep - startStep);
+                //启用计时器
+                changeTimer = setInterval(function () {
+                    startStep++;
+                    startPoint += everyStep;
+                    if (startStep >= endStep) {
+                        startStep = 0;
+                        clearInterval(changeTimer);
+                    }
+                    oInner.scrollLeft = startPoint;
+                }, 20)
+
+                //继续启用自动轮播
+                moveTimer = setInterval(function () {
+                    i++;
+                    if (i > 4) {
+                        i = 0;
+                    }
+                    //初始位置
+                    var startPoint = oInner.scrollLeft;
+                    //结束位置
+                    var endPoint = i * oPicLists[0].offsetWidth;
+                    //走过的步数
+                    var startStep = 0;
+                    //一共要走的步数
+                    var endStep = 20;
+                    //每一步要走的
+                    var everyStep = (endPoint - startPoint) / (endStep - startStep);
+                    //启用计时器
+                    changeTimer = setInterval(function () {
+                        startStep++;
+                        startPoint += everyStep;
+                        if (startStep >= endStep) {
+                            startStep = 0;
+                            clearInterval(changeTimer);
+                        }
+                        oInner.scrollLeft = startPoint;
+                    }, 20)
+
+                }, 2000)
+            }
+
+        })
+    </script>
+</body>
+
+</html>

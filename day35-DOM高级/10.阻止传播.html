@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>阻止传播</title>
+    <style>
+        #outer {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+        #inner {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="box"></div>
+        </div>
+    </div>
+    <script>
+        var oOuter = document.getElementById("outer");
+        var oInner = document.getElementById("inner");
+        var oBox = document.getElementById("box");
+
+        oBox.onclick = function(e){
+            e.stopPropagation();//原本会冒泡到inner,加了这个的话从inner开始就不会再触发了
+            alert("box");
+        }
+        oInner.onclick = function(){
+            
+            alert("inner");
+            e.stopPropagation();
+        }
+        oOuter.onclick = function(){
+            // e.stopPropagation();
+            alert("outer");
+        }
+
+
+        // oOuter.addEventListener("click", function () {
+        //     // ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+        //     alert("outer");
+        // });
+        // oInner.addEventListener("click", function () {
+        //     // ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+        //     alert("inner");
+        // });
+        // oBox.addEventListener("click", function (ev) {
+        //     // 阻止传播
+        //     // 现代浏览器中：
+        //     /* ev.stopPropagation();
+     
+        //      // ie678浏览器中
+        //      ev.cancelBubble = true;*/
+
+        //     ev.stopPropagation?ev.stopPropagation():ev.cancelBubble = true;
+        //     alert("box");
+        // });
+
+    </script>
+</body>
+
+</html>

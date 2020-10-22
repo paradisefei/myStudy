@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            position:fixed;
+        }
+        #con {
+            height:4000px;
+            width:4000px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">
+        点我
+    </button>
+    <div id="con">
+
+    </div>
+
+    <script>
+        //点击按钮设置文档滚动条的位置
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function(){
+            window.scrollTo(500,400)
+        }
+    </script>
+</body>
+</html>

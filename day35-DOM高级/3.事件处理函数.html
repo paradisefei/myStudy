@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件处理函数</title>
+    <style>
+        #outer {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            background-color: red;
+        }
+
+        #inner {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background-color: black;
+        }
+
+        #con {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="con"></div>
+        </div>
+    </div>
+    <script>
+        /*
+            addEventListener()是DOM2级事件
+        */
+        var oOuter = document.querySelector("#outer");
+        var oInner = document.querySelector("#inner");
+        var oCon = document.querySelector("#con");
+
+        /*
+            使用addEventListener()来绑定事件
+            第一个参数是绑定的事件名,注意不需要加on
+            第二个参数是事件函数
+            第三个参数是一个Boolean值,表示该事件是在捕获阶段触发还是冒泡阶段触发
+                false:默认值,表示冒泡阶段触发
+                true:表示捕获阶段触发
+        */
+        // oOuter.addEventListener("click", function () {
+        //     alert("outer");
+        // },true)
+        // oInner.addEventListener("click", function () {
+        //     alert("inner");
+        // },true)
+        // oCon.addEventListener("click", function () {
+        //     alert("con");
+        // })
+
+        oCon.addEventListener("click", function () {
+            alert("con1");
+        })
+        oCon.addEventListener("click", function () {
+            alert("con2");
+        })
+        oCon.addEventListener("click", function () {
+            alert("con3");
+        })
+    </script>
+</body>
+
+</html>

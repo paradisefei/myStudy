@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 4000px;
+        }
+
+        #returnTop {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            border-radius: 5px;
+            /* border:1px solid black; */
+            background-color: red;
+
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            cursor: pointer;
+
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="returnTop">回到顶部</div>
+
+    <script>
+        var oReturnTop = document.getElementById("returnTop");
+        var oReturnTopTimer = null;
+
+        window.onscroll = function () {
+            if (window.pageYOffset >= 800) {
+                oReturnTop.style.display = "block";
+            }
+            else {
+                oReturnTop.style.display = "none";
+            }
+        }
+
+        oReturnTop.onclick = function () {
+            //获取起始点位置
+            var startPoint = window.pageYOffset;
+            console.log(startPoint);
+            //获取终点位置
+            var endPoint = 0;
+            //每次走的步数//每次的步数都一样，所以是匀速的
+            var foot = Math.floor((endPoint - startPoint) / 100);
+
+            oReturnTopTimer = setInterval(function () {
+                //计算每一次滚动条的位置
+                // foot -= 8;
+                startPoint += foot;
+                //设置滚动位置
+                if (startPoint <= 0) {
+                    clearInterval(oReturnTopTimer);
+                }
+                window.scrollTo(0, startPoint);
+            }, 1000 / 60)
+        }
+    </script>
+</body>
+
+</html>

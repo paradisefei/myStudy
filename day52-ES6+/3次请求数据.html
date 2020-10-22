@@ -1,0 +1,55 @@
+<script>
+    /*
+        1.请求数据A,得到一个对象obj={name:"lily"}
+        1.请求数据B,得到一个对象obj={age:18},将该数据assign到第一个对象中
+        1.请求数据A,返回一个对象obj={sex:"女"},将对象追加,返回成功结果
+    */
+    {
+        //请求数据A
+        const pro1 = new Promise((resolve, reject) => {
+            console.log("开始请求数据A");
+            setTimeout(function () {
+                const obj1 = {
+                    name: "lily"
+                }
+                resolve(obj1);
+            }, 1000)
+
+        })
+        //请求数据B
+        const thenResult1 = pro1.then((success) => {
+            console.log(success)
+            return new Promise((resolve, reject) => {
+                console.log("开始请求数据B");
+                setTimeout(function () {
+                    const obj2 = {
+                        age: 18
+                    }
+                    resolve(Object.assign(success,obj2));
+                }, 1000)
+
+            })
+        })
+        //请求数据C
+        const thenResult2 = thenResult1.then((success) => {
+            console.log(success)
+            return new Promise((resolve, reject) => {
+                console.log("开始请求数据C");
+                setTimeout(function () {
+                    const obj3 = {
+                        sex: '女'
+                    }
+                    resolve(Object.assign(success,obj3));
+                }, 1000)
+
+            })
+        })
+        thenResult2.then((success) => {
+            console.log("结果:",success)
+        })
+
+        // console.log("pro1", pro1)
+        // console.log("thenResult1", thenResult1)
+        // console.log("thenResult2", thenResult2)
+    }
+</script>

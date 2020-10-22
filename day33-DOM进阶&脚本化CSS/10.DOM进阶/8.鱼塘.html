@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        table {
+            width: 500px;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="###" id="form">
+        <label>
+            请输入姓名
+            <input type="text" id="user">
+        </label>
+        <br>
+        <label>
+            请输入年龄
+            <input type="text" id="age">
+        </label>
+        <br>
+        <label>
+            打分
+            <input type="text" id="score">
+        </label>
+        <br>
+        <label>
+            身价
+            <input type="text" id="price">
+        </label>
+        <br>
+        <button id="btn">添加</button>
+    </form>
+
+    <table id="tab">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>打分</th>
+            <th>身价</th>
+            <th>操作</th>
+        </tr>
+    </table>
+
+    <script>
+        //获取元素对象
+        var oUser = document.getElementById("user");
+        var oAge = document.getElementById("age");
+        var oScore = document.getElementById("score");
+        var oPrice = document.getElementById("price");
+
+        var oBtn = document.getElementById("btn");
+        var oTab = document.getElementById("tab");
+        var oTrs = oTab.getElementsByTagName("tr");
+
+        //点击提交事件
+        oBtn.onclick = function () {
+            console.log(oTrs.length);
+            //获取内容，并去掉前后空格
+            var oUserCon = oUser.value.trim();
+            var oAgeCon = oAge.value.trim();
+            var oScoreCon = oScore.value.trim();
+            var oPriceCon = oPrice.value.trim();
+
+            if (oUserCon && oAgeCon && oScoreCon && oPriceCon) {
+                var newTr = document.createElement("tr");
+
+                newTr.innerHTML = "<td>" + oUserCon + "</td>" + "<td>" + oAgeCon + "</td>"
+                    + "<td>" + oScoreCon + "</td>" + "<td>" + oPriceCon + "</td>" + "<td>删除</td>";
+
+                //将新元素添加入表格中
+                // oTab.appendChild(newTr);
+
+                //要记得这种动态的一定要用旧的方法获取元素才行
+                if (oTrs.length === 1) {
+                    oTab.appendChild(newTr);
+                }
+                else {
+                    oTab.insertBefore(newTr, oTrs[1]);
+                }
+                //删除节点
+                for(var i = 1; i < oTrs.length ;i++){
+                    //找到按钮所在的节点
+                    oTrs[i].children[4].onclick = function(){
+                        //删除父节点
+                        this.parentNode.parentNode.removeChild(this.parentNode);
+                    }
+                }
+            }
+            else {
+                alert("不能有空");
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

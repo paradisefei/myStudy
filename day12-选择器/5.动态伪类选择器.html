@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        #box {
+            width: 500px;
+            height: 400px;
+            margin: 10px auto;
+            font-size: 0;
+        }
+        #box a {
+            display: block;
+            position: absolute;
+        }
+        #box a img {
+            width: 500px;
+            height: 400px;
+        }
+        #click {
+            width: 500px;
+            margin: 10px auto;
+        }
+        #click::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #click li {
+            float: left;
+            margin-left: 10px;
+        }
+        #click img {
+            height: 70px;
+        }
+        #box a:target {
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <a name='kof-01'>
+            <img src="./img/kof-01.jpg" alt="">
+        </a>
+        <a name='kof-02'>
+            <img src="./img/kof-02.jpg" alt="">
+        </a>
+        <a name='kof-03'>
+            <img src="./img/kof-03.jpg" alt="">
+        </a>
+        <a name='kof-04'>
+            <img src="./img/kof-04.jpg" alt="">
+        </a>
+        <a name='kof-05'>
+            <img src="./img/kof-05.jpg" alt="">
+        </a>
+    </div>
+    <ul id="click">
+        <li>
+            <a href="#kof-01">
+                <img src="./img/kof-01.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-02">
+                <img src="./img/kof-02.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-03">
+                <img src="./img/kof-03.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-04">
+                <img src="./img/kof-04.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-05">
+                <img src="./img/kof-05.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态伪类选择器</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        /* 清除所有列表的默认样式 */
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+        }
+        #box ul {
+            width: 500px;
+
+        }
+        #box ul li {
+            width: 500px;
+            height: 400px;
+            /* border: 1px solid steelblue; */
+            position: absolute;
+        }
+        #box ul li a {
+            position: absolute;
+        }
+        #box ul li img {
+            width: 500px;
+            height: 400px;
+
+        }
+        #box ul li.li1 {
+            z-index: 1;
+        }
+        #link {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        #link li {
+            float: left;
+            margin-left: 10px;
+        }
+        #link li img {
+            height: 70px;
+        }
+        #box a:target {
+            z-index: 2;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li class="li1">
+                <a name='kof-01'>
+                    <img src="./img/kof-01.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a name='kof-02'>
+                    <img src="./img/kof-02.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a name='kof-03'>
+                    <img src="./img/kof-03.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a name='kof-04'>
+                    <img src="./img/kof-04.jpg" alt="">
+                </a>
+            </li>
+            <li class="li5">
+                <a name='kof-05'>
+                    <img src="./img/kof-05.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <ul id="link">
+        <li>
+            <a href="#kof-01">
+                <img src="./img/kof-01.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-02">
+                <img src="./img/kof-02.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-03">
+                <img src="./img/kof-03.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-04">
+                <img src="./img/kof-04.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#kof-05">
+                <img src="./img/kof-05.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+</body>
+</html> -->

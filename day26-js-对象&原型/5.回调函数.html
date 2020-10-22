@@ -1,0 +1,42 @@
+<script>
+    // function bar(){
+    //     console.log('我是bar');
+    // }
+    // function foo(fn){
+    //     console.log('!!!!!');
+    //     console.log(fn);
+    //     fn();
+    // }
+
+    // foo(bar);
+
+
+    function getNumber(num,fn){
+        for(var i = 1 ; i <= 100 ; i++){
+            if(fn(i)){
+                console.log(i);
+            }
+        }
+
+    }
+    getNumber(100,rule1);
+    //能被5整除
+    function rule1(n){
+        if(n % 5 == 0){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    //个位数上不为3
+    function rule2(n){
+        if(parseInt(n / 1 % 10) == 3){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+</script>

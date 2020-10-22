@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #8a231e;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <!-- - 我们获取到一个URL地址 http//:127.0.0.1:3000?user=xiaowang&pass=12345;得到一个对象{user:"xiaowang",pass:"12345"}
+
+    - 我们获取到一个对象{user:"xiaowang",pass:"12345"},请得到一个查询字符串user=xiaowang&pass=12345 -->
+    <!-- 
+        1.把键值用等号连起来
+        2.把对用&连起来
+     -->
+    <script>
+        var oUrl = "http//:127.0.0.1:3000?user=xiaowang&pass=12345&text=什么东西";
+        var p = oUrl.split("?")[1].split("&");
+        console.log(p);
+        var nObj = {}
+        for(var i = 0; i < p.length;i++){
+            var pars = p[i].split("=");
+            // console.log(pars[0]);
+            // console.log(pars[1]);
+            nObj[pars[0]] = pars[1];
+        }
+        console.log(nObj);
+
+
+        var obj = {
+            user:"xiaowang",
+            pass:"12345",
+            text:"什么东西"
+        }
+        // console.log(obj);
+        // console.log(obj.length);
+        var str = '';
+        var arr = [];
+        for(var x in obj){
+            str += x + '=' + obj[x];
+            arr[arr.length] = str;
+        }
+        console.log(arr.join("&"));
+    </script>
+</body>
+</html>

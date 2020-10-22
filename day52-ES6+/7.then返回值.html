@@ -1,0 +1,72 @@
+<script>
+    /*
+
+    */
+    {
+        const pro1 = new Promise((resolve, reject) => {
+            console.log("准备请求a数据")
+            setTimeout(() => {
+                let flag = true;
+                if (flag) {
+                    console.log("请求成功")
+                    //假设现在请求了数据为data
+                    const data = {
+                        name: "xiaowang"
+                    }
+                    //resolve 和 reject两个同时书写，以第一个为准
+                    resolve(data);
+                    //无论返回成功还是失败，后边的代码都会继续执行完成
+                    console.log("最后的代码")
+                } else {
+                    console.log("请求失败")
+                    //假设现在请求了数据为data
+                    const err = "errorMessage:your code has bug";
+                    //resolve 和 reject两个同时书写，以第一个为准
+                    reject(err);
+                    //无论返回成功还是失败，后边的代码都会继续执行完成
+                    console.log("最后的代码")
+                }
+
+            }, 1000)
+        });
+
+        /*
+        then返回值
+then本身是一个方法,本身会返回一个Promise
+then的参数也是一个方法
+then的返回值根据then中的回调函数的返回值来确定
+1.返回一个值(基本类型/引用类型)
+    then返回的Promise中[[PromiseState]]为fulfilled,[[PromiseResult]]为返回的这个值
+2.没有返回值
+    then返回的Promise中[[PromiseState]]为fulfilled,[[PromiseResult]]为undefined
+3.返回Promise
+    then返回的Promise中[[PromiseState]],[[PromiseResult]]和回调函数返回的一致
+4.抛出异常
+    then返回的Promise中[[PromiseState]]为rejected,[[PromiseResult]]为抛出的错误的字符串
+
+
+        */
+
+        //1.返回一个值
+        // const thenResult1 = pro1.then((success)=>{
+        //     console.log(success);
+        //     return Object
+        // })
+        //2.没有返回值
+        // const thenResult1 = pro1.then((success)=>{
+        //     console.log(success);
+        // })
+        //3.返回promise
+        // const thenResult1 = pro1.then((success)=>{
+        //     console.log(success);
+        //     return new Promise()
+        // })
+        //4.抛出异常
+        const thenResult1 = pro1.then((success)=>{
+            console.log(success);
+            throw new Error();
+        })
+        console.log('pro1',pro1);
+        console.log('then的返回值',thenResult1);
+    }
+</script>

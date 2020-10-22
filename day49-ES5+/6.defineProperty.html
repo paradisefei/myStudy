@@ -1,0 +1,51 @@
+<script>
+    /*
+    Object.defineProperty()方法
+    1.功能
+    就是用来修改属性的
+    2.参数Object.defineProperty(obj,key,{des})
+            1.value
+            2.writable
+            3.enumerable
+            4.configurable
+
+    */
+
+    //字面量方式创建对象
+    var obj = {
+        name: "小王",
+        age: 12
+    }
+    //如果修改的是普通属性,在描述中只用修改value,其它默认都是true,修改为false时就不可了
+    Object.defineProperty(obj, "name", {
+        value: "老王",
+        // writable: false,
+        // enumerable:false,
+        // configurable:false
+
+    })
+    for (var i in obj) {
+        console.log(i);
+    }
+    console.log(obj);
+
+    //create方式创建对象
+    var obj2 = Object.create(null,{
+        name:{
+            value:"张三",
+            configurable:true
+        }
+    })
+
+    //此时如果要修改属性时需要在创建时把configurable设置为true
+    Object.defineProperty(obj2,"name",{
+        value:"李四",
+        // enumerable:true
+    })
+    for (var i in obj2) {
+        console.log(i);
+    }
+    console.log(obj2);
+
+
+</script>

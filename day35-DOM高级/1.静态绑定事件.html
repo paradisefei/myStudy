@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- js语句 -->
+    <!-- <div onclick="alert(1)">这是一个静态绑定事件</div> -->
+    <!-- 
+        函数调用:点击触发点击事件,在行内标签中的点击事件函数是需要用引号引起来的,所以就是要看引号中是什么就会执行什么了,如果不给括号的话,就只是一个函数在字符串代码在这里面并不会执行,所以不会有什么效果;因此需要有括号,函数本身需要执行。
+     -->
+    <div onclick="fn()">这是一个静态绑定事件</div>
+    <script>
+        function fn(){
+            alert(1);
+        }
+    </script>
+</body>
+
+</html>

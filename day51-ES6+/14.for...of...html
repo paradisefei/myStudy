@@ -1,0 +1,52 @@
+<script>
+    /*
+    打印出来都会有0,1,2,3...这些,这些就是所谓的key
+    for...of..的话就是拿出这些数值的key所对应的value来进行遍历
+    */
+    {
+        // arguments
+        function fn1() {
+            console.log(arguments);
+            for (let values of arguments) {
+                console.log(values);
+            }
+        }
+        fn1(1, 2, 3, 4, 5);
+    }
+    {
+        //数组
+        const arr = ["a", "b", "c", "d", "e"];
+        console.log(arr);
+        for (let values of arr) {
+            console.log(values);
+        }
+        for (let values of arr.entries()) {
+            console.log(values);
+        }
+    }
+    {
+        //set
+        const set = new Set([1,2,3,4,2,45,1,2]);
+        console.log(set);
+        for (let values of set) {
+            console.log(values);
+        }
+        for (let values of set.entries()) {
+            console.log(values);
+        }
+    }
+    {
+        //Map
+        const map = new Map([
+            ["name","张三"],
+            [true,12]
+        ])
+        console.log(map);
+        for (let values of map) {
+            console.log(values);
+        }
+        for (let values of map.entries()) {
+            console.log(values);
+        }
+    }
+</script>

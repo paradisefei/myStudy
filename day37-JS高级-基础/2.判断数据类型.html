@@ -1,0 +1,70 @@
+<script>
+    /* 
+        typeof判断：
+            - typeof有两种用法
+                typeof(value)    typeof value
+
+            - typeof可以检测的类型：
+                number、
+                boolean、
+                string、
+                object(只能检测出来是对象类型，不能检测出是哪一种对象)、
+                undefined、
+                Function
+    
+     */
+
+    //typeof 返回当前数据的类型字符的字符串
+    //typeof可以检测的类型
+    var log = console.log;
+//     log(typeof 123); //number
+//     log(typeof "123"); //string
+//     log(typeof (null)); //object
+//     log(typeof undefined); //undefined
+// log(typeof []); //object
+//     log(typeof {}); //object
+//     log(typeof true); //boolean
+//     log(typeof
+//         function () {}); //function
+//     log(typeof Math); //object
+//     log(typeof Date); //function
+//     log(typeof new Date()); //object
+
+
+    /* 
+        A instanceof B:
+            - 用来判断A是否是B的实例
+            - 返回一个布尔值
+            - 主要用来检测对象类型，对于基本类型来说不能检测
+            - 可以检测的类型是：Array Function RegExp Object
+     */
+//     log([] instanceof Array);//true
+//     log([] instanceof Object); //true
+//     log(Array instanceof Function); //true
+// log([] instanceof Function); //false
+//     log({}
+//         instanceof Array); //false
+//     log("123"
+//         instanceof String); //false
+//     log(1 instanceof Number); //false
+//     log(true instanceof Boolean); //false
+
+//     log(/\s/g
+//         instanceof RegExp);//true
+
+//     log(new String("123") instanceof String);//true 
+
+
+    /*  
+        因为null和undefined都只有一个唯一的值  null 和 undefined
+        所以可以通过全等=== 来检测这两个类型
+     */
+
+    var a = null;
+    var b;
+    log(b === undefined) //true
+    log(a === null) //true
+
+    var a = null;
+    console.log(a === null);//true
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box::before {
+            content: attr(title);
+            display: block;
+            height: 100px;
+            width: 100px;
+            background: red;
+            border-radius: 10px;
+        }
+        .box::after {
+            content: 'hi';
+        }
+    </style>
+</head>
+<body>
+    <div class="box" title="哈哈哈">你好</div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box::after {
+            content: '你好';
+            color: teal;
+            /* display: inline-block; */
+            width: 100px;
+            height: 100px;
+            /* background-color: #fc5185; */
+        }
+        #box::before {
+            content: '呵呵';
+            color: tomato;
+            /* display: inline-block; */
+            width: 200px;
+            height: 200px;
+            /* background-color: #3f72af; */
+        }
+        span::before{
+            content: '这是一个';
+        }
+        span::after {
+            content: '非常好的例子';
+        }
+    </style>
+</head>
+<body>
+    <div id="box">你好</div>
+    <span>非常</span>
+</body>
+</html> -->

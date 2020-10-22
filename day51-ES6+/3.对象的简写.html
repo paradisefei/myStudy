@@ -1,0 +1,36 @@
+<script>
+    /*
+    1.当value用变量来表示,key和value用相同的英文单词来表示时,可以简写
+    */
+    {
+        /* 属性简写
+            1.对象需要有属性名和属性值
+            2.属性的简写就是用变量直接写入对象中
+            2.此时,变量名就是属性名;变量值就是属性值
+        */
+        const age = 28,sex = "男",to = "北京";
+        const obj = {
+            age,sex,to
+        }
+        console.log(obj);
+    }
+
+    {
+        /* 方法简写
+            1.方法名就是对象的属性,保存的是后面这个方法的地址
+         */
+
+        // const obj = {
+        //     do:function(){
+        //         console.log("do");
+        //     }
+        // }
+        const obj = {
+            do(){
+                console.log("我是简写的do方法");
+            }
+        }
+        obj.do();
+
+    }
+</script>

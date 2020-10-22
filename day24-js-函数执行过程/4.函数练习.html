@@ -1,0 +1,174 @@
+<script>
+// 1. 定义一个函数，求总价（单价*数量），并且组合成￥100,这种格式。
+
+// function getTotal(s,n){
+//     var total = s * n;
+//     console.log('￥' + total);
+// }
+// getTotal(5,20);
+
+// function getTotal(s,n){
+//     var total = s * n;
+//     return total;
+// }
+// console.log('￥' + getTotal(5,20)); 
+
+
+// 2. 定义一个函数，打印100遍：闫海静真英俊！！！。（不用参数和返回值）
+// function print() {
+//         for(var i = 1; i <= 100 ;i++){
+//         console.log('hello');
+//     }
+// }
+// print();
+
+// 3. 定义一个函数，打印N遍：闫海静真英俊！！！。（不用返回值，用参数）
+// function print(n) {
+//         for(var i = 1; i <= n ; i++){
+//         console.log('hello');
+//     }
+// }
+// print(1);
+
+// 4. 定义一个函数，求1到n的和。
+
+// function getTotal(n) {
+//      var sum = 0;
+//     for(var i = 1 ; i <= n ; i++){
+//         sum += i;
+//     }
+//     console.log(sum);
+// }
+// getTotal(2);
+   
+// 5. 定义一个函数，求1到n的阶乘。
+// function getTotal(n) {
+//      var c = 1;
+//     for(var i = 1 ; i <= n; i++){
+//         c *= i;
+//     }
+//     console.log(c);
+// }
+// getTotal(18);
+   
+// 6. 定义一个函数，给定一个数组得到这个数组的最大值和最小值。
+// function getMaxAndMin(arr) {
+     
+//     var min = arr[0];
+//     var max = arr[0];
+//     for(var i = 0 ; i < arr.length ; i++){
+//         if(arr[i] > max){
+//             max = arr[i];
+//         }
+//         if(arr[i] < min){
+//             min = arr[i];
+//         }
+//         // console.log(i);
+//     }
+//     return ['max:' + max,'min:' +  min]
+//  }
+//  var arr = [2,4,7,1,0,34,7,-1,4,-10];
+//  console.log(getMaxAndMin(arr)) ;
+    
+// 7. 封装函数加工数组，每一项加10输出。
+// function plusTen(arr) {
+//     for(var i = 0 ; i < arr.length ; i++){
+//         arr[i] = arr[i] + 10;
+//     }
+//     console.log(arr);
+// }
+// var arr = [1,2,3,4,5];
+// plusTen(arr)
+
+//使用return
+    // function plusTen(arr) {
+    //     for(var i = 0 ; i < arr.length ; i++){
+    //         arr[i] = arr[i] + 10;
+    //     }
+    //     return arr;
+    // }
+    // var arr = [1,2,3,4,5];
+    // console.log(plusTen(arr)) ;
+
+// 8. 封装函数实现打印1到N的质数。
+        // function getZhi(n) {
+        //         var nArr = [];
+        //         for(var i = 1 ; i <= n ; i++){
+        //         var count = 0;
+        //         for(var j = 1;j <= i; j++){
+        //             if(i % j === 0){
+        //                 count++;
+        //             }
+        //         }
+        //         if(count === 2){
+        //             // console.log(i);
+        //             // return i;
+
+        //             nArr[nArr.length] = i;
+        //         }
+        //     }
+        //     return nArr;
+        // }
+        // console.log(getZhi(100)) ;
+        
+       
+// 9. 封装函数实现对数组进行排序。
+        //    function sort(arr) {
+                    
+        //         for(var i = 1 ; i < arr.length ; i++){
+        //             for(var j = 0 ; j < arr.length - i; j++){
+        //                 if(arr[j] > arr[j + 1]){
+        //                     var temp;
+        //                     temp = arr[j];
+        //                     arr[j] = arr[j + 1];
+        //                     arr[j + 1] = temp;
+        //                 }
+        //             }
+        //         }
+        //         // console.log(arr);
+        //         return arr;
+        //     }
+        //     var arr = [6,9,8,3,23,67,-100,2,0,0,2,4,1,5,7];
+        //     // sort(arr);
+        //     console.log(sort(arr));
+            
+
+// 10. 封装函数实现对数组翻转。
+        //    function reverse(arr) {
+        //         for(var i = 0 ; i < arr.length / 2 ; i++){
+        //             var temp;
+        //             temp = arr[i];
+        //             arr[i] = arr[arr.length - 1 - i];
+        //             arr[arr.length - 1 - i] = temp;
+        //         }
+        //         // console.log(arr);
+        //         return arr;
+        //     }
+        //     var arr = [5,4,3,2,1];
+        //     // reverse(arr);
+        //     console.log(reverse(arr));
+// 11. 封装函数实现对数组去重。
+        //    function quchong(arr){
+        //         var nArr = []
+        //         for(var i = 0; i < arr.length ; i++){
+        //             var flag = false;//表示没有重复
+        //             var val = arr[i];
+        //             for(var j = 0 ; j < nArr.length; j++){
+        //                 if(nArr[j] === val){
+        //                     flag = true;//表示重复了
+        //                 }
+        //             }
+        //             if(!flag){
+        //                 nArr[nArr.length] = val;
+        //             }
+        //             // console.log(i);
+        //         }
+        //         // console.log(nArr);
+        //         return nArr;
+        //     }
+        //     var arr = [1,2,3,2,5,7,8,1];
+        //     // quchong(arr)
+        //     console.log(quchong(arr));
+            
+
+</script>

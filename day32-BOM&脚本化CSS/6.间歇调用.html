@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">取消</button>
+
+    <script>
+        //获取元素对象
+        var oBtn = document.getElementById("btn");
+
+        var timer = setInterval(function(){
+            // alert("我好帅");
+            console.log("我好帅");
+        },1000)
+
+        //取消间歇调用
+        oBtn.onclick = function(){
+            clearInterval(timer);
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="box">
+            <!-- <p>姓名 <span>XXX</span> </p>
+            <p>年龄 <span>XXX</span> </p>
+            <p>性别 <span>XXX</span> </p> -->
+        </div>
+    </body>
+</html>
+
+<script>
+    
+    {
+        let oBox = document.querySelector("#box");
+        const obj = {
+            name:"李四",
+            age:33,
+            sex:"男",
+            fn:function(){
+                console.log("我是对象中的一个函数");
+            }
+        }
+        /*反引号*/
+        oBox.innerHTML =
+        /*
+            括号中可以放表达式
+            可以放函数
+        */
+        `
+            <p>姓名 <span>${obj.name === "李四"?"改了之后的李四" : "不改"}</span></p>
+            <p>年龄 <span>${obj.age + 10}</span></p>
+            <p>性别 <span>${obj.sex}</span></p>
+            <p>函数 <span>${obj.fn()}</span></p>
+        `
+        // `
+        //     <p>姓名 <span>${obj.name}</span></p>
+        //     <p>年龄 <span>${obj.age}</span></p>
+        //     <p>性别 <span>${obj.sex}</span></p>
+        // `
+
+        /*引号*/
+        // "   
+        //     <p>姓名 <span>"+obj.name+"</span> </p>\
+        //     <p>年龄 <span>"+obj.age+"</span> </p>\
+        //     <p>性别 <span>"+obj.sex+"</span> </p>\
+        // "
+        
+    }
+</script>

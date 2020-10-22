@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: green;
+            animation: change2 3s;
+        }
+        /* @keyframes change {
+            from {
+                background-color: red;
+            }
+            25% {
+                background-color: #625772;
+            }
+            50% {
+                background-color: yellow;
+            }
+            75% {
+                background-color: #fbafaf;
+            }
+            100% {
+                background-color: blue;
+            }
+        } */
+        @keyframes change2 {
+            /* from {
+                background-color: red;
+            } */
+
+            50% {
+                background-color: yellow;
+            }
+
+            /* 100% {
+                background-color: blue;
+            } */
+        }
+    </style>
+</head>
+<body>
+    <!-- 如果有起始状态和结束状态，动画开始的时候会直接变成0%的状态，动画结束的时候会直接变成默认状态 -->
+    <!-- 如果没有写开始状态和结束状态，那么默认状态就是开始状态和结束状态 -->
+
+    <div class="box1"></div>
+</body>
+</html>

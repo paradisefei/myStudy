@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="wrap">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        // var oWrap = document.getElementById("wrap");
+
+        //获取子元素节点
+        // var oLis = oWrap.children;
+        // console.log(oLis);
+
+        //获取子节点
+        // var oLis = oWrap.childNodes;
+        // console.log(oLis);
+
+        //获取父节点//直接获取到元素节点
+        // console.log(oLis[0].parentNode) ;
+
+        //获取下一个兄弟节点
+        //在谷歌中得到的是下一个兄弟节点，并不是兄弟元素节点//在ie678中得到的是下一个兄弟元素节点
+        // console.log(oLis[0].nextSibling);
+        //在谷歌中得到的是下一个兄弟元素节点//在ie678中得到的是undefined
+        // console.log(oLis[0].nextElementSibling);
+        //兼容就是要在哪里都能正常输出，在这里就是不管在哪个浏览器都能正常输出下一个兄弟元素节点
+        // function getNextSibling(ele){
+        //     return ele.nextElementSibling || ele.nextSibling;
+        // }
+        // console.log(getNextSibling(oLis[0]));
+
+        //获取第一个元素
+        var oWrap = document.getElementById("wrap");
+        // console.log(oWrap.firstElementChild);
+            //兼容
+        function getFirstChild(ele){
+            if(ele.firstElementChild){
+                console.log(ele.firstElementChild);
+            }
+            else{
+                console.log(ele.firstChild);
+            }            
+        }
+        getFirstChild(oWrap)
+        //获取最后一个元素
+        // console.log(oWrap.lastElementChild)
+        function getLastChild(ele){
+            if(ele.lastElementChild){
+                console.log(ele.lastElementChild);
+            }
+            else{
+                console.log(ele.lastChild);
+            }            
+        }
+        getLastChild(oWrap)
+    </script>
+</body>
+</html>

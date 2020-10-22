@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" id="form">
+        用户名 <input type="text" name="username" id="user">
+        密码 <input type="password" id="pass" name="pass">
+        <button id="submit">提交</button>
+    </form>
+    <p id="login">请登录</p>
+
+    <script>
+        var oForm = document.getElementById("form");
+        var oUser = document.getElementById("user");
+        var oPass = document.getElementById("pass");
+        var oSubmit = document.getElementById("submit");
+        var oLogin = document.getElementById("login");
+        var timer = null;
+
+        //form表单被提交事件
+        oForm.onsubmit = function(){
+            var num = 3;
+            if(oUser.value === "徐耀飞" && oPass.value === "123"){
+                oLogin.innerHTML = "登陆成功，3秒后跳转...";
+                timer = setInterval(function(){
+                    num--;
+                    if(num <= 0){
+                        clearInterval(timer);
+                        location.href = "http://www.baidu.com";
+                        return;
+                    }
+                    oLogin.innerHTML = "登陆成功，" + num + "秒后跳转...";
+                },1000)
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

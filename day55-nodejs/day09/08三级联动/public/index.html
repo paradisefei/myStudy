@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>三级联动</title>
+</head>
+
+<body>
+    <select id="province">
+        <option selected hidden disabled value="">请选择</option>
+    </select>省
+    <select id="city">
+        <option selected hidden disabled value="">请选择</option>
+    </select>市
+    <select id="county">
+        <option selected hidden disabled value="">请选择</option>
+    </select>区(县)
+
+    <script>
+        /* 
+            1.服务器加载进来打开public下的index.html文件
+            2.在index.html中的script代码直接从后端请求相应数据
+                1.请求地址为/，这样就不会在地址栏中显示
+                    什么时候会显示在地址栏中
+        
+        */
+        window.onload = function () {
+            const oProvince = document.getElementById("province");
+            const oCity = document.getElementById("city");
+            const oCounty = document.getElementById("county");
+            const oProOptions = oProvince.getElementsByTagName("option");
+            const oCityOptions = oCity.getElementsByTagName("option");
+            const oCountyOptions = oCounty.getElementsByTagName("option");
+
+
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "/province", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && (xhr.status > 199 && xhr.status < 300)) {
+                    const objOfProvince = JSON.parse(xhr.responseText);
+                    objOfProvince.data.forEach((item) => {
+                        const oOption = document.createElement("option");
+                        oOption.innerHTML = item.name;
+                        oProvince.appendChild(oOption);
+                    })
+                }
+            }
+            /* 
+                省份栏点击事件
+                    1.创建Ajax请求
+                    2.建立连接
+                    3.发送请求
+            */
+            oProvince.onchange = function () {
+
+                Array.from(oCityOptions).forEach((item) => {
+                    item.parentNode.removeChild(item);
+                })
+                /* 
+                    1.得到省份栏被选中项的值
+                        1.获取被选中项的索引
+                        2.获取该项的内容
+                    2.将该值传到服务端
+                */
+                const index = oProvince.selectedIndex;
+                const provinceName = oProOptions[index].text;
+                const xhr2 = new XMLHttpRequest();
+                xhr2.open("GET", `/city?provinceName=${provinceName}`, true);
+                xhr2.send();
+
+
+                xhr2.onreadystatechange = function () {
+                    console.log(1);
+                    if (xhr2.readyState == 4 && (xhr2.status > 199 && xhr2.status < 300)) {
+                        const objOfProvince = JSON.parse(xhr2.responseText);
+                        objOfProvince.data.forEach((item) => {
+                            const oOption = document.createElement("option");
+                            oOption.innerHTML = item.name;
+                            oCity.appendChild(oOption);
+                        })
+                    }
+                }
+            }
+
+            /* 
+                市栏点击事件
+                    1.创建Ajax请求
+                    2.建立连接
+                    3.发送请求
+            */
+            oCity.onchange = function () {
+
+                Array.from(oCountyOptions).forEach((item) => {
+                    item.parentNode.removeChild(item);
+                })
+
+
+                /* 
+                    1.得到省份栏被选中项的值
+                        1.获取被选中项的索引
+                        2.获取该项的内容
+                    2.将该值传到服务端
+                */
+                const indexProvince = oProvince.selectedIndex;
+                const provinceName = oProOptions[indexProvince].text;
+                const indexCity = oCity.selectedIndex;
+                const cityName = oCityOptions[indexCity].text;
+                const xhr2 = new XMLHttpRequest();
+                xhr2.open("GET", `/county?provinceName=${provinceName}&cityName=${cityName}`, true);
+                xhr2.send();
+
+
+                xhr2.onreadystatechange = function () {
+                    if (xhr2.readyState == 4 && (xhr2.status > 199 && xhr2.status < 300)) {
+                        const objOfProvince = JSON.parse(xhr2.responseText);
+                        console.log(objOfProvince);
+                        objOfProvince.data.forEach((item) => {
+                            const oOption = document.createElement("option");
+                            oOption.innerHTML = item.name;
+                            oCounty.appendChild(oOption);
+                        })
+                    }
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

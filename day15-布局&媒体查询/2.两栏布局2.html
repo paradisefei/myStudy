@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+        html,body {
+            padding: 0;
+            margin: 0;
+        }
+        #container {
+            height: 300px;
+            width: 100%;
+
+            position: relative;
+        }
+        #container .left {
+            width: 200px;
+            height: 100%;
+            background-color: #07689f;
+
+            position: absolute;
+            /* z-index: 1; */
+        }
+        #container .right {
+            background-color: #fc5185;
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            /* 把内容顶出来 */
+            margin-left: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="left"></div>
+        <div class="right">
+            开始这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边这是右边
+        </div>
+    </div>
+</body>
+</html>

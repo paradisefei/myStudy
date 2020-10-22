@@ -1,0 +1,44 @@
+<script>
+    /*
+        Promise.all(iterable)
+            功能
+                返回一个Promise实例
+                如果iterable中所有的promise都是resolve
+            参数
+                1.一个可迭代对象,如Array或String
+            返回值
+                1.如果都是fulfilled的promise,则返回一个成功状态的promise,PromiseResult中保存的是一个数组,数组中的每一项是每个resolve()的参数
+                2.如果返回的是一个rejected的promise,则这个promise中PromiseResult的值是遍历到的第一次为rejected的promise的rejected()的参数
+
+
+    */
+
+    {
+        const pro1 = new Promise((resolve, reject) => {
+            console.log("请求a~")
+            setTimeout(() => {
+                console.log("a请求成功");
+                // resolve("a数据");
+                reject("GG");
+            }, 1000)
+        })
+        const pro2 = new Promise((resolve, reject) => {
+            console.log("请求b~")
+            setTimeout(() => {
+                console.log("b请求成功")
+                resolve("b数据");
+
+            }, 2000)
+        })
+        const pro3 = new Promise((resolve, reject) => {
+            console.log("请求c~")
+            setTimeout(() => {
+                console.log("c请求成功")
+                resolve("c数据");
+            }, 1500)
+        })
+
+        const resultProAll = Promise.all([pro1,pro2,pro3]);
+        console.log(resultProAll);
+    }
+</script>

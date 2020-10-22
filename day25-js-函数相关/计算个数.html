@@ -1,0 +1,50 @@
+<script>
+    var arr = [1,[1,2]];
+
+   
+    function countF(arr){
+         var count = 0;
+        for(var i = 0; i < arr.length ; i++){
+            if(Array.isArray(arr[i])){
+                count += countF(arr[i]);
+            }
+            else{
+                count++;
+            }
+        }
+        return count;
+    }
+    console.log(countF(arr)) ;
+
+//执行countF(arr)
+    //count = 0;
+    //i = 0//i = 1
+    //0 < 2 true//1 < 2 true
+    //Array.isArray(1) false//Array.isArray([1,2]) true
+    //count = 1
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

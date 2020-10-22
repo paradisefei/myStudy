@@ -1,0 +1,32 @@
+<script>
+    function fun3() {
+        console.log("fun3");
+    }
+    function fun2() {
+        fun3();
+    }
+    function fun1() {
+        fun2();
+    }
+    fun1();
+
+    /*
+    1.js引擎创建一个执行上下文栈
+    var stack = [];
+    2.向栈中压入全局执行上下文
+    stack = [globalContext];
+    3.执行fun1(),向执行栈中压入fun1()的执行上下文
+    stack.push(<fun1>Context);
+    4.执行fun2(),向执行栈中压入fun2()的执行上下文
+    stack.push(<fun2>Context);
+    5.执行fun3(),向执行栈中压入fun3()的执行上下文
+    stack.pus(<fun3>Context);
+    6.fun3()执行完毕,从执行栈中弹出
+    stack.pop();
+    7.fun2()执行完毕,从执行栈中弹出
+    stack.pop();
+    8.fun1()执行完毕,从执行栈中弹出
+    stack.pop()
+    9.所有代码执行完毕,全局上下文从执行栈中弹出
+    */
+</script>

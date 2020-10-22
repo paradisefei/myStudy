@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        #ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="go">走你</button>
+    <button id="stop">停</button>
+    <div id="outer">
+        <div id="ball"></div>
+    </div>
+    <script>
+        var oOuter = document.getElementById("outer");
+        var oBall = document.getElementById("ball");
+        var oGo = document.getElementById("go");
+        var oStop = document.getElementById("stop");
+        var timer = null;
+
+        var flagX = false;
+        var flagY = false;
+        var l = 20;
+        var t = 20;
+        oGo.onclick = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                if (!flagX) {
+                    l += 2;
+                    if (oBall.offsetLeft >= (oOuter.clientWidth - oBall.offsetWidth)) {
+                        flagX = !flagX;
+                    }
+                }
+                if (flagX) {
+                    l -= 2;
+                    if (oBall.offsetLeft <= 0) {
+                        flagX = !flagX;
+                    }
+                }
+                if (!flagY) {
+                    t += 2;
+                    if (oBall.offsetTop >= (oOuter.clientHeight - oBall.offsetHeight)) {
+                        flagY = !flagY;
+                    }
+                }
+                if (flagY) {
+                    t -= 2;
+                    if (oBall.offsetTop <= 0) {
+                        flagY = !flagY;
+                    }
+                }
+
+                oBall.style.left = l + 'px';
+                oBall.style.top = t + 'px';
+            }, 15)
+        }
+        oStop.onclick = function(){
+            clearInterval(timer);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+document.write("这是外部的js这真的是外部的js");

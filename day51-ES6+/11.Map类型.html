@@ -1,0 +1,121 @@
+<script>
+    /*
+        Map类型
+            1.一种新的数据结构,相当于是对象的扩展
+            2.对象中的key必须是字符串,Map类型在这个上面做了扩展,不止可以是字符串,各种类型的值都可以当作键
+        1.如何创建一个Map数据结构
+        2.参数
+1.map数据中有下标0,1,2...
+2.每个下标里面保存的是一个对象
+3.对象中的key就是设置的key
+3.对象中的value就是设置的value
+    */
+    {
+        //创建一个Map类型的数据
+        const map = new Map();
+        //向map中添加数据//添加的key是对象类型
+        const obj = {p:'hello world'};
+        map.set(obj,'content');
+        console.log(map);
+    }
+    {
+        /*
+        1.Map作为一个构造函数,可以传入一个数组作为参数来对创建的map进行初始化
+        2.数组的成员是一个个表示键值对的数组
+        3.键值对中的key是什么(类型),最后得到的数据中的key就是什么(类型)
+        */
+        const obj1 = {
+            o1(){
+                console.log("我是o1的key");
+            }
+        }
+        const age = "age";
+        const map = new Map([
+            ["name","张三"],
+            [age,33],
+            [true,2],
+            [2,120],
+            [obj1,function(){
+                console.log("我是o1的value");
+            }]
+        ])
+        console.log(map);
+
+    }
+    {
+        /*
+        Map的方法
+            size
+            set()
+                功能:给Map设置键值对
+                参数:(key,value)
+                    注意:如果Map中有key,则更新
+                        如果没有,则添加
+            get()
+                功能:获取对应key的value,如果没有则返回undefined
+            has()
+                功能:判断数据中是否有某个键
+            delete()
+                功能:删除某个键
+                返回值:布尔值
+                    如果删除成功,返回true
+                    如果删除失败,返回false
+            clear()
+                功能:清空
+            entries()
+                功能:得到一个包含调用者的[key,value]的iterator对象
+            keys()
+                功能:得到一个包含调用者的key的iterator对象
+            values()
+                功能:得到一个包含调用者的value的iterator对象
+            forEach()
+                功能:遍历
+        */
+        const obj1 = {
+            o1(){
+                console.log("我是o1的key");
+            }
+        }
+        const age = "age";
+        const map = new Map([
+            ["name","张三"],
+            [age,33],
+            [true,2],
+            [2,120],
+            [obj1,function(){
+                console.log("我是o1的value");
+            }]
+        ])
+        
+        console.log(map.size);
+
+        //如果没有
+        map.set('o',function(){
+            console.log("我是o");
+        })
+        //如果有
+        map.set("name","李四");
+        console.log(map);
+
+        console.log(map.get("name"));
+        console.log(map.get("o"));
+
+        console.log(map.has("name"));
+        // console.log(map.delete("name"));
+        // map.clear();
+        // console.log(map);
+
+        const mapEntries = map.entries();
+        console.log(mapEntries);
+        const mapKeys = map.keys();
+        console.log(mapKeys);
+
+        map.forEach(function(value,key){
+            console.log(value,key);
+        })
+        //把每一个{key,value}拿出来赋给values
+        for(let values of map){
+            console.log(values);
+        }
+    }
+</script>

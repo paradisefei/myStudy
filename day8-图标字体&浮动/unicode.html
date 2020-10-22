@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>unicode引入图标字体</title>
+        <style>
+            @font-face{
+                font-family: 'myicon';
+                src: url(./font/iconfont.eot);
+                src: url(./font/iconfont.woff2) format('woff2'),
+                    url(./font/iconfont.woff) format('woff'),
+                    url(./font/iconfont.ttf) format('truetype'),
+                    url(./font/iconfont.svg) format('svg');
+            }
+            .iconfont {
+                font-family: 'myicon' !important;
+                font-size: 16px;
+                font-style: normal;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-somoothing:grayscale;
+            }
+            div:hover{
+                color: tomato;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="iconfont">
+            &#xe661;
+        </div>
+    </body>
+</html>

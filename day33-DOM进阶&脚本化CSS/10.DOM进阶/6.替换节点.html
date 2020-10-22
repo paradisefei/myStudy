@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        //获取元素
+        var oBtn = document.getElementById("btn");
+        // var oList = document.getElementById("list");
+        var oList = document.querySelector("#list");
+        var oListLis = document.querySelectorAll("#list > li")
+
+        //点击按钮替换
+        oBtn.onclick = function(){
+            //创建一个新元素
+            // var newLi = document.createElement("li");
+            // newLi.innerHTML = "我要去替换别人了";
+
+            // oList.replaceChild(newLi,oListLis[2]);
+
+            //也可以是已存在的元素,如果是已经存在的元素去替换另一个元素，那么已经存在的元素那个位置就没东西了，后面的就会顶上去了
+            oList.replaceChild(oListLis[0],oListLis[3]);
+        }
+    </script>
+</body>
+
+</html>

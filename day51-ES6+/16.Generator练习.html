@@ -1,0 +1,27 @@
+<script>
+    {
+        function* getData() {
+            yield setTimeout(
+                ()=>{
+                    console.log("a");
+                    re.next()
+                }
+            ,1000)
+            yield setTimeout(
+                ()=>{
+                    console.log("b");
+                    re.next()
+                }
+            ,1000)
+            yield setTimeout(
+                ()=>{
+                    console.log("c");
+                    
+                }
+            ,1000)
+        }
+        const re = getData();
+        re.next()
+    }
+
+</script>

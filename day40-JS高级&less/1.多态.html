@@ -1,0 +1,23 @@
+<script>
+    //不同的对象对同一方法有不同的响应
+    function Cat(){
+        
+    }
+    Cat.prototype.eat = function(){
+        console.log("我是猫");
+    }
+    function Dog(){
+        
+    }
+    Dog.prototype.eat = function(){
+        console.log("我是狗");
+    }
+    function eat(obj){
+        obj.eat();
+    }
+    var cat = new Cat();
+    var dog = new Dog();
+    eat(cat);
+    eat(dog);
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js'></script>
+    <style>
+        .con {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">走你</button>
+    <div class="con">
+
+
+    </div>
+    <script>
+        /*
+        鼠标移入,让元素宽度变为500
+        鼠标移出,让元素宽度变为300
+
+        我想要的效果是,鼠标移入确实变宽,在鼠标移出的瞬间,元素在当前宽度的基础上就变小
+        这样的话就需要在动画之前停止之前的动画
+        问题
+        1.下面两个动画是否在同一个动画队列里面
+        */
+        $(function () {
+            $(".con").mouseenter(function () {
+                $(".con").animate({ width: "500px" }, 1000);
+            })
+            $(".con").mouseleave(function () {
+                //animate()是异步代码,在执行stop()这个同步代码的时候,它后面的animate()还没有加载,还不在队列里面,因为是在一个程序里面,鼠标移入那个animate()在队列里面,被清了
+                $(".con").stop(true,true).animate({ width: "100px" }, 1000);
+            })
+        })
+    </script>
+</body>
+
+</html>

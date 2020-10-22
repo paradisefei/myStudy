@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+header {
+	//要留白,就不能给宽度设为100%
+	padding: 0 20px;
+	height: 60px;
+	min-width: 768px;
+	background-color: lightgreen;
+
+	display: flex;
+	//元素在侧轴居中
+	align-items: center;
+	//左边宽度占25%
+	.left {
+		width: 25%;
+		display: flex;
+		justify-content: center;
+
+		img {
+			height: 40px;
+			text-align: center;
+			//默认情况下隐藏
+			display: none;
+			//媒体查询
+			@media screen and (min-width: 1200px) {
+				//显示第三张图片
+				&:nth-child(3) {
+					display: block;
+				}
+			}
+			@media screen and (min-width: 992px) and (max-width: 1200px) {
+				//显示第三张图片
+				&:nth-child(2) {
+					display: block;
+				}
+			}
+			@media screen and (max-width: 992px) {
+				//显示第三张图片
+				&:nth-child(1) {
+					display: block;
+				}
+			}
+		}
+	}
+	//中间宽度占50%
+	form {
+		width: 50%;
+		display: flex;
+		input {
+			width: 80%;
+			height: 40px;
+			box-sizing: border-box;
+		}
+		button {
+			width: 20%;
+			height: 40px;
+		}
+	}
+	//右边宽度占25%
+	.right {
+		width: 25%;
+		display: flex;
+		justify-content: space-evenly;
+		a {
+			text-decoration: none;
+			color: #333;
+			&:hover {
+				color: red;
+			}
+		}
+
+		//媒体查询
+		@media screen and (min-width: 992px) {
+			span {
+				display: none;
+			}
+		}
+		@media screen  and (max-width: 992px) {
+			a {
+				display: none;
+			}
+			span {
+				width: 40px;
+				height: 5px;
+				background-color: white;
+                display: block;
+                cursor:pointer;
+                position:relative;
+				&:before {
+                    content:"";
+					width: 40px;
+					height: 5px;
+                    background-color: white;
+                    position:absolute;
+                    left:0px;
+                    top:-10px;
+				}
+				&:after {
+                    content:"";
+					width: 40px;
+					height: 5px;
+                    background-color: white;
+                    position:absolute;
+                    left:0px;
+                    top:10px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+<script>
+    /*
+
+    1.ES5中对象的属性一定是字符串形式,不管是怎么样的都会被解析成字符串形式
+    2. ES6中做了改变,属性名可以是变量,为变量时,需要使用中括号
+        1.对象名有中括号时,表示此时是一个变量,要进行解析,就是把变量的值转成字符串
+     */
+     {
+         const a = "age";
+         const obj = {
+             [a]:18
+         }
+         console.log(obj);
+     }
+     {
+const o1 = {};
+const o2 = {};
+const obj3 = {
+    [o1]:12,//[object Object]:12
+    [o2]:13//[object Object]:13
+}
+console.log(obj3)
+     }
+
+
+
+</script>

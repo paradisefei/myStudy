@@ -1,0 +1,123 @@
+<script>
+    // console.log(this);
+    // 全局中定义的变量和方法是作为window属性存在的
+    // function aaaaaaa(){
+
+    // }
+    // function bbbbbbb(){
+        
+    // }
+    // var cccccccccccc;
+    // console.log(window)
+    //光秃秃的函数调用
+    // function test (){
+    //     console.log(this);
+    //     function test1(){
+    //         console.log(this);
+    //     }
+    //     test1();
+    // }
+    // test();
+
+    //通过对象的方法调用
+    // var a = 'global';
+    // var foo = {
+    //     a:'foo',
+    //     bar:function (){
+    //         console.log(this.a);
+    //     }
+    // }
+    // foo.bar();
+
+    // var a = 'global';
+    // function bar(){
+    //         console.log(this.a);
+    // }
+    // var foo = {
+    //     a:1,
+    //     bar:bar
+    // }
+    // bar();//'global'
+
+    // var obj2 = {
+    //     a:'obj2',
+    //     foo:function (){
+    //         console.log(this.a);
+    //     }
+    // }
+
+    // var obj1 = {
+    //     a:'obj1',
+    //     obj2:obj2
+    // }
+
+    // obj1.obj2.foo();
+
+    // var a = 1;
+    // var foo = {
+    //     a:2,
+    //     bar:function (){
+    //         console.log(this.a);
+    //     }
+    // }
+
+    // var b = foo.bar;
+    // b();//1
+
+    // var a = 1;
+    // var foo = {
+    //     a:2,
+    //     bar:function (){
+    //         console.log(this.a);
+    //     }
+    // };
+    // (foo.bar)();//2
+
+    // var a = 1;
+    // var foo = {
+    //     a:2,
+    //     bar:function (){
+    //         console.log(this.a);
+    //     }
+    // };
+
+    // (foo.bar = foo.bar) ();
+    // (foo.bar,foo.bar)();
+    // (false || foo.bar)();
+
+    //apply和call
+
+        // var obj = {
+        //     name:'sex',
+        //     say:function(){
+        //         console.log(this);
+        //         console.log(this.name);
+        //     }
+        // }
+        // obj.say();
+
+        // var obj1 = {
+        //     name:'hello'
+        // }
+        // obj.say.call(obj1);
+
+        // obj.call(obj1);
+
+        // console.log(Math.min(1,2,3,-1,3,4));
+        // var arr = [1,2,5,-1,0,-5];
+        // console.log(Math.min.apply(null,arr));
+        // console.dir(Math.min)
+
+        function Demo(name){
+            this.name = name;
+        }
+
+        var obj = {
+            sex:'男',
+            age:18
+        };
+
+        Demo.call(obj,'Joey');
+        console.log(obj);
+
+</script>

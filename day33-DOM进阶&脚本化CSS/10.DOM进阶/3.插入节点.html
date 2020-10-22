@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <ul id="list">
+        <!-- <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li> -->
+    </ul>
+
+    <script>
+        //获取元素
+        var oBtn = document.getElementById("btn");
+        // var oList = document.getElementById("list");
+        var oList = document.querySelector("#list");
+        var oListLis = document.querySelectorAll("#list > li")
+
+//在父元素的最后一个子元素后面插入
+        // oBtn.onclick = function(){
+        //     var newLi = document.createElement("li");
+        //     newLi.innerHTML = "我是新的";
+
+        //     oList.appendChild(newLi);
+        // }
+//把已有的元素拿出来插入到其它位置
+//原来位置上的东西就没有了，后面的东西就会替上去
+        // oBtn.onclick = function(){
+        //     oList.appendChild(oListLis[0]);
+        // }
+
+//insertBefore插入
+        // oBtn.onclick = function(){
+        //     //创建新的节点
+        //     var newLi = document.createElement("li");
+        //     newLi.innerHTML = "这是使用insertBefore方式插入元素"
+        //     //在第二个元素前面插入
+        //     oList.insertBefore(newLi,oListLis[0]);
+        // }
+
+        //封装一个插入到最前面的方法
+        /*
+            @params1 {eleobj} 被插入位置的父元素
+            @params1 {eleobj} 被插入的元素
+
+        */
+       function appendFirst(parent,child){
+            //两种情况，父元素中是否有子元素
+            //如何判断父元素中是否有子元素
+            if(parent.children){
+                //插在第一个子元素的前面
+                parent.insertBefore(child,parent.children[0]);
+            }else{
+                //插在最后
+                parent.appendChild(child);
+            }
+       }
+
+        oBtn.onclick = function(){
+            //创建新的节点
+            var newLi = document.createElement("li");
+            newLi.innerHTML = "这是使用封装函数方式插入元素"
+            //在第二个元素前面插入
+            appendFirst(oList,newLi);
+        }
+    </script>
+</body>
+
+</html>

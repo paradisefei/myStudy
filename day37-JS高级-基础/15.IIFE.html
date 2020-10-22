@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回调函数</title>
+</head>
+
+<body>
+    <script src='./model.js'></script>
+    <script>
+        var myModel = module;
+        // console.log(myModel);
+        console.log(myModel.add(1,2,3));
+
+        /* 
+            匿名函数执行：
+                - 把匿名函数赋值给一个变量，变量调用
+                - IIFE
+
+
+            IIFE：匿名函数自调用
+                (匿名函数)()
+                +匿名函数()
+
+            IIFE的作用：
+                - 构建局部作用域(防止变量污染)
+                - 模块化
+        
+         */
+
+
+        // for (var i = 0; i < 5; i++) {
+        //     setTimeout(function () {
+        //         console.log(i); //5 5 5 5 5
+        //     })
+        // }
+
+        /* for (var i = 0; i < 5; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    console.log(i); //5 5 5 5 5
+                })
+            })(i)
+        } */
+
+
+        // var module1 = module1;
+        // console.log(module1)
+    </script>
+</body>
+
+</html>

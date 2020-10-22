@@ -1,0 +1,22 @@
+<script>
+    /*
+        获取对象中的属性
+        设置对象中的属性
+        也就是说,这两个关键字是用在对象中的
+
+    get 后面跟的是一个函数,函数名就相当于是对象的一个属性,调用该属性时不需要加括号调用
+    set 修改时就相当于是给属性赋值,而不需要调用函数传入参数来修改
+    */
+    var obj = {
+        name:"张三",
+        age:33,
+        get fullInfo(){
+            return this.name + this.age;
+        },
+        set setName(val){
+            this.name = val
+        }
+    }
+    obj.setName = "李四"
+    console.log(obj.fullInfo)
+</script>

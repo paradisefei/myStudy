@@ -1,0 +1,40 @@
+<script>
+    //数组求和
+    var arr = [1,2,3,4,5,6,7,8,9,10];
+    // var arr = [1,2,3,4];
+    var sum = 0;
+    for(var i = 0 ; i < arr.length ; i++){
+        // console.log(i);
+        sum += arr[i];
+    }
+    console.log(sum)
+
+    //最小值
+    var arr = [1,2,80,-10,0];
+    //min = 1
+    var min = arr[0];
+    //个数是从1开始算的，下标是从0开始算的
+    //i = 0 //i = 1//i = 2//i = 3//i = 4//i = 5
+    //0 < 5 true//1 < 5 true//2 < 5 true//3 < 5 true//4 < 5 true//5 < 5 false,终止循环
+    for(var i = 0 ; i < arr.length ; i++){
+        //arr[0] = 1//arr[1] = 2//arr[2] = 80//arr[3] = -10//arr[4] = 0
+        //1 < 1 false//2 < 1 false//80 < 1 false//-10 < 1 true//0 < -10 false
+        //相等的话min就不需要换值了
+        if(arr[i] < min){
+            min = arr[i];//min = -10
+        }
+        // console.log(i);
+        // console.log(arr[i]);
+    }
+    console.log(min)
+
+    var arr = [1,2,80,-10,0];
+    var max = arr[0];
+    for(var i = 0 ; i < arr.length ; i++){
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+    console.log(max)
+
+</script>

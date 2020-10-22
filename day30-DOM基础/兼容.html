@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        var oList = document.getElementById("list");
+        var oLists = oList.getElementsByTagName("li");
+
+        //谷歌中结果是上一个节点，不是上一个元素节点
+        //ie678是上一个元素节点
+        // console.log(oLists[1].previousSibling);
+
+        //谷歌中是上一个元素节点
+        //ie678中是undefined
+        // console.log(oLists[1].previousElementSibling);
+
+        //封装
+        function getPreviousSibling(ele){
+            // return ele.previousElementSibling || ele.previousSibling;
+            return ele.previousSibling || ele.previousElementSibling;
+        }
+        console.log(getPreviousSibling(oLists[1]));
+    </script>
+</body>
+</html>

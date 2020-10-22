@@ -1,0 +1,65 @@
+<script>
+    /*
+     箭头函数
+     1.箭头(=>)左边是形参列表,右边是代码块
+
+     参数不同情况
+     1.只有一个形参时,形参列表可以不用加括号
+     2.没有参数或有多个参数时,形参都要加括号
+     语句数量不同情况
+     1.函数只有一条语句时,可以不用花括号,不用花括号的话语句前面是默认省略一个return的
+        1.return语句
+            直接写这个语句
+        2.不是return语句
+            用花括号括起来
+     2.有多条语句时,要用花括号括起来
+        1.return就要老老实实的写了
+     return语句的使用
+     1.如果函数只有一个return语句,可以不写return,直接写return后面的
+
+     */
+    {
+        /* 只有一个形参 */
+        const fn = a => a + 1;
+
+        console.log(fn(10));
+    }
+    {
+        /* 语句数 */
+        // 一条语句
+        const fn = a => {
+            return  console.log(a + 1);
+        }
+
+        console.log(fn(10));
+
+        //多条语句
+        const fn2 = a => {
+            const b = a + 1;
+            console.log(b);
+        }
+        fn2(100)
+        const fn3 = () => {
+            let a = 102;
+            const b = a + 1;
+            console.log(b);
+        }
+        fn3()
+
+
+    }
+    {
+                        //练习
+        /* function sum1(...rest) {
+            return rest.reduce(function (p, c) {
+                return p + c;
+            }, 0)
+        } */
+        //不用花括号就表示省略了return关键字,但如果加上花括号的话就要写上return关键字了
+        const sum1 = (...rest) => rest.reduce(function(p,c){
+                                return p + c;
+                            })
+        
+        console.log(sum1(1,2,3,4,5));
+    }
+</script>

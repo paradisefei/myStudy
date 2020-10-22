@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+
+<body>
+    <!-- 
+        1.用表单
+        2.阻止表单提交请求
+        3.使用Ajax提交请求
+     -->
+    <form action="###">
+        <input type="text" name="username" id="user">
+        <button id="btn">提交</button>
+    </form>
+    <script>
+        const oForm = document.querySelector("form");
+        const oUser = document.querySelector("#user");
+
+        //  表单提交事件
+        oForm.onsubmit = function () {
+            /* 
+            POST请求
+                1.ajax发送请求
+                2.服务器接收请求
+                3.服务器返回响应
+                4.Ajax接收响应
+             */
+
+            //创建Ajax实例化对象
+            const xhr = new XMLHttpRequest();
+            //建立连接
+            xhr.open("POST", `/userInfo`, true);
+            /* 
+                POST请求中发送请求有两种格式
+                    1.urlencoded编码
+                    2.json数据
+            */
+/*            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            xhr.send(`username=${oUser.value}`) */
+
+            xhr.setRequestHeader("Content-Type","application/json");
+            xhr.send(JSON.stringify({
+                username:oUser.value,
+                pass:123
+            }));
+
+
+            //接收响应,事件驱动
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && (xhr.status > 199 && xhr.status < 300)){
+                    console.log("数据请求成功");
+                    //接收响应
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+
+
+            // 阻止表单提交事件
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

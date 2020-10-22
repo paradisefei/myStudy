@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unicode引入图标字体</title>
+        <style>
+            @font-face {
+                font-family: 'iconfont';
+                src: url('./ifont/iconfont.eot');
+                src: url('./ifont/iconfont.eot?#iefix') format('embedded-opentype'),
+                    url('./ifont/iconfont.woff2') format('woff2'),
+                    url('./ifont/iconfont.woff') format('woff'),
+                    url('./ifont/iconfont.ttf') format('truetype'),
+                    url('./ifont/iconfont.svg#iconfont') format('svg');
+            }
+            
+
+            .iconfont {
+                font-family: 'iconfont' !important;
+                font-size: 200px;
+                font-style: normal;
+                color: tomato;
+                -webkit-font-smoothing:antialiased;
+                -moz-osx-font-smoothing:grayscale;
+            }
+            .iconfont span:hover  {
+                color: #aa96da;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="iconfont">
+            <span>&#xe608;</span>
+        </div>
+    </body>
+</html>

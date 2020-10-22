@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js'></script>
+</head>
+
+<body>
+    <form action="###">
+        用户名<input type="text" name="user" autocomplete="off"> <br>
+        姓名<input type="text" name="name1" disabled><br>
+        邮箱<input type="email" name="name1" value="lipeihua0922@163.com" readonly><br>
+        密码<input type="password" name="pass"><br>
+        城市：
+        <input type="checkbox" name="city">北京
+        <input type="checkbox" name="city" checked>武汉
+        <input type="checkbox" name="city">上海
+        <input type="checkbox" name="city">深圳
+
+        <select name="food" id="">
+            <option value="">卤煮</option>
+            <option value="">豆汁</option>
+            <option value="" selected>螺蛳粉</option>
+            <option value="">臭豆腐</option>
+        </select>
+        <button id="btn">提交</button>
+
+    </form>
+    <script>
+        $(function () {
+            console.log($("form input[type=text][name=user]"));
+            console.log($("form input:enabled")); //包含只读 不包含disabled禁用
+            console.log($("form input:disabled")); //包含只读 不包含disabled禁用
+
+            console.log($("form input[name=city]:checked")); //包含只读 不包含disabled禁用
+            console.log($("form select option:selected")); //包含只读 不包含disabled禁用
+            console.log($("form :input")); //包含只读 不包含disabled禁用
+
+
+        })
+    </script>
+</body>
+
+</html>

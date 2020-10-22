@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width: 768px)  {
+            div::before{
+                content: '(小于768px)';
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+            div::before {
+                content: "(768~992)";
+            }
+        }
+        @media screen and (min-width: 992px) and (max-width: 1200px) {
+            div::before {
+                content: "(992~1200)";
+            }
+        }
+        @media screen and (min-width: 1200px){
+            div::before {
+                content: "(大于1200)";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Hello
+    </div>
+</body>
+</html>

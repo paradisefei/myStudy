@@ -1,0 +1,101 @@
+<script>
+    //字面量方式声明对象
+    // var people = {
+    //     name:'姓名',
+    //     age:'年龄',
+    //     weight:'体重'
+    // }
+    // console.log(people);
+
+    //对象的属性值也可以是函数
+    // var people = {
+    //     name:'姓名',
+    //     age:'年龄',
+    //     weight:'体重',
+    //     say:function (){
+    //         console.log('我会说话');
+    //     }
+    // }
+    // console.log(people);
+
+    //键的问题
+        //键是字符串，在定义的时候不管是什么类型的数据或关键字，只要是作为键存在的话就会被自动转为字符串
+    // var people = {
+    //     name:'Joey',
+    //     sex:'nan',
+    //     'age':'18',
+    //     undefined:'haha',
+    //     null:'world',
+    //     1:'hello',
+    //     var:'var'
+    // }
+    
+    //如果键名不符合变量命名的规则那么必须加上一对引号
+
+    // var people = {
+    //     name:'Joey',
+    //     sex:'nan',
+    //     'age':'18',
+    //     undefined:'haha',
+    //     null:'world',
+    //     1:'hello',//只有数字时，不加引号不会报错，可以成功设置，但不能用点的方式访问到它的值
+    //     var:'var',
+    //     'my category':'person',
+    //     '1s':'hehe'//以数字开头时，不加引号会报错，加了引号才能够正常设置，但用点的方式也还是访问不到
+    // }
+
+
+//  使用Object构造函数方式创建对象
+    // var people = new Object(
+    //     {
+    //         name:'Joey',
+    //         sex:'nan',
+    //         'age':'18',
+    //         undefined:'haha',
+    //         null:'world',
+    //         1:'hello',
+    //         var:'var'
+    //     }
+    // )
+    // console.log(people)
+    // console.log(people.name);
+    // console.log(people.sex);
+    // console.log(people.age);
+    // console.log(people.undefined);
+    // console.log(people.null);
+    // // console.log(people.'1s');
+    // console.log(people.var);
+
+    // console.log(people.'my category');
+    // console.log(people.1);
+
+        //鸭子类型
+        //999只鸭子，1只鸡，都会发出鸭叫
+        // var duck = {
+        //     duckSinging:function() {
+        //         console.log('嘎嘎嘎');
+        //     }
+        // }
+        // var chick = {
+        //     duckSinging:function() {
+        //         console.log('嘎嘎嘎');
+        //     }
+        // }
+
+        // var choir = [duck,chick];
+
+        // for(var i = 0 ; i < choir.length ; i++){
+        //     choir[i].duckSinging();
+        // }
+
+
+
+
+
+
+
+
+
+
+
+</script>

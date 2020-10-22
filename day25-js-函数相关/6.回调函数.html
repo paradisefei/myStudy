@@ -1,0 +1,25 @@
+<script>
+    //把一个引用类型数据赋值给一个变量
+    // var a = [];
+    // var b = a;//a和b指向同一个地址
+
+    // function fn(){
+
+    // }
+    // var fn1 = fn;//fn1和fn指向的是同一个地址，fn1中存放的是fn的地址
+
+    //一个引用类型可以有多个名字，一个改变引用类型的值，另外一个的值也会改变。
+    // var a = [1,2,3,4,5];
+    // var b = a;
+    // var c = b;
+    // b[0] = 'hello';
+    // c[1] = 'hi';
+    // console.log(a);
+
+    var arr = [1,2,3,4,5];
+    function fn(arr){
+        arr[0] = 'hello';
+    }
+    fn(arr);
+    console.log(arr);
+</script>

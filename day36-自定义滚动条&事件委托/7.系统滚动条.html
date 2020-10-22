@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* html,body{
+            overflow:hidden;
+        } */
+        /* html {
+            width:500px;
+            height:500px;
+            border:1px solid black;
+        }
+        body{
+            height:10000px;
+        } */
+        body {
+            width:500px;
+            height:500px;
+            border:1px solid black;
+        }
+        html{
+            height:10000px;
+        }
+        /* #box {
+            height:10000px;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- 
+        html设置高度过小，body设置高度过高时,会有系统滚动条
+        html设置高度过高，body设置高度过小时,会有系统滚动条
+        元素设置的高度超过窗口大小会出现系统滚动条,是因为它撑开了body
+        禁止系统滚动条：
+    -->
+    <div id="box">
+        box
+    </div>
+
+</body>
+
+</html>

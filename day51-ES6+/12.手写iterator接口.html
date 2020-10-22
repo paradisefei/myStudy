@@ -1,0 +1,41 @@
+<script>
+    /*
+        iterator对象都有一个next()方法,包含{value,done}
+    */
+    {
+const arr = ["a", "b", "c", "d", "e"];
+
+Array.prototype.myIterator = function () {
+    let index = 0;
+    //一个数组调用myIterator方法会返回一个对象,对象中有一个next()方法
+    const _this = this;
+    return {
+        next: function () {
+            if (index < _this.length) {
+                return {
+                    value: _this[index++],
+                    done: false
+                }
+            }
+            else {
+                return {
+                    value:undefined,
+                    done:true
+                }
+            }
+
+        }
+    }
+}
+
+const res = arr.myIterator();
+console.log(res);
+console.log(res.next());
+console.log(res.next());
+console.log(res.next());
+console.log(res.next());
+console.log(res.next());
+console.log(res.next());
+console.log(res.next());
+    }
+</script>

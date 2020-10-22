@@ -1,0 +1,18 @@
+<script>
+    var obj = {
+        name:'sex',
+        say:function() {
+            console.log(this);
+            console.log(this.name);
+        }
+    }
+
+    obj.say(1,2,3);
+
+    var obj1 = {
+        name:'hello'
+    }
+
+    obj.say.call(obj1)//obj中的属性say中的this指向到obj1中，而不是说把obj中的属性say绑定到obj1中
+    obj.say.apply(obj1)
+</script>

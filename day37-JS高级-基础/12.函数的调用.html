@@ -1,0 +1,11 @@
+<script>
+    function fn(){
+        console.log(1);
+    }
+    // fn();
+    // new fn();
+    // var f = new fn();//实例化调用,也是要执行函数代码的
+
+    fn.call(fn2);//fn函数调用了自己的call函数,所以call中的this是指向fn的,
+    //执行fn.call()相当于执行了call()中的this(),执行的就是fn();
+</script>

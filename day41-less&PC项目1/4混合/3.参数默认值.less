@@ -1,0 +1,28 @@
+.center(@w,@h,@bgc:#ccc){
+    width:@w;
+    height:@h;
+    position:absolute;
+    background-color:@bgc;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:0 auto;
+}
+.outer {
+    .center(@h:500px,@w:100px);
+
+    &>.con1 {
+        width:300px;
+        height:300px;
+        &:nth-child(1){
+            width:200px;
+        }
+        .center(300,300,lightgreen);
+        .con2 {
+            width:200px;
+            height:200px;
+        }
+    }
+    
+}

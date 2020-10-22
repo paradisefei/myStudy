@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            两个引用变量 指向同一个对象，如果通过一个引用变量修改了对象的值，则另一个引用变量也看的见
+        
+         */
+        var o1 = {
+            m: 1
+        }
+        var o2 = o1;
+        o2.m = 2;
+        console.log(o1.m, o1 === o2);//2 true
+
+
+        /* 
+            两个引用变量 指向同一个对象，如果修改了一个引用变量的地址值，另一个引用变量保持原有地址值不变
+        
+         */
+
+        var o3 = {
+            m: 3
+        }
+        var o4 = o3
+        o3 = {
+            m: 4
+        }
+        console.log(o4.m, o4 === o3) //3 false
+
+
+
+
+        //test1
+        // var o5 = {
+        //     m: 5
+        // };
+        // var o6 = o5;
+
+
+        // //函数的传参操作其实是 值的传递或者是引用值的传递  而不是堆内数据的传递
+        // //传参的传递只有值传递  而没有引用传递
+        // //o5传递给obj  只是把地址值传递给了obj 而不是把o5所代表的对象传递给obj
+        // function fn(obj) {
+        //     obj = {
+        //         m: 6
+        //     };
+        // }
+        // fn(o5)
+        // console.log(o5.m, o6.m, o6 === o5)//5 5 true
+
+
+
+
+        //test2
+        var o5 = {
+            m: 5
+        };
+        var o6 = o5;
+
+        function fn(obj) {
+            obj.m = 6
+        }
+        fn(o5)
+        console.log(o5.m, o6.m, o6 === o5)//6 6 true
+    </script>
+</body>
+
+</html>

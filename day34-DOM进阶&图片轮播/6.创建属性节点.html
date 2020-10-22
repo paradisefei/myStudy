@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        创建新的属性
+    </div>
+
+    <script>
+        /*
+            创建属性
+            给属性赋值
+            在某个元素中添加该属性
+        */
+        //旧的方法
+        var oBox = document.querySelector(".box");
+
+        var newAttr = document.createAttribute("study");
+        //给属性赋值
+        newAttr.value="DOM";
+        //查看新创建出来的属性//此时不属于任何节点
+        console.log(newAttr);
+        //某个元素添加新的属性
+        oBox.setAttributeNode(newAttr);
+    </script>
+</body>
+</html>

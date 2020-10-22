@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bo {
+            width: 500px;
+            height: 100px;
+            background-color: red;
+            overflow: auto;
+            padding-left: 200px;
+        }
+        .po {
+            width: 4000px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bo">
+        <div class="po">
+
+        </div>
+    </div>
+    <button id="btn">点击</button>
+    <script>
+        var oBo = document.getElementById("bo");
+        var oPo = document.querySelector(".po");
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function(){
+            console.log(oBo.scrollWidth);
+        }
+    </script>
+</body>
+</html>

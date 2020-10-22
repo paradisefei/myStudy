@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤选择器</title>
+    <script src='https://cdn.bootcdn.net/ajax/libs/jquery/1.11.3/jquery.js'></script>
+</head>
+
+<body>
+    <div class="outer">
+        <ul class="con1">
+            <li>1</li>
+            <li class="li2">2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+        <ul class="con2">
+            <li>5</li>
+            <li>6</li>
+            <li>
+                <p class="p2">
+                    <span>1</span>
+                    <span>22</span>
+                </p>
+                <p>2</p>
+            </li>
+            <li>8</li>
+        </ul>
+        <ul>
+            <li>10</li>
+        </ul>
+        <div class="box">
+            <p>p1</p>
+            <h1>h1111</h1>
+            <span>span1</span>
+            <p>p2</p>
+            <span>span2</span>
+            <h4>h4444</h4>
+            <span>span3</span>
+        </div>
+        <div style="width: 100px;background-color: red;">
+            1111111111&nbsp;1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+        </div>
+    </div>
+    <script>
+        /*过滤选择器*/
+
+
+        $(function () {
+            //:first 所有匹配元素的第一个
+            // console.log($(".outer li:first"));
+            // //:first-child 所有匹配到的元素中,如果该元素是自己父级的第一个儿子,那么就被选中
+            // console.log($(".outer li:first-child"));
+            // //:not() 在匹配到的元素中去掉一些元素,不需要用引号了
+            // console.log($(".outer li:not(.con1 li)"));
+            // //:nth-child(1)
+            // console.log($(".outer li:nth-child(1)"));
+            //     //:nth-child(even) even:2,4,6,8,...
+            // console.log($(".outer li"));
+            // console.log($(".outer li:nth-child(even)"));
+            //     //:nth-child(odd) odd:2,4,6,8,...
+            // console.log($(".outer li"));
+            // console.log($(".outer li:nth-child(odd)"));
+            //     //表达式:2n+1 n是从0开始的nth-child()中是从1开始找的
+            // console.log($(".outer li"));
+            // console.log($(".outer li:nth-child(2n+1)"));
+            // //:even even:0 2 4 6 8 
+            // console.log($(".outer li:even"));
+            //:odd odd:1 3 5 7
+            // console.log($("ul li:odd"));
+
+            // //:eq 从0开始索引
+            console.log($(".outer li:eq(1)"));
+            //:gt 大于参数
+            console.log($("ul li:gt(4)"));
+            // //:lt 小于参数
+            // console.log($(".outer li:lt(4)"));
+
+            // //:header
+            // console.log($(".box :header")); //.box的所有后代元素中的所有标题元素
+
+            // //:contains(text) 选取文本内容包含text的元素
+            // console.log($(".outer li:contains(1)"));
+
+            // //:empty 不包含子元素或文本的空元素
+            // console.log($(".outer li:empty"));
+
+            // //:has() 该元素的后代元素满足筛选条件时,就选中该元素
+            // console.log($("ul:has(.li2)"));//
+
+            // //:parent 选取含有子元素或文本的元素 做爸爸的
+            // console.log($(".outer li:parent"));
+
+            // //:only-child
+            // console.log($(".outer li:only-child"));
+        })
+    </script>
+</body>
+
+</html>

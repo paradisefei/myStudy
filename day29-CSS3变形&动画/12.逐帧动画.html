@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bike {
+            width: 130px;
+            height: 130px;
+            background:url(./img/bike.png) 0 0 no-repeat;
+
+            animation: bike 10s;
+            /* animation:bike 1s steps(32) infinite; */
+            /* 
+                逐帧
+             */
+        }
+        @keyframes bike {
+            from {
+                background:url(./img/bike.png) 0 -0 no-repeat;
+            }
+            to {
+                background: url(./img/bike.png) 0 -4160px no-repeat;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bike"></div>
+</body>
+</html>

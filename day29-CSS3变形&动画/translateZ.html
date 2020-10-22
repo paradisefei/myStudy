@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .outer {
+            height: 250px;
+            /* border: 1px solid black; */
+
+            transform-style: preserve-3d;
+            perspective: 300px;
+        }
+        .inner {
+            width: 250px;
+            height: 250px;
+            margin:  20px auto;
+            background-color: #00adb5;
+
+            /* transition: all .5s; */
+            /* transform: translateZ(30px); */
+
+            /* animation: change .1s infinite linear; */
+        }
+        /* .inner:hover {
+            transform: translateZ(100px);
+        } */
+
+        @keyframes change {
+            0%{
+                transform: rotateZ(0deg);
+            }
+            50% {
+                width: 500px;
+                height: 500px;
+                background-color: #ff2e63;
+            }
+            75% {
+                border-radius: 50%;
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+
+        </div>
+    </div>
+</body>
+</html>

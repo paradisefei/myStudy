@@ -1,0 +1,34 @@
+<script>
+    /*
+    ...rest
+    把多出来的那些数放入到数组中
+    */
+    {
+        //解构时
+        const [a,...b] = [1,2,3,4,5,6,7];
+        console.log(a,b)
+    }
+
+    {
+        /*调用函数时传参
+            比如要实现把所有传入的参数相加
+                以前可以使用arguments来实现
+                现在可以使用rest参数来实现
+        */
+function fn(...rest){//rest是数组类型
+    console.log(rest.reduce(function(p,c){
+        return p + c;
+    }))
+}
+fn(1,2,3);
+
+function sum(){
+    var res = Array.prototype.reduce.call(arguments,function(p,c){
+        return p + c;
+    })
+    return res;
+}
+
+console.log("sum" + sum(1,2,3));
+    }
+</script>

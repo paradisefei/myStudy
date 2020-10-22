@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+        }
+
+        #bar {
+            width: 30px;
+            /* 
+            当高度用百分比表示时,父级需要有显示的高度
+            fixed不需要显示的高度是因为它直接参照的是窗口高度
+             */
+            height: 100%;
+            background-color: red;
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+
+        #con {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #box {
+            width: 100%;
+            height: 30px;
+            background-color: #ccc;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="con"></div>
+        <div id="bar">
+            <div id="box">
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        /*
+        滑块动,内容跟着一起动
+        */
+        //获取元素对象
+        var oCon = document.getElementById("con");
+        var oBar = document.getElementById("bar");
+        var oBox = document.getElementById("box");
+
+        //添加内容
+        var str = "";
+        for (var i = 0; i < 300; i++) {
+            str += i + '<br/>'
+        }
+        oCon.innerHTML = str;
+
+        //设置滑块高度
+        //比例
+        var scale = document.documentElement.clientHeight / oCon.offsetHeight;
+        var heiOfBox = scale * oBar.offsetHeight;
+        oBox.style.height = heiOfBox + "px";
+
+        //鼠标按下事件
+        oBox.onmousedown = function (e) {
+            e.preventDefault();
+
+            //获取鼠标按下时到box上边框的距离
+            var mousePos = e.offsetY;
+
+            //文档移动事件
+            document.onmousemove = function (e) {
+                e.preventDefault();
+                //移动后的位置
+                var res = e.clientY - mousePos;
+                // 判断临界值
+                if (res < 0) {
+                    res = 0;
+                } else if (res > oBar.offsetHeight - oBox.offsetHeight) {
+                    res = oBar.offsetHeight - oBox.offsetHeight;
+                }
+                //确定新的定位
+                oBox.style.top = res + "px";
+
+
+                //内容应该走过的距离=滑块走过的距离/scale
+                oCon.style.top = - res / scale + "px";
+
+
+            }
+            //鼠标抬起事件
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<script>
+    {
+        function* gen() {
+            yield console.log(0);
+            yield console.log(1);
+            yield console.log(2);
+            yield console.log(3);
+            yield console.log(4);
+        }
+        const res = gen();
+        console.log(res);
+        res.next()
+        res.next()
+        res.next()
+        res.next()
+        res.next()
+    }
+    {
+        
+    }
+</script>

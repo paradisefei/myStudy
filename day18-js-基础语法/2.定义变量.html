@@ -1,0 +1,83 @@
+<script>
+    //变量定义
+    //基本形式
+    // var a = 10;
+    // console.log(a);
+    //不适用var
+    // b = 10;//没有定义但是给了值
+    // b = 'hello'
+    // console.log(b);//会输出，但是这个变量是没有定义的
+    // console.log(typeof b);//number//typeof 变量 得到的结果是字符串类型的数据
+
+    // var c;//定义了但是没有给值
+    // console.log(typeof c);
+
+    //同时定义两个变量
+    // var a = 10,b = 'hello';
+    // // 等价于var a = 10;var b = 'hello';
+    // console.log(a);
+    // console.log(typeof a);
+    // console.log(b);
+    // console.log(typeof b);
+    
+    //使用连等定义变量
+    // var a = b = 10;//变量b没有定义，变量a定义了的。
+    // b = 10;
+    // var a;
+    // a = b;
+    // console.log(a);//10
+    // console.log(typeof a);//number
+    // console.log(b);//10
+    // console.log(typeof b);//number
+
+    //两个变量,一个变量值为100，另一个变量值为200，交换两者的值
+    var a = 100, b = 200;
+    //方法一
+    // var c;
+    // c = a;
+    // a = b;
+    // b = c;
+    // console.log(a);
+    // console.log(b);
+    //方法二
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    console.log(a);
+    console.log(b);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a = 10;
+        console.log(a);
+    </script>
+</body>
+</html> -->

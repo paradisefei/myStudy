@@ -1,0 +1,17 @@
+<script>
+    /*
+    其它对象上也有toString方法，但和Object上的toString方法得到的结果不同
+    Object上的toString方法得到的时[object XXXX],可以精确的确定对象的数据类型
+    */
+    console.log(Object.prototype.toString.call(null));//[object Null]
+    console.log(Object.prototype.toString.call(undefined));//[object Undefined]
+    console.log(Object.prototype.toString.call(1));//[object Number]
+    console.log(Object.prototype.toString.call("hello"));//[object String]
+    console.log(Object.prototype.toString.call(true));//[object Boolean]
+    console.log(Object.prototype.toString.call({}));//[object Object]
+    console.log(Object.prototype.toString.call(function fn(){}));//[object Function]
+    console.log(Object.prototype.toString.call([]));//[object Array]
+    console.log(Object.prototype.toString.call(Math));//[object Math]
+    console.log(Object.prototype.toString.call(Date));//[object Function]
+    console.log(Object.prototype.toString.call(new Date));//[object Date]
+</script>

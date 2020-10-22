@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="list">
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+    </ul>
+    <script>
+        var oListLis = document.querySelectorAll(".list li");
+
+        // for(var i = 0; i < oListLis.length;i++){
+        //     (function(i){
+        //         oListLis[i].onclick = function(){
+        //         console.log(i + 1);
+        //     }
+        //     })(i)
+        // }
+        // for (var i = 0; i < oListLis.length; i++) {
+        //     oListLis[i].index = i;
+        //     oListLis[i].onclick = function () {
+        //         console.log(this.index + 1);
+        //     }
+        // }
+        oListLis.forEach(function(item,index){
+            item.onclick = function(){
+                console.log(index + 1);
+            }
+        })
+    </script>
+</body>
+
+</html>
